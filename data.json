@@ -1,0 +1,224 @@
+{
+    "DR01": [
+        {
+            "code": "NDX01",
+            "issuer": "ChinaAMC NASDAQ 100 ETF",
+            "underlyingIndex": "NASDAQ 100",
+            "market": "US",
+            "ratio": "340:1",
+            "lastPrice": 20.87,
+            "percentChange": "+0.25%",
+            "dr1M": "+0.25%",
+            "ul1M_THB": "+0.25%"
+        },
+        {
+            "code": "SPX01",
+            "issuer": "SPDR S&P 500 ETF Trust",
+            "underlyingIndex": "S&P 500",
+            "market": "US",
+            "ratio": "120:1",
+            "lastPrice": 18.55,
+            "percentChange": "-0.12%",
+            "dr1M": "+1.12%",
+            "ul1M_THB": "+1.25%"
+        },
+        {
+            "code": "QQQ01",
+            "issuer": "Invesco QQQ Trust",
+            "underlyingIndex": "NASDAQ 100",
+            "market": "US",
+            "ratio": "95:1",
+            "lastPrice": 27.40,
+            "percentChange": "+0.88%",
+            "dr1M": "+3.52%",
+            "ul1M_THB": "+3.41%"
+        },
+        {
+            "code": "SPY01",
+            "issuer": "SPDR S&P 500 ETF",
+            "underlyingIndex": "S&P 500",
+            "market": "US",
+            "ratio": "110:1",
+            "lastPrice": 22.10,
+            "percentChange": "+0.33%",
+            "dr1M": "+1.20%",
+            "ul1M_THB": "+1.15%"
+        },
+        {
+            "code": "DOW01",
+            "issuer": "SPDR Dow Jones Industrial Average ETF",
+            "underlyingIndex": "Dow Jones",
+            "market": "US",
+            "ratio": "150:1",
+            "lastPrice": 14.80,
+            "percentChange": "-0.05%",
+            "dr1M": "+0.90%",
+            "ul1M_THB": "+1.02%"
+        },
+        {
+            "code": "HKC01",
+            "issuer": "ChinaAMC Hang Seng TECH ETF",
+            "underlyingIndex": "Hang Seng TECH",
+            "market": "Hong Kong",
+            "ratio": "85:1",
+            "lastPrice": 9.74,
+            "percentChange": "+0.80%",
+            "dr1M": "+4.22%",
+            "ul1M_THB": "+4.05%"
+        },
+        {
+            "code": "HST01",
+            "issuer": "iShares Hang Seng TECH ETF",
+            "underlyingIndex": "Hang Seng TECH",
+            "market": "Hong Kong",
+            "ratio": "90:1",
+            "lastPrice": 8.90,
+            "percentChange": "+0.50%",
+            "dr1M": "+3.80%",
+            "ul1M_THB": "+3.60%"
+        },
+        {
+            "code": "HSH01",
+            "issuer": "Tracker Fund of Hong Kong",
+            "underlyingIndex": "Hang Seng Index",
+            "market": "Hong Kong",
+            "ratio": "100:1",
+            "lastPrice": 5.55,
+            "percentChange": "-0.40%",
+            "dr1M": "-1.10%",
+            "ul1M_THB": "-1.05%"
+        },
+        {
+            "code": "CSI01",
+            "issuer": "CSOP FTSE China A50 ETF",
+            "underlyingIndex": "FTSE China A50",
+            "market": "China",
+            "ratio": "55:1",
+            "lastPrice": 11.62,
+            "percentChange": "+0.10%",
+            "dr1M": "-0.82%",
+            "ul1M_THB": "-0.95%"
+        },
+        {
+            "code": "CHT01",
+            "issuer": "iShares China Tech ETF",
+            "underlyingIndex": "MSCI China Tech",
+            "market": "US",
+            "ratio": "65:1",
+            "lastPrice": 10.42,
+            "percentChange": "+0.77%",
+            "dr1M": "+2.65%",
+            "ul1M_THB": "+2.50%"
+        },
+        {
+            "code": "JPN01",
+            "issuer": "iShares MSCI Japan ETF",
+            "underlyingIndex": "MSCI Japan",
+            "market": "Japan",
+            "ratio": "130:1",
+            "lastPrice": 7.80,
+            "percentChange": "+0.20%",
+            "dr1M": "+1.60%",
+            "ul1M_THB": "+1.55%"
+        },
+        {
+            "code": "NKY01",
+            "issuer": "Nikkei 225 ETF",
+            "underlyingIndex": "Nikkei 225",
+            "market": "Japan",
+            "ratio": "140:1",
+            "lastPrice": 12.40,
+            "percentChange": "+0.60%",
+            "dr1M": "+3.10%",
+            "ul1M_THB": "+3.05%"
+        },
+        {
+            "code": "EUR01",
+            "issuer": "iShares MSCI Europe ETF",
+            "underlyingIndex": "MSCI Europe",
+            "market": "Europe",
+            "ratio": "90:1",
+            "lastPrice": 9.22,
+            "percentChange": "+0.12%",
+            "dr1M": "+1.85%",
+            "ul1M_THB": "+1.70%"
+        },
+        {
+            "code": "UK01",
+            "issuer": "iShares FTSE 100 ETF",
+            "underlyingIndex": "FTSE 100",
+            "market": "UK",
+            "ratio": "100:1",
+            "lastPrice": 6.70,
+            "percentChange": "-0.02%",
+            "dr1M": "+0.75%",
+            "ul1M_THB": "+0.84%"
+        },
+        {
+            "code": "GLD01",
+            "issuer": "SPDR Gold Trust",
+            "underlyingAsset": "Gold Spot",
+            "market": "US",
+            "ratio": "950:1",
+            "lastPrice": 32.40,
+            "percentChange": "+0.55%",
+            "dr1M": "+2.13%",
+            "ul1M_THB": "+2.00%"
+        },
+        {
+            "code": "SLV01",
+            "issuer": "iShares Silver Trust",
+            "underlyingAsset": "Silver Spot",
+            "market": "US",
+            "ratio": "600:1",
+            "lastPrice": 11.10,
+            "percentChange": "-0.30%",
+            "dr1M": "+1.95%",
+            "ul1M_THB": "+1.80%"
+        },
+        {
+            "code": "XLF01",
+            "issuer": "Financial Select Sector SPDR Fund",
+            "underlyingIndex": "S&P Financials",
+            "market": "US",
+            "ratio": "85:1",
+            "lastPrice": 8.40,
+            "percentChange": "+0.18%",
+            "dr1M": "+0.95%",
+            "ul1M_THB": "+1.00%"
+        },
+        {
+            "code": "XLE01",
+            "issuer": "Energy Select Sector SPDR Fund",
+            "underlyingIndex": "S&P Energy",
+            "market": "US",
+            "ratio": "70:1",
+            "lastPrice": 10.55,
+            "percentChange": "-0.50%",
+            "dr1M": "-1.22%",
+            "ul1M_THB": "-1.15%"
+        },
+        {
+            "code": "ARK01",
+            "issuer": "ARK Innovation ETF",
+            "underlyingIndex": "ARKK Tech Growth",
+            "market": "US",
+            "ratio": "50:1",
+            "lastPrice": 15.75,
+            "percentChange": "+1.20%",
+            "dr1M": "+6.35%",
+            "ul1M_THB": "+6.00%"
+        },
+        {
+            "code": "EVT01",
+            "issuer": "iShares Global Clean Energy ETF",
+            "underlyingIndex": "Global Clean Energy",
+            "market": "Global",
+            "ratio": "60:1",
+            "lastPrice": 7.10,
+            "percentChange": "-0.15%",
+            "dr1M": "+0.45%",
+            "ul1M_THB": "+0.40%"
+        }
+    ]
+}

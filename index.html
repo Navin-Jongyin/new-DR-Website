@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DR01</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <section id="iNAV" class="iNav-section" style="padding: 64px 16px;">
+        <div class="header">
+            <h1 class="section-title">ข้อมูล DR01 iNAV</h1>
+        </div>
+
+        <hr>
+        <div class="tabs" id="tabs-holidays">
+            <button class="tab" aria-selected="true" data-tab="etf">DR อ้างอิง ETF</button>
+            <button class="tab" aria-selected="false" data-tab="stock">DR อ้างอิงหุ้น</button>
+            <button class="tab" aria-selected="false" data-tab="calculator">เครื่องมือคำนวณราคา DR</button>
+
+        </div>
+
+        <!-- Tab Content: ETF -->
+        <div class="tab-content" data-content="etf" style="display: block;">
+            <!-- Inserted selected layer (converted table) -->
+            <div class="dr-table-card" id="dr-table-component">
+                <div class="dr-table-scroll">
+                    <table class="dr-table" role="table">
+                        <thead>
+                            <tr>
+                                <th>DR01</th>
+                                <th>สินทรัพย์อ้างอิง</th>
+                                <th>ตลาดสินทรัพย์อ้างอิง</th>
+                                <th>อัตราส่วนสินทรัพย์อ้างอิง</th>
+                                <th>มูลค่าตลาด</th>
+                                <th>ราคาปิดล่าสุด (บาท)</th>
+                                <th>%เปลี่ยนแปลง</th>
+                                <th>&DR 1 M</th>
+                                <th>%UL 1 M (adj. THB)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dr-table-body">
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>NDX01</span>
+                                </td>
+                                <td style="text-align: left;">ChinaAMC NASDAQ 100 ETF</td>
+                                <td>US</td>
+                                <td>340:1</td>
+                                <td>NASDAQ 100</td>
+                                <td>20.87</td>
+                                <td style="color: #16C784;">+0.25%</td>
+                                <td style="color: #16C784;">+0.25%</td>
+                                <td style="color: #16C784;">+0.25%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>SP50001</span>
+                                </td>
+                                <td style="text-align: left;">Hang Seng S&P 500 Index ETF</td>
+                                <td>US</td>
+                                <td>120:1</td>
+                                <td>NASDAQ</td>
+                                <td>18.55</td>
+                                <td style="color: #EA3943;">-0.12%</td>
+                                <td style="color: #16C784;">+1.12%</td>
+                                <td style="color: #16C784;">+1.25%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>QQQ01</span>
+                                </td>
+                                <td style="text-align: left;">Invesco QQQ Trust</td>
+                                <td>US</td>
+                                <td>95:1</td>
+                                <td>NASDAQ 100</td>
+                                <td>27.40</td>
+                                <td style="color: #16C784;">+0.88%</td>
+                                <td style="color: #16C784;">+3.52%</td>
+                                <td style="color: #16C784;">+3.41%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>SPY01</span>
+                                </td>
+                                <td style="text-align: left;">SPDR S&P 500 ETF</td>
+                                <td>US</td>
+                                <td>110:1</td>
+                                <td>S&P 500</td>
+                                <td>22.10</td>
+                                <td style="color: #16C784;">+0.33%</td>
+                                <td style="color: #16C784;">+1.20%</td>
+                                <td style="color: #16C784;">+1.15%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>DOW01</span>
+                                </td>
+                                <td style="text-align: left;">SPDR Dow Jones Industrial Average ETF</td>
+                                <td>US</td>
+                                <td>150:1</td>
+                                <td>Dow Jones</td>
+                                <td>14.80</td>
+                                <td style="color: #EA3943;">-0.05%</td>
+                                <td style="color: #16C784;">+0.90%</td>
+                                <td style="color: #16C784;">+1.02%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Hong Kong"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>HKC01</span></td>
+                                <td style="text-align: left;">ChinaAMC Hang Seng TECH ETF</td>
+                                <td>Hong Kong</td>
+                                <td>85:1</td>
+                                <td>Hang Seng TECH</td>
+                                <td>9.74</td>
+                                <td style="color: #16C784;">+0.80%</td>
+                                <td style="color: #16C784;">+4.22%</td>
+                                <td style="color: #16C784;">+4.05%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Hong Kong"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>HST01</span></td>
+                                <td style="text-align: left;">iShares Hang Seng TECH ETF</td>
+                                <td>Hong Kong</td>
+                                <td>90:1</td>
+                                <td>Hang Seng TECH</td>
+                                <td>8.90</td>
+                                <td style="color: #16C784;">+0.50%</td>
+                                <td style="color: #16C784;">+3.80%</td>
+                                <td style="color: #16C784;">+3.60%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Hong Kong"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>HSH01</span></td>
+                                <td style="text-align: left;">Tracker Fund of Hong Kong</td>
+                                <td>Hong Kong</td>
+                                <td>100:1</td>
+                                <td>Hang Seng Index</td>
+                                <td>5.55</td>
+                                <td style="color: #EA3943;">-0.40%</td>
+                                <td style="color: #EA3943;">-1.10%</td>
+                                <td style="color: #EA3943;">-1.05%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="China"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>CSI01</span></td>
+                                <td style="text-align: left;">CSOP FTSE China A50 ETF</td>
+                                <td>China</td>
+                                <td>55:1</td>
+                                <td>FTSE China A50</td>
+                                <td>11.62</td>
+                                <td style="color: #16C784;">+0.10%</td>
+                                <td style="color: #EA3943;">-0.82%</td>
+                                <td style="color: #EA3943;">-0.95%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>CHT01</span>
+                                </td>
+                                <td style="text-align: left;">iShares China Tech ETF</td>
+                                <td>US</td>
+                                <td>65:1</td>
+                                <td>MSCI China Tech</td>
+                                <td>10.42</td>
+                                <td style="color: #16C784;">+0.77%</td>
+                                <td style="color: #16C784;">+2.65%</td>
+                                <td style="color: #16C784;">+2.50%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Japan"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>JPN01</span></td>
+                                <td style="text-align: left;">iShares MSCI Japan ETF</td>
+                                <td>Japan</td>
+                                <td>130:1</td>
+                                <td>MSCI Japan</td>
+                                <td>7.80</td>
+                                <td style="color: #16C784;">+0.20%</td>
+                                <td style="color: #16C784;">+1.60%</td>
+                                <td style="color: #16C784;">+1.55%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Japan"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>NKY01</span></td>
+                                <td style="text-align: left;">Nikkei 225 ETF</td>
+                                <td>Japan</td>
+                                <td>140:1</td>
+                                <td>Nikkei 225</td>
+                                <td>12.40</td>
+                                <td style="color: #16C784;">+0.60%</td>
+                                <td style="color: #16C784;">+3.10%</td>
+                                <td style="color: #16C784;">+3.05%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Europe"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>EUR01</span></td>
+                                <td style="text-align: left;">iShares MSCI Europe ETF</td>
+                                <td>Europe</td>
+                                <td>90:1</td>
+                                <td>MSCI Europe</td>
+                                <td>9.22</td>
+                                <td style="color: #16C784;">+0.12%</td>
+                                <td style="color: #16C784;">+1.85%</td>
+                                <td style="color: #16C784;">+1.70%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="UK" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>UK01</span>
+                                </td>
+                                <td style="text-align: left;">iShares FTSE 100 ETF</td>
+                                <td>UK</td>
+                                <td>100:1</td>
+                                <td>FTSE 100</td>
+                                <td>6.70</td>
+                                <td style="color: #EA3943;">-0.02%</td>
+                                <td style="color: #16C784;">+0.75%</td>
+                                <td style="color: #16C784;">+0.84%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>GLD01</span>
+                                </td>
+                                <td style="text-align: left;">SPDR Gold Trust</td>
+                                <td>US</td>
+                                <td>950:1</td>
+                                <td>Gold Spot</td>
+                                <td>32.40</td>
+                                <td style="color: #16C784;">+0.55%</td>
+                                <td style="color: #16C784;">+2.13%</td>
+                                <td style="color: #16C784;">+2.00%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>SLV01</span>
+                                </td>
+                                <td style="text-align: left;">iShares Silver Trust</td>
+                                <td>US</td>
+                                <td>600:1</td>
+                                <td>Silver Spot</td>
+                                <td>11.10</td>
+                                <td style="color: #EA3943;">-0.30%</td>
+                                <td style="color: #16C784;">+1.95%</td>
+                                <td style="color: #16C784;">+1.80%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>XLF01</span>
+                                </td>
+                                <td style="text-align: left;">Financial Select Sector SPDR Fund</td>
+                                <td>US</td>
+                                <td>85:1</td>
+                                <td>S&P Financials</td>
+                                <td>8.40</td>
+                                <td style="color: #16C784;">+0.18%</td>
+                                <td style="color: #16C784;">+0.95%</td>
+                                <td style="color: #16C784;">+1.00%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>XLE01</span>
+                                </td>
+                                <td style="text-align: left;">Energy Select Sector SPDR Fund</td>
+                                <td>US</td>
+                                <td>70:1</td>
+                                <td>S&P Energy</td>
+                                <td>10.55</td>
+                                <td style="color: #EA3943;">-0.50%</td>
+                                <td style="color: #EA3943;">-1.22%</td>
+                                <td style="color: #EA3943;">-1.15%</td>
+                            </tr>
+                            <tr>
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="US" width="28"
+                                        height="28" style="border-radius: 50%; margin-right: 8px;"><span>ARK01</span>
+                                </td>
+                                <td style="text-align: left;">ARK Innovation ETF</td>
+                                <td>US</td>
+                                <td>50:1</td>
+                                <td>ARKK Tech Growth</td>
+                                <td>15.75</td>
+                                <td style="color: #16C784;">+1.20%</td>
+                                <td style="color: #16C784;">+6.35%</td>
+                                <td style="color: #16C784;">+6.00%</td>
+                            </tr>
+                            <tr class="row-alt">
+                                <td class="dr-cell-first"><img
+                                        src="/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png" alt="Global"
+                                        width="28" height="28"
+                                        style="border-radius: 50%; margin-right: 8px;"><span>EVT01</span></td>
+                                <td style="text-align: left;">iShares Global Clean Energy ETF</td>
+                                <td>Global</td>
+                                <td>60:1</td>
+                                <td>Global Clean Energy</td>
+                                <td>7.10</td>
+                                <td style="color: #EA3943;">-0.15%</td>
+                                <td style="color: #16C784;">+0.45%</td>
+                                <td style="color: #16C784;">+0.40%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Stock -->
+        <div class="tab-content" data-content="stock" style="display: none;">
+            <div class="dr-table-card">
+                <p style="text-align: center; padding: 40px; color: #777E90;">DR อ้างอิงหุ้น - Coming Soon</p>
+            </div>
+        </div>
+
+        <!-- Tab Content: Calculator -->
+        <div class="tab-content" data-content="calculator" style="display: none;">
+            <div class="calculator-container">
+                <!-- Left Panel: Calculator Input -->
+                <div class="calculator-panel">
+                    <div class="calculator-content">
+                        <!-- Header with DR Code -->
+                        <div class="calculator-header">
+                            <div class="calculator-input-container">
+                                <input type="text" class="calculator-dr-input" id="calculator-dr-code" value="NDX01"
+                                    placeholder="พิมพ์ DR code...">
+                                <img src="http://localhost:3845/assets/c17ee7eee0981fc89a23a3d4cfc8f74ea2754ab9.svg"
+                                    alt="search" class="calculator-search-icon">
+
+                                <!-- Dropdown List -->
+                                <ul class="calculator-dropdown-list" id="dropdownList">
+                                    <!-- Items populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ETF Name -->
+                        <p class="calculator-etf-name" id="calculator-etf-name">
+                            ChinaAMC NASDAQ 100 ETF (3086)
+                        </p>
+
+                        <!-- Ratio Info -->
+                        <div class="calculator-ratio">
+                            <p class="calculator-ratio-label">
+                                อัตราส่วนต่อสินทรัพย์อ้างอิง (สินทรัพย์อ้างอิง : DR)
+                            </p>
+                            <p class="calculator-ratio-value" id="calculator-ratio">
+                                1 : 10
+                            </p>
+                        </div>
+
+                        <!-- Input: Asset Price -->
+                        <div class="calculator-input-group">
+                            <label>ราคาสินทรัพย์อ้างอิง</label>
+                            <div class="calculator-input-wrapper">
+                                <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice">
+                                <img src="http://localhost:3845/assets/9f2803bf21dc8458f26ffe7bba0839d970b642e9.svg"
+                                    alt="">
+                                <span>USD</span>
+                            </div>
+                        </div>
+
+                        <!-- Input: Exchange Rate -->
+                        <div class="calculator-input-group">
+                            <label>อัตราแลกเปลี่ยน</label>
+                            <div class="calculator-input-wrapper">
+                                <input type="number" value="33.68" id="exchangeRate">
+                                <img src="http://localhost:3845/assets/9f2803bf21dc8458f26ffe7bba0839d970b642e9.svg"
+                                    alt="">
+                                <span>HKD/THB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View Button -->
+                    <button class="calculator-view-button">
+                        ดูข้อมูล NDX01
+                    </button>
+                </div>
+
+                <!-- Right Panel: Result Display -->
+                <div class="calculator-result">
+                    <div class="calculator-result-content">
+                        <!-- Widget Title -->
+                        <div class="calculator-result-header">
+                            <h3>ราคา DR โดยประมาณ</h3>
+                            <div class="calculator-result-divider"></div>
+                        </div>
+
+                        <!-- Fair Price Display -->
+                        <div class="calculator-price-display">
+                            <p class="calculator-price-label">Fair Price (THB)</p>
+                            <p id="fairPrice" class="calculator-price-value">3.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div class="calculator-disclaimer">
+                        <p class="calculator-disclaimer-title">Disclaimer</p>
+                        <p class="calculator-disclaimer-text">
+                            ราคา DR ที่แสดงเป็นการคำนวณโดยอ้างอิงจากราคาสินทรัพย์อ้างอิง อัตราแลกเปลี่ยน
+                            และอัตราส่วนต่อสินทรัพย์อ้างอิง ซึ่งเป็นเพียงการประมาณการเบื้องต้นเท่านั้น ราคาดังกล่าว
+                            อาจไม่สอดคล้องกับราคาซื้อขายจริงในตลาด เนื่องจากยังมีปัจจัยที่ส่งผลต่อราคา DR เช่น
+                            ความต้องการซื่อขายในตลาด (Demand & Supply) ช่วงเวลาการเปิด-ปิดของตลาดหลักทรัพย์ต่างประเทศ
+                            ผู้ลงทุนควรพิจารณาข้อมูลอย่างรอบด้านก่อนตัดสินใจลงทุน
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="notice">
+            <hr>
+            <p>Disclaimer</p>
+            <p>
+                ราคา iNAV ของ DR คือ ราคาโดยประมาณที่สะท้อนมูลค่าของตราสารแสดงสิทธิในหลักทรัพย์ต่างประเทศ
+                ซึ่งคำนวณมาจากมูลค่าล่าสุดของหลักทรัพย์อ้างอิง ที่ประกาศโดยผู้ออก ETF (ซึ่งแสดงข้อมูลช้ากว่า
+                ข้อมูลจริง 15 นาที บนหลักทรัพย์อ้างอิงบางประเทศ) ในทางปฏิบัติของการซื้อขาย DR
+                ผู้ดูแลสภาพคล่องอาจไม่สามารถวางราคาเสนอซื้อ-เสนอขาย ให้อยู่ในระดับราคา iNAV
+                ได้เนื่องจากการซื้อขายหลักทรัพย์
+                อ้างอิงสำหรับรองรับ DR นั้นอาจมีราคาและส่วนต่างของราคาเสนอซื้อและเสนอขายที่แตกต่างจาก iNAV
+                ที่มาจากการคำนวณข้างต้น หรืออาจมีสภาพคล่องไม่เพียงพอต่อการซื้อขาย รวมทั้งมีต้นทุนของธุรกรรม
+                ที่เกี่ยวข้อง ทำให้ราคาเสนอซื้อ-เสนอขายของ DR อาจแตกต่างจากราคา iNAV ทั้งนี้ หลักการคำนวน iNAV ดังกล่าว
+                และการคำนวณราคาเสนอซื้อขายของผู้ดูแลสภาพคล่อง มีหลักการเดียวกันกับหน่วยลงทุน ETF อื่นๆ
+                ที่ซื้อขายทั่วไปในตลาดหลักทรัพย์ไทย
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // DR01 data from data.json
+        const drData = {
+            "DR01": [
+                {
+                    "code": "NDX01",
+                    "issuer": "ChinaAMC NASDAQ 100 ETF",
+                    "underlyingIndex": "NASDAQ 100",
+                    "market": "US",
+                    "ratio": "340:1",
+                    "lastPrice": 20.87,
+                    "percentChange": "+0.25%",
+                    "dr1M": "+0.25%",
+                    "ul1M_THB": "+0.25%"
+                },
+                {
+                    "code": "SP50001",
+                    "issuer": "Hang Seng S&P 500 Index ETF",
+                    "underlyingIndex": "NASDAQ",
+                    "market": "US",
+                    "ratio": "120:1",
+                    "lastPrice": 18.55,
+                    "percentChange": "-0.12%",
+                    "dr1M": "+1.12%",
+                    "ul1M_THB": "+1.25%"
+                },
+                {
+                    "code": "QQQ01",
+                    "issuer": "Invesco QQQ Trust",
+                    "underlyingIndex": "NASDAQ 100",
+                    "market": "US",
+                    "ratio": "95:1",
+                    "lastPrice": 27.40,
+                    "percentChange": "+0.88%",
+                    "dr1M": "+3.52%",
+                    "ul1M_THB": "+3.41%"
+                },
+                {
+                    "code": "SPY01",
+                    "issuer": "SPDR S&P 500 ETF",
+                    "underlyingIndex": "S&P 500",
+                    "market": "US",
+                    "ratio": "110:1",
+                    "lastPrice": 22.10,
+                    "percentChange": "+0.33%",
+                    "dr1M": "+1.20%",
+                    "ul1M_THB": "+1.15%"
+                },
+                {
+                    "code": "DOW01",
+                    "issuer": "SPDR Dow Jones Industrial Average ETF",
+                    "underlyingIndex": "Dow Jones",
+                    "market": "US",
+                    "ratio": "150:1",
+                    "lastPrice": 14.80,
+                    "percentChange": "-0.05%",
+                    "dr1M": "+0.90%",
+                    "ul1M_THB": "+1.02%"
+                },
+                {
+                    "code": "HKC01",
+                    "issuer": "ChinaAMC Hang Seng TECH ETF",
+                    "underlyingIndex": "Hang Seng TECH",
+                    "market": "Hong Kong",
+                    "ratio": "85:1",
+                    "lastPrice": 9.74,
+                    "percentChange": "+0.80%",
+                    "dr1M": "+4.22%",
+                    "ul1M_THB": "+4.05%"
+                },
+                {
+                    "code": "HST01",
+                    "issuer": "iShares Hang Seng TECH ETF",
+                    "underlyingIndex": "Hang Seng TECH",
+                    "market": "Hong Kong",
+                    "ratio": "90:1",
+                    "lastPrice": 8.90,
+                    "percentChange": "+0.50%",
+                    "dr1M": "+3.80%",
+                    "ul1M_THB": "+3.60%"
+                },
+                {
+                    "code": "HSH01",
+                    "issuer": "Tracker Fund of Hong Kong",
+                    "underlyingIndex": "Hang Seng Index",
+                    "market": "Hong Kong",
+                    "ratio": "100:1",
+                    "lastPrice": 5.55,
+                    "percentChange": "-0.40%",
+                    "dr1M": "-1.10%",
+                    "ul1M_THB": "-1.05%"
+                },
+                {
+                    "code": "CSI01",
+                    "issuer": "CSOP FTSE China A50 ETF",
+                    "underlyingIndex": "FTSE China A50",
+                    "market": "China",
+                    "ratio": "55:1",
+                    "lastPrice": 11.62,
+                    "percentChange": "+0.10%",
+                    "dr1M": "-0.82%",
+                    "ul1M_THB": "-0.95%"
+                },
+                {
+                    "code": "CHT01",
+                    "issuer": "iShares China Tech ETF",
+                    "underlyingIndex": "MSCI China Tech",
+                    "market": "US",
+                    "ratio": "65:1",
+                    "lastPrice": 10.42,
+                    "percentChange": "+0.77%",
+                    "dr1M": "+2.65%",
+                    "ul1M_THB": "+2.50%"
+                },
+                {
+                    "code": "JPN01",
+                    "issuer": "iShares MSCI Japan ETF",
+                    "underlyingIndex": "MSCI Japan",
+                    "market": "Japan",
+                    "ratio": "130:1",
+                    "lastPrice": 7.80,
+                    "percentChange": "+0.20%",
+                    "dr1M": "+1.60%",
+                    "ul1M_THB": "+1.55%"
+                },
+                {
+                    "code": "NKY01",
+                    "issuer": "Nikkei 225 ETF",
+                    "underlyingIndex": "Nikkei 225",
+                    "market": "Japan",
+                    "ratio": "140:1",
+                    "lastPrice": 12.40,
+                    "percentChange": "+0.60%",
+                    "dr1M": "+3.10%",
+                    "ul1M_THB": "+3.05%"
+                },
+                {
+                    "code": "EUR01",
+                    "issuer": "iShares MSCI Europe ETF",
+                    "underlyingIndex": "MSCI Europe",
+                    "market": "Europe",
+                    "ratio": "90:1",
+                    "lastPrice": 9.22,
+                    "percentChange": "+0.12%",
+                    "dr1M": "+1.85%",
+                    "ul1M_THB": "+1.70%"
+                },
+                {
+                    "code": "UK01",
+                    "issuer": "iShares FTSE 100 ETF",
+                    "underlyingIndex": "FTSE 100",
+                    "market": "UK",
+                    "ratio": "100:1",
+                    "lastPrice": 6.70,
+                    "percentChange": "-0.02%",
+                    "dr1M": "+0.75%",
+                    "ul1M_THB": "+0.84%"
+                },
+                {
+                    "code": "GLD01",
+                    "issuer": "SPDR Gold Trust",
+                    "underlyingAsset": "Gold Spot",
+                    "market": "US",
+                    "ratio": "950:1",
+                    "lastPrice": 32.40,
+                    "percentChange": "+0.55%",
+                    "dr1M": "+2.13%",
+                    "ul1M_THB": "+2.00%"
+                },
+                {
+                    "code": "SLV01",
+                    "issuer": "iShares Silver Trust",
+                    "underlyingAsset": "Silver Spot",
+                    "market": "US",
+                    "ratio": "600:1",
+                    "lastPrice": 11.10,
+                    "percentChange": "-0.30%",
+                    "dr1M": "+1.95%",
+                    "ul1M_THB": "+1.80%"
+                },
+                {
+                    "code": "XLF01",
+                    "issuer": "Financial Select Sector SPDR Fund",
+                    "underlyingIndex": "S&P Financials",
+                    "market": "US",
+                    "ratio": "85:1",
+                    "lastPrice": 8.40,
+                    "percentChange": "+0.18%",
+                    "dr1M": "+0.95%",
+                    "ul1M_THB": "+1.00%"
+                },
+                {
+                    "code": "XLE01",
+                    "issuer": "Energy Select Sector SPDR Fund",
+                    "underlyingIndex": "S&P Energy",
+                    "market": "US",
+                    "ratio": "70:1",
+                    "lastPrice": 10.55,
+                    "percentChange": "-0.50%",
+                    "dr1M": "-1.22%",
+                    "ul1M_THB": "-1.15%"
+                },
+                {
+                    "code": "ARK01",
+                    "issuer": "ARK Innovation ETF",
+                    "underlyingIndex": "ARKK Tech Growth",
+                    "market": "US",
+                    "ratio": "50:1",
+                    "lastPrice": 15.75,
+                    "percentChange": "+1.20%",
+                    "dr1M": "+6.35%",
+                    "ul1M_THB": "+6.00%"
+                },
+                {
+                    "code": "EVT01",
+                    "issuer": "iShares Global Clean Energy ETF",
+                    "underlyingIndex": "Global Clean Energy",
+                    "market": "Global",
+                    "ratio": "60:1",
+                    "lastPrice": 7.10,
+                    "percentChange": "-0.15%",
+                    "dr1M": "+0.45%",
+                    "ul1M_THB": "+0.40%"
+                }
+            ]
+        };
+
+        // Map market names to flag image URLs
+
+        // --- FLAG PATHS FROM KENTICO ---
+        // Use only /getmedia or /media paths here
+        const marketFlags = {
+            'US': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png',
+            'China': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png',
+            'Hong Kong': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png',
+            'Japan': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png',
+            'Europe': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png',
+            'UK': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png',
+            'Global': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/US.png'
+        };
+
+        // --- RUN AFTER DOM IS READY ---
+        document.addEventListener('DOMContentLoaded', function () {
+            // ----- TABS -----
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+
+                    tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+                    tab.setAttribute('aria-selected', 'true');
+
+                    tabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+
+                    const activeContent = document.querySelector(`[data-content="${tabName}"]`);
+                    if (activeContent) {
+                        activeContent.style.display = 'block';
+                    }
+
+                    localStorage.setItem('activeTab', index);
+                });
+            });
+
+            const savedTabIndex = localStorage.getItem('activeTab');
+            if (savedTabIndex !== null && tabs[savedTabIndex]) {
+                tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+                tabs[savedTabIndex].setAttribute('aria-selected', 'true');
+
+                tabContents.forEach(content => content.style.display = 'none');
+
+                const savedTab = tabs[savedTabIndex];
+                const savedTabName = savedTab.getAttribute('data-tab');
+                const savedContent = document.querySelector(`[data-content="${savedTabName}"]`);
+                if (savedContent) {
+                    savedContent.style.display = 'block';
+                }
+            }
+
+            // ----- CALCULATOR -----
+            const assetPriceInput = document.getElementById('assetPrice');
+            const exchangeRateInput = document.getElementById('exchangeRate');
+            const fairPriceDisplay = document.getElementById('fairPrice');
+
+            let currentDR = drData.DR01[0];
+            let currentRatio = 1 / parseInt(currentDR.ratio.split(':')[0], 10);
+
+            function updateCalculatorDisplay(dr) {
+                const drInput = document.getElementById('calculator-dr-code');
+                drInput.value = dr.code;
+                document.getElementById('calculator-etf-name').textContent = dr.issuer;
+                document.getElementById('calculator-ratio').textContent = dr.ratio;
+
+                const ratioParts = dr.ratio.split(':');
+                currentRatio = 1 / parseInt(ratioParts[0], 10);
+
+                calculateFairPrice();
+            }
+
+            updateCalculatorDisplay(currentDR);
+
+            const drInput = document.getElementById('calculator-dr-code');
+            const dropdownList = document.getElementById('dropdownList');
+            const searchIcon = document.querySelector('.calculator-search-icon');
+            let isDropdownOpen = false;
+
+            searchIcon.addEventListener('click', function (e) {
+                e.stopPropagation();
+                isDropdownOpen = !isDropdownOpen;
+
+                if (isDropdownOpen) {
+                    drInput.focus();
+                    drInput.select();
+                    filterDropdownItems(drInput.value);
+                    dropdownList.classList.add('active');
+                } else {
+                    dropdownList.classList.remove('active');
+                }
+            });
+
+            drInput.addEventListener('input', function () {
+                if (isDropdownOpen) {
+                    filterDropdownItems(this.value);
+                }
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.calculator-input-container')) {
+                    dropdownList.classList.remove('active');
+                    isDropdownOpen = false;
+                }
+            });
+
+            function filterDropdownItems(searchTerm) {
+                const filtered = drData.DR01.filter(dr => {
+                    const searchLower = searchTerm.toLowerCase();
+                    return dr.code.toLowerCase().includes(searchLower) ||
+                        dr.issuer.toLowerCase().includes(searchLower);
+                });
+
+                renderDropdownItems(filtered);
+            }
+
+            function renderDropdownItems(items) {
+                dropdownList.innerHTML = '';
+
+                if (items.length === 0) {
+                    dropdownList.innerHTML = '<li class="calculator-dropdown-empty">ไม่พบข้อมูล</li>';
+                    return;
+                }
+
+                items.forEach(dr => {
+                    const li = document.createElement('li');
+                    li.className = 'calculator-dropdown-item';
+                    li.innerHTML = `
+                    <div class="calculator-dropdown-item-code">${dr.code}</div>
+                    <div class="calculator-dropdown-item-name">${dr.issuer}</div>
+                `;
+
+                    li.addEventListener('click', function () {
+                        currentDR = dr;
+                        updateCalculatorDisplay(dr);
+                        dropdownList.classList.remove('active');
+                        isDropdownOpen = false;
+                    });
+
+                    dropdownList.appendChild(li);
+                });
+            }
+
+            function calculateFairPrice() {
+                const assetPrice = parseFloat(assetPriceInput.value) || 0;
+                const exchangeRate = parseFloat(exchangeRateInput.value) || 33.68;
+                const fairPrice = (assetPrice * exchangeRate) * currentRatio;
+                fairPriceDisplay.textContent = fairPrice.toFixed(2);
+            }
+
+            if (assetPriceInput && exchangeRateInput) {
+                assetPriceInput.addEventListener('input', calculateFairPrice);
+                exchangeRateInput.addEventListener('input', calculateFairPrice);
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
