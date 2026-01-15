@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR01 Top Ranking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+        /* Fonts */
+        @font-face {
+            font-family: 'BLS';
+            src: local('BLS Bold'), local('BLS-Bold'), url('');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'BLS Text';
+            src: local('BLS Text Regular'), local('BLS-Text-Regular');
+            font-weight: 400;
+        }
+
+        /* Flag Icons from Trading Time Table */
+        .dr-flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #E6E8ED;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .flag-us {
+            background-image: url('/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png');
+        }
+
+        .flag-hk {
+            background-image: url('/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg');
+        }
+
+        .flag-vn {
+            background-image: url('/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png');
+        }
+
+        .flag-cn {
+            background-image: url('/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp');
+        }
+
+        .flag-ind {
+            background-image: url('/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png');
+        }
+
+        .flag-jp {
+            background-image: url('/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg');
+        }
+
+        .flag-fr {
+            background-image: url('/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png');
+        }
+
+        .flag-nl {
+            background-image: url('/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png');
+        }
+
+        .flag-eu {
+            background-image: url('https://via.placeholder.com/24/003399/ffffff?text=EU');
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body
+    style="font-family: 'BLS', 'Inter', sans-serif; margin: 0; padding: 40px 16px; background-color: #FFFFFF; color: #141416;">
+
+    <section id="top-DR"
+        style="width: 100%; max-width: none; margin: 0; padding: 24px 16px; display: flex; flex-direction: column; gap: 48px;">
+        <!-- Header -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <h2
+                    style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; margin: 0; color: #141416;">
+                    สรุป DR01 Top Ranking</h2>
+                <div style="display: flex; gap: 12px; width: fit-content;">
+                    <button id="tab-trade"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #1565B3; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #1565B3; color: #FFFFFF;">Top
+                        Trade</button>
+                    <button id="tab-gainer"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Top
+                        Gainer/Loser</button>
+                </div>
+            </div>
+            <button
+                style="display: flex; align-items: center; justify-content: center; padding: 12px 24px; border: 1.5px solid #1E90FF; border-radius: 8px; background: transparent; color: #1E90FF; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer;">เครื่องมือคำนวณราคา
+                DR</button>
+        </div>
+
+        <!-- Filters -->
+        <div
+            style="padding: 24px; background: #F4F5F6; border-radius: 16px; display: flex; gap: 24px; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 200px;">
+                <label style="font-family: 'BLS Text', sans-serif; font-size: 14px; color: #353945;">ประเภท DR</label>
+                <div id="filter-type"
+                    style="position: relative; background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px;">อ้างอิงหุ้นต่างประเทศ</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 200px;">
+                <label style="font-family: 'BLS Text', sans-serif; font-size: 14px; color: #353945;">ประเทศ</label>
+                <div id="filter-country"
+                    style="position: relative; background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px;">ทั้งหมด</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 200px;">
+                <label style="font-family: 'BLS Text', sans-serif; font-size: 14px; color: #353945;">ระยะเวลา</label>
+                <div id="filter-period"
+                    style="position: relative; background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px;">YTD</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Info -->
+        <div style="text-align: right; font-family: 'BLS Text', sans-serif; font-size: 14px; color: #777E90;">
+            สถานะ: <span style="color: #EAB308;">Day</span> ข้อมูลล่าสุด 11 พ.ย. 2568 12:30 ข้อมูลแสดงช้ากว่าข้อมูลจริง
+            15 นาที
+        </div>
+
+        <div style="height: 1px; background: #E6E8ED; width: 100%;"></div>
+
+        <!-- Charts -->
+        <div style="display: flex; gap: 48px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-family: 'BLS', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 24px;">DR01
+                    Trading Value</h3>
+
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <span
+                        style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 700; width: 100px;">DR
+                        อ้างอิง ETF</span>
+                    <div
+                        style="flex: 1; height: 32px; position: relative; background-image: linear-gradient(to right, #E6E8ED 1px, transparent 1px); background-size: 14.2857% 100%;">
+                        <div style="height: 100%; background: #0D4EA6; border-radius: 4px; width: 32.85%;"></div>
+                    </div>
+                    <span
+                        style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0D4EA6; width: 60px; text-align: right;">230
+                        M</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <span
+                        style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 700; width: 100px;">DR
+                        อ้างอิงหุ้น</span>
+                    <div
+                        style="flex: 1; height: 32px; position: relative; background-image: linear-gradient(to right, #E6E8ED 1px, transparent 1px); background-size: 14.2857% 100%;">
+                        <div style="height: 100%; background: #0D4EA6; border-radius: 4px; width: 61.42%;"></div>
+                    </div>
+                    <span
+                        style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0D4EA6; width: 60px; text-align: right;">430
+                        M</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                    <div style="width: 100px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; display: flex; justify-content: space-between; position: relative;">
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: flex-start; white-space: nowrap;">0
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">100
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">200
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">300
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">400
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">500
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">600
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: flex-end; white-space: nowrap;">700
+                            M</span>
+                    </div>
+                    <div
+                        style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0D4EA6; width: 60px; text-align: right; visibility: hidden;">
+                        230 M</div>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-family: 'BLS', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 24px;">DR01
+                    Trading Volume</h3>
+
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <span
+                        style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 700; width: 100px;">DR
+                        อ้างอิง ETF</span>
+                    <div
+                        style="flex: 1; height: 32px; position: relative; background-image: linear-gradient(to right, #E6E8ED 1px, transparent 1px); background-size: 14.2857% 100%;">
+                        <div style="height: 100%; background: #0D4EA6; border-radius: 4px; width: 32.85%;"></div>
+                    </div>
+                    <span
+                        style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0D4EA6; width: 60px; text-align: right;">230
+                        M</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <span
+                        style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 700; width: 100px;">DR
+                        อ้างอิงหุ้น</span>
+                    <div
+                        style="flex: 1; height: 32px; position: relative; background-image: linear-gradient(to right, #E6E8ED 1px, transparent 1px); background-size: 14.2857% 100%;">
+                        <div style="height: 100%; background: #0D4EA6; border-radius: 4px; width: 61.42%;"></div>
+                    </div>
+                    <span
+                        style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0D4EA6; width: 60px; text-align: right;">430
+                        M</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                    <div style="width: 100px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; display: flex; justify-content: space-between; position: relative;">
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: flex-start; white-space: nowrap;">0
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">100
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">200
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">300
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">400
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">500
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: center; white-space: nowrap;">600
+                            M</span>
+                        <span
+                            style="font-family: 'BLS Text', sans-serif; font-size: 10px; color: #777E90; width: 0; display: flex; justify-content: flex-end; white-space: nowrap;">700
+                            M</span>
+                    </div>
+                    <div
+                        style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0D4EA6; width: 60px; text-align: right; visibility: hidden;">
+                        230 M</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 1px; background: #E6E8ED; width: 100%;"></div>
+
+        <!-- Table -->
+        <div>
+            <h3 id="table-title"
+                style="font-family: 'BLS', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 24px;">10
+                อันดับมูลค่าการซื้อขายสูงสุด</h3>
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid #E6E8ED;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th
+                                style="background: #353945; color: #FFFFFF; padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700;">
+                                หลักทรัพย์</th>
+                            <th
+                                style="background: #353945; color: #FFFFFF; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700;">
+                                มูลค่าซื้อขาย (ล้านบาท)</th>
+                            <th
+                                style="background: #353945; color: #FFFFFF; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700;">
+                                ปริมาณ (หน่วย)</th>
+                            <th
+                                style="background: #353945; color: #FFFFFF; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700;">
+                                ราคาล่าสุด</th>
+                            <th
+                                style="background: #353945; color: #FFFFFF; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700;">
+                                % เปลี่ยนแปลง 1 วัน</th>
+                            <th
+                                style="background: #353945; color: #FFFFFF; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700;">
+                                มูลค่าตลาด (ล้านบาท)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Content -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="height: 1px; background: #E6E8ED; width: 100%;"></div>
+
+        <!-- Disclaimer -->
+        <div style="font-family: 'BLS Text', sans-serif; font-size: 14px; color: #777E90; line-height: 1.5;">
+            <p style="margin: 0; color: #777E90;">Disclaimer</p>
+            <p style="margin-top: 8px;">
+                ราคา iNAV ของ DR คือ ราคาโดยประมาณที่สะท้อนมูลค่าของตราสารแสดงสิทธิในหลักทรัพย์ต่างประเทศ
+                ซึ่งคำนวณมาจากมูลค่าล่าสุดของหลักทรัพย์อ้างอิง ที่ประกาศโดยผู้ออก ETF (ซึ่งแสดงข้อมูลช้ากว่า ข้อมูลจริง
+                15 นาที บนหลักทรัพย์อ้างอิงบางประเทศ) ในทางปฏิบัติของการซื้อขาย DR
+                ผู้ดูแลสภาพคล่องอาจไม่สามารถวางราคาเสนอซื้อ-เสนอขาย ให้อยู่ในระดับราคา iNAV
+                ได้เนื่องจากการซื้อขายหลักทรัพย์ อ้างอิงสำหรับรองรับ DR
+                นั้นอาจมีราคาและส่วนต่างของราคาเสนอซื้อและเสนอขายที่แตกต่างจาก iNAV ที่มาจากการคำนวณข้างต้น
+                หรืออาจมีสภาพคล่องไม่เพียงพอต่อการซื้อขาย รวมทั้งมีต้นทุนของธุรกรรม ที่เกี่ยวข้อง
+                ทำให้ราคาเสนอซื้อ-เสนอขายของ DR อาจแตกต่างจากราคา iNAV ทั้งนี้ หลักการคำนวน iNAV ดังกล่าว
+                และการคำนวณราคาเสนอซื้อขายของผู้ดูแลสภาพคล่อง มีหลักการเดียวกันกับหน่วยลงทุน ETF อื่นๆ
+                ที่ซื้อขายทั่วไปในตลาดหลักทรัพย์ไทย
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        const tableData = {
+            'trade': [
+                { symbol: 'AMD80', value: '1.55', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'TSLA80', value: '2.86', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'NVDA80', value: '31.50', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'AMZN80', value: '2.02', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'GOOG80', value: '4.62', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'META80', value: '2.58', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'NVDA01', value: '18.50', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'TSLA01', value: '42.00', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'MNST06', value: '3.28', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'KUAISH23', value: '2.04', volume: '30,243,032', price: '20.87', change: '20.87', mkt: '20.87', flag: 'hk' }
+            ],
+            'gainer': [
+                { symbol: 'KUAISH23', value: '2.04', volume: '30,243,032', price: '20.87', change: '+5.87', mkt: '20.87', flag: 'hk' },
+                { symbol: 'MNST06', value: '3.28', volume: '30,243,032', price: '20.87', change: '+4.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'TSLA01', value: '42.00', volume: '30,243,032', price: '20.87', change: '-3.87', mkt: '20.87', flag: 'us' },
+                { symbol: 'NVDA01', value: '18.50', volume: '30,243,032', price: '20.87', change: '+2.87', mkt: '20.87', flag: 'us' }
+            ]
+        };
+
+        const tabTrade = document.getElementById('tab-trade');
+        const tabGainer = document.getElementById('tab-gainer');
+        const tableBody = document.getElementById('table-body');
+        const tableTitle = document.getElementById('table-title');
+
+        const tdStyleBase = "padding: 12px 16px; text-align: right; font-family: 'BLS Text', sans-serif; font-size: 14px; color: #353945; border-bottom: 1px solid #E6E8ED; vertical-align: middle;";
+        const tdStyleFirst = "padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-weight: 700; color: #141416; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #E6E8ED; font-size: 14px; vertical-align: middle;";
+
+        function renderTable(type) {
+            tableBody.innerHTML = '';
+            tableData[type].forEach((row, index) => {
+                const tr = document.createElement('tr');
+                if (index % 2 !== 0) {
+                    tr.style.background = '#F4F5F6'; // Alternating row color
+                }
+
+                const flagHtml = row.flag ? `<div class="dr-flag-icon flag-${row.flag}"></div>` : '';
+
+                const changeValue = parseFloat(row.change.replace('+', ''));
+                let changeStyle = `color: #141416;`; // Default
+                if (changeValue > 0) changeStyle = `color: #00B16A;`;
+                if (changeValue < 0) changeStyle = `color: #DC3545;`;
+
+                tr.innerHTML = `
+                    <td style="${tdStyleFirst}">${flagHtml} ${row.symbol}</td>
+                    <td style="${tdStyleBase}">${row.value}</td>
+                    <td style="${tdStyleBase}">${row.volume}</td>
+                    <td style="${tdStyleBase}">${row.price}</td>
+                    <td style="${tdStyleBase} ${changeStyle}">${row.change}</td>
+                    <td style="${tdStyleBase}">${row.mkt}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        tabTrade.addEventListener('click', () => {
+            tabTrade.style.background = '#1565B3';
+            tabTrade.style.color = '#FFFFFF';
+            tabTrade.style.border = '1px solid #1565B3';
+            tabGainer.style.background = '#FFFFFF';
+            tabGainer.style.color = '#777E90';
+            tabGainer.style.border = '1px solid #E6E8ED';
+            tableTitle.innerText = "10 อันดับมูลค่าการซื้อขายสูงสุด";
+            renderTable('trade');
+        });
+
+        tabGainer.addEventListener('click', () => {
+            tabGainer.style.background = '#1565B3';
+            tabGainer.style.color = '#FFFFFF';
+            tabGainer.style.border = '1px solid #1565B3';
+            tabTrade.style.background = '#FFFFFF';
+            tabTrade.style.color = '#777E90';
+            tabTrade.style.border = '1px solid #E6E8ED';
+            tableTitle.innerText = "10 อันดับ Top Gainer/Loser";
+            renderTable('gainer');
+        });
+
+        // Init
+        renderTable('trade');
+
+        // Dropdown Logic
+        const mockDropdownData = {
+            type: ['ทั้งหมด', 'อ้างอิงหุ้นต่างประเทศ', 'อ้างอิง ETF'],
+            country: ['ทั้งหมด', 'สหรัฐอเมริกา', 'จีน', 'ฮ่องกง', 'เวียดนาม', 'สิงคโปร์', 'ญี่ปุ่น', 'ฝรั่งเศส'],
+            period: ['YTD', '1 Day', '1 Week', '1 Month', '3 Months', '6 Months', '1 Year']
+        };
+
+        const menuStyles = 'position: absolute; top: 100%; left: 0; width: 100%; background: #FFFFFF; border: 1px solid #E6E8ED; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); margin-top: 4px; z-index: 1000; display: none; max-height: 240px; overflow-y: auto;';
+        const itemStyles = 'padding: 10px 16px; cursor: pointer; font-family: "BLS Text", sans-serif; font-size: 16px; color: #141416; transition: background-color 0.2s;';
+
+        function setupDropdown(id, type) {
+            const wrapper = document.getElementById(id);
+            const span = wrapper.querySelector('span');
+
+            // Create menu
+            const menu = document.createElement('div');
+            menu.style.cssText = menuStyles;
+
+            mockDropdownData[type].forEach(item => {
+                const div = document.createElement('div');
+                div.textContent = item;
+                div.style.cssText = itemStyles;
+                div.onmouseenter = () => { div.style.backgroundColor = '#F4F5F6'; };
+                div.onmouseleave = () => { div.style.backgroundColor = 'transparent'; };
+                div.onclick = (e) => {
+                    e.stopPropagation();
+                    span.textContent = item;
+                    closeAllDropdowns();
+                };
+                menu.appendChild(div);
+            });
+
+            wrapper.appendChild(menu);
+
+            wrapper.onclick = (e) => {
+                e.stopPropagation();
+                const isVisible = menu.style.display === 'block';
+                closeAllDropdowns();
+                if (!isVisible) {
+                    menu.style.display = 'block';
+                }
+            };
+        }
+
+        function closeAllDropdowns() {
+            const wrappers = ['filter-type', 'filter-country', 'filter-period'];
+            wrappers.forEach(id => {
+                const wrapper = document.getElementById(id);
+                if (wrapper && wrapper.lastElementChild && wrapper.lastElementChild.style.position === 'absolute') {
+                    wrapper.lastElementChild.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('click', closeAllDropdowns);
+
+        // Setup Dropdowns
+        setupDropdown('filter-type', 'type');
+        setupDropdown('filter-country', 'country');
+        setupDropdown('filter-period', 'period');
+
+    </script>
+</body>
+
+</html>

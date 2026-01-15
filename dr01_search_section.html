@@ -1,0 +1,323 @@
+<div style="margin: 0; padding: 20px; font-family: 'BLS', sans-serif; background-color: #F5F6F8; color: #141416;">
+
+    <!-- Header -->
+    <h1 style="font-size: 28px; font-weight: 800; margin: 0 0 24px 0;">DR01 ที่ออกโดยหลักทรัพย์บัวหลวง</h1>
+    <div style="height: 1px; background: #E6E8ED; width: 100%; margin-bottom: 24px;"></div>
+
+    <!-- Filters Grid -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px;">
+        <!-- 1. Search -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">รหัส DR01</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; align-items: center;">
+                <input type="text" id="searchInput" placeholder="ค้นหา DR01"
+                    style="border: none; outline: none; width: 100%; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416; background: transparent;">
+            </div>
+        </div>
+
+        <!-- 2. Type -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเภท DR</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+
+        <!-- 3. Country -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเทศที่ต้องการลงทุน</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+
+        <!-- 4. Market -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ตลาดที่หลักทรัพย์อ้างอิงจดทะเบียน</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+
+        <!-- 5. Theme -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ธีมการลงทุน</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+
+        <!-- 6. Index -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ดัชนีอ้างอิง</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+
+        <!-- 7. Dividend -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประวัติการจ่ายปันผล</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+
+        <!-- 8. Session -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">Trading Session</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons (Figma Integration) -->
+    <div
+        style="display: flex; gap: 32px; align-items: center; justify-content: flex-end; width: 100%; margin-bottom: 24px;">
+        <!-- Clear Button -->
+        <button id="clearBtn"
+            style="display: flex; gap: 8px; align-items: center; cursor: pointer; background: none; border: none; padding: 0;">
+            <div style="width: 16px; height: 16px; position: relative;">
+                <img src="
+/getmedia/46314a6b-c3a9-45ca-a7cf-8132aa500b9a/Refresh-Icon.png" style="width: 100%; height: 100%; display: block;">
+            </div>
+            <span
+                style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 14px; color: #0d0d0e; line-height: 1.5;">ล้างการค้นหา</span>
+        </button>
+
+        <!-- Search Button -->
+        <button id="mainSearchBtn"
+            style="background-color: #1E90FF; display: flex; height: 44px; align-items: center; justify-content: center; padding: 0 24px; border-radius: 8px; width: 200px; cursor: pointer; border: none;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF; line-height: 1.5;">ค้นหา</span>
+        </button>
+    </div>
+
+    <div style="background: #FFFFFF; border-radius: 12px; border: 1px solid #E6E8ED; overflow: hidden;">
+
+        <div style="max-height: 900px; overflow-y: auto; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: separate; border-spacing: 0; min-width: 1200px;">
+                <thead>
+                    <tr>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: left; padding: 16px 24px; position: sticky; top: 0; z-index: 20; white-space: nowrap; left: 0; min-width: 180px;">
+                            DR01</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: right; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ราคาล่าสุด (บาท)</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: right; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            %เปลี่ยนแปลง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: left; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            สินทรัพย์อ้างอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: left; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ดัชนี</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: left; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ตลาดหลักทรัพย์อ้างอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: left; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ธีมการลงทุน</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: right; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            อัตราแปลงสภาพ</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: right; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            มูลค่าตลาด (ล้านบาท)</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: center; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ประวัติการจ่ายปันผล</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 16px; font-weight: 700; text-align: center; padding: 16px 24px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            Trading Session</th>
+                    </tr>
+                </thead>
+                <tbody id="dr-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .dr-flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #E6E8ED;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .flag-us {
+            background-image: url('/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png');
+        }
+
+        .flag-hk {
+            background-image: url('/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg');
+        }
+
+        .flag-vn {
+            background-image: url('/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png');
+        }
+
+        .flag-cn {
+            background-image: url('/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp');
+        }
+
+        .flag-ind {
+            background-image: url('/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png');
+        }
+
+        .flag-jp {
+            background-image: url('/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg');
+        }
+
+        .flag-fr {
+            background-image: url('/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png');
+        }
+
+        .flag-nl {
+            background-image: url('/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png');
+        }
+    </style>
+
+    <script>
+        (function () {
+            const symbols = [
+                'AAPL01', 'AMZN01', 'CRM01', 'GOOGL01', 'ISRG01', 'META01', 'MICRON01', 'MSFT01', 'NDX01', 'NVDA01', 'ORCL01', 'PLTR01', 'SP50001', 'TSLA01',
+                'LVMH01', 'ASML01', 'CN01', 'STAR5001', 'E1FVN3001', 'FUEVFVND01', 'INDIA01', 'JAPAN10001',
+                'BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01', 'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'
+            ];
+
+            function getSymbolInfo(symbol) {
+                if (symbol === 'LVMH01') return { market: 'Euronext Paris', flag: 'fr', index: 'CAC 40', asset: 'Moet Hennessy Louis Vuitton' };
+                if (symbol === 'ASML01') return { market: 'Euronext Amsterdam', flag: 'nl', index: 'AEX', asset: 'ASML Holding N.V.' };
+                if (['E1FVN3001', 'FUEVFVND01'].includes(symbol)) return { market: 'HOSE', flag: 'vn', index: 'VN30', asset: 'Vietnam ETF' };
+                if (symbol === 'INDIA01') return { market: 'NSE India', flag: 'ind', index: 'Nifty 50', asset: 'India Eagle ETF' };
+                if (symbol === 'JAPAN10001') return { market: 'TSE', flag: 'jp', index: 'TOPIX', asset: 'Japan 100 ETF' };
+                if (['CN01', 'STAR5001'].includes(symbol)) return { market: 'SSE', flag: 'cn', index: 'SSE', asset: 'China ETF' };
+                const hkList = ['BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01', 'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'];
+                if (hkList.includes(symbol)) return { market: 'HKEX', flag: 'hk', index: 'HSI / HSCEI', asset: symbol.replace('01', '') + ' (HK)' };
+                return { market: 'Nasdaq', flag: 'us', index: 'NASDAQ / S&P 500', asset: symbol.replace('01', '') + ' Inc.' };
+            }
+
+            const tbody = document.getElementById('dr-table-body');
+            const searchInput = document.getElementById('searchInput'); // Now targeting the input by ID
+            const cellStyle = "padding: 16px 24px; font-size: 16px; color: #141416; border-bottom: 1px solid #E6E8ED; vertical-align: middle; white-space: nowrap;";
+            const stickyFirstColStyle = "position: sticky; left: 0; z-index: 5; border-right: 1px solid #E6E8ED;";
+
+            // Sort Order: US, EU, HK, China, Vietnam, Japan, India
+            const regionOrder = ['us', 'eu', 'hk', 'cn', 'vn', 'jp', 'ind'];
+
+            function render(filterText = '') {
+                let html = "";
+                const term = filterText.toUpperCase();
+
+                // Sort symbols by Region then Alphabetical
+                const sortedSymbols = [...symbols].sort((a, b) => {
+                    const infoA = getSymbolInfo(a);
+                    const infoB = getSymbolInfo(b);
+
+                    // Map flags to regions for sorting (group FR/NL as EU)
+                    let regionA = infoA.flag;
+                    let regionB = infoB.flag;
+
+                    if (['fr', 'nl'].includes(regionA)) regionA = 'eu';
+                    if (['fr', 'nl'].includes(regionB)) regionB = 'eu';
+
+                    const indexA = regionOrder.indexOf(regionA);
+                    const indexB = regionOrder.indexOf(regionB);
+
+                    if (indexA !== indexB) {
+                        return indexA - indexB;
+                    }
+                    return a.localeCompare(b);
+                });
+
+                sortedSymbols.forEach((sym, index) => {
+                    // Simple filter matching symbol name
+                    if (term && !sym.includes(term)) return;
+
+                    const info = getSymbolInfo(sym);
+                    const bgColor = index % 2 === 0 ? '#FFFFFF' : '#F4F5F6';
+
+                    html += `
+                        <tr style="background-color: ${bgColor};" data-symbol="${sym}">
+                            <td style="${cellStyle} ${stickyFirstColStyle} background-color: ${bgColor};">
+                                <div style="display: flex; align-items: center; gap: 12px; font-weight: 700;">
+                                    <div class="dr-flag-icon flag-${info.flag}"></div>
+                                    ${sym}
+                                </div>
+                            </td>
+                            <td style="${cellStyle} text-align: right;">--</td>
+                            <td style="${cellStyle} text-align: right; color: #00B16A;">+0.00%</td>
+                            <td style="${cellStyle}">${info.asset}</td>
+                            <td style="${cellStyle}">${info.index}</td>
+                            <td style="${cellStyle}">${info.market}</td>
+                            <td style="${cellStyle}">Technology</td>
+                            <td style="${cellStyle} text-align: right;">1 : 100</td>
+                            <td style="${cellStyle} text-align: right;">--</td>
+                            <td style="${cellStyle} text-align: center;">จ่ายปันผล</td>
+                            <td style="${cellStyle} text-align: center;">10:00 - 16:30</td>
+                        </tr>
+                    `;
+                });
+                tbody.innerHTML = html;
+            }
+
+            const mainSearchBtn = document.getElementById('mainSearchBtn');
+            const clearBtn = document.getElementById('clearBtn');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    render(e.target.value);
+                });
+            }
+
+            if (mainSearchBtn) {
+                mainSearchBtn.addEventListener('click', () => {
+                    render(searchInput ? searchInput.value : '');
+                });
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', () => {
+                    if (searchInput) searchInput.value = '';
+                    render('');
+                });
+            }
+
+            render();
+        })();
+    </script>
+</div>

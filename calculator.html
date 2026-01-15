@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องมือคำนวณราคา DR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'BLS Text', sans-serif;
+            padding: 0;
+        }
+
+        .recommend-section {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: start;
+            justify-content: start;
+        }
+
+        .widget-title {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .title-text {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .title-text h1 {
+            font-family: 'BLS', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0d0d0e;
+            flex: 1;
+            text-align: left !important;
+        }
+
+        .title-divider {
+            background-color: #cbd3df;
+            height: 1px;
+            width: 100%;
+        }
+
+        .calculator-container {
+            background: #ffffff;
+            border: 1px solid #e6e8ed;
+            border-radius: 32px;
+            display: flex;
+            gap: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .calculator-panel {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .calculator-header {
+            border-bottom: 1px solid #cbd3df;
+            padding-bottom: 8px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .calculator-input-container {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .calculator-dr-input {
+            font-family: 'BLS', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1e90ff;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .calculator-dr-input::placeholder {
+            color: #1e90ff;
+            opacity: 0.5;
+        }
+
+        .calculator-search-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .calculator-dropdown-list {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #cbd3df;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .calculator-dropdown-list.active {
+            display: block;
+        }
+
+        .calculator-dropdown-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-bottom: 1px solid #f1f4f8;
+        }
+
+        .calculator-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .calculator-dropdown-item:hover {
+            background-color: #f1f4f8;
+        }
+
+        .calculator-dropdown-item-code {
+            font-family: 'BLS', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e90ff;
+            margin-bottom: 4px;
+        }
+
+        .calculator-dropdown-item-name {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 12px;
+            color: #777e90;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .calculator-etf-name {
+            font-family: 'BLS', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: -0.18px;
+            color: #23262f;
+        }
+
+        .calculator-ratio {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calculator-ratio-label {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+            color: #777e90;
+        }
+
+        .calculator-ratio-value {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: normal;
+            color: #000000;
+        }
+
+        .calculator-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calculator-input-group label {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+            color: #777e90;
+        }
+
+        .calculator-input-wrapper {
+            background: #fff;
+            border: 1px solid #cbd3df;
+            border-radius: 8px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            gap: 16px;
+        }
+
+        .calculator-input-wrapper input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            color: #23262f;
+        }
+
+        .calculator-input-wrapper .divider {
+            width: 1px;
+            height: 43px;
+            background-color: #cbd3df;
+        }
+
+        .calculator-input-wrapper span {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            color: #23262f;
+        }
+
+        .calculator-view-button {
+            width: 100%;
+            height: 44px;
+            border: 2px solid #1e90ff;
+            background: transparent;
+            border-radius: 8px;
+            font-family: 'BLS', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: -1px;
+            color: #1e90ff;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .calculator-view-button:hover {
+            background: #1e90ff;
+            color: #fff;
+        }
+
+        .calculator-result {
+            flex: 1;
+            background: #1b3664;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .calculator-result-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .calculator-result-header {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .calculator-result-header h3 {
+            font-family: 'BLS', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .calculator-result-divider {
+            height: 1px;
+            background: #cbd3df;
+        }
+
+        .calculator-price-display {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .calculator-price-label {
+            flex: 1;
+            font-family: 'BLS', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .calculator-price-value {
+            font-family: 'BLS', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .calculator-disclaimer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calculator-disclaimer-title {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #e6e8ed;
+        }
+
+        .calculator-disclaimer-text {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #e6e8ed;
+        }
+
+        @media (max-width: 1400px) {
+            body {
+                padding: 64px 40px;
+            }
+
+            .calculator-container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            .calculator-container {
+                flex-direction: column;
+            }
+
+            .calculator-panel,
+            .calculator-result {
+                padding: 24px;
+            }
+
+            .calculator-dr-input {
+                font-size: 24px;
+            }
+
+            .widget-title h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="recommend-section" data-name="Recommend section" data-node-id="16801:73264">
+        <!-- Calculator Container -->
+        <div class="calculator-container" data-node-id="16801:73266">
+            <!-- Left Panel: Input Form -->
+            <div class="calculator-panel" data-node-id="16801:73267">
+                <!-- Header with DR Code -->
+                <div class="calculator-header">
+                    <div class="calculator-input-container">
+                        <input type="text" class="calculator-dr-input" id="calculator-dr-code" value="NDX01"
+                            placeholder="พิมพ์ DR code...">
+                        <img src="http://localhost:3845/assets/12f59a6012b467787309179f59907b0871b5ad33.svg"
+                            alt="search" class="calculator-search-icon">
+
+                        <!-- Dropdown List -->
+                        <ul class="calculator-dropdown-list" id="dropdownList">
+                            <!-- Items populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ETF Name -->
+                <p class="calculator-etf-name" id="calculator-etf-name">
+                    ChinaAMC NASDAQ 100 ETF (3086)
+                </p>
+
+                <!-- Ratio Info -->
+                <div class="calculator-ratio">
+                    <p class="calculator-ratio-label">
+                        อัตราส่วนต่อสินทรัพย์อ้างอิง (สินทรัพย์อ้างอิง : DR)
+                    </p>
+                    <p class="calculator-ratio-value" id="calculator-ratio">
+                        340 : 1
+                    </p>
+                </div>
+
+                <!-- Input: Asset Price -->
+                <div class="calculator-input-group">
+                    <label>ราคาสินทรัพย์อ้างอิง</label>
+                    <div class="calculator-input-wrapper">
+                        <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice">
+                        <div class="divider"></div>
+                        <span>USD</span>
+                    </div>
+                </div>
+
+                <!-- Input: Exchange Rate -->
+                <div class="calculator-input-group">
+                    <label>อัตราแลกเปลี่ยน</label>
+                    <div class="calculator-input-wrapper">
+                        <input type="number" value="33.68" id="exchangeRate">
+                        <div class="divider"></div>
+                        <span>HKD/THB</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Right Panel: Result Display -->
+            <div class="calculator-result">
+                <div class="calculator-result-content">
+                    <!-- Widget Title -->
+                    <div class="calculator-result-header">
+                        <h3>ราคา DR โดยประมาณ</h3>
+                        <div class="calculator-result-divider"></div>
+                    </div>
+
+                    <!-- Fair Price Display -->
+                    <div class="calculator-price-display">
+                        <p class="calculator-price-label">Fair Price (THB)</p>
+                        <p id="fairPrice" class="calculator-price-value">0.00</p>
+                    </div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="calculator-disclaimer">
+                    <p class="calculator-disclaimer-title">Disclaimer</p>
+                    <p class="calculator-disclaimer-text">
+                        ราคา DR ที่แสดงเป็นการคำนวณโดยอ้างอิงจากราคาสินทรัพย์อ้างอิง อัตราแลกเปลี่ยน
+                        และอัตราส่วนต่อสินทรัพย์อ้างอิง ซึ่งเป็นเพียงการประมาณการเบื้องต้นเท่านั้น ราคาดังกล่าว
+                        อาจไม่สอดคล้องกับราคาซื้อขายจริงในตลาด เนื่องจากยังมีปัจจัยที่ส่งผลต่อราคา DR เช่น
+                        ความต้องการซื่อขายในตลาด (Demand & Supply) ช่วงเวลาการเปิด-ปิดของตลาดหลักทรัพย์ต่างประเทศ
+                        ผู้ลงทุนควรพิจารณาข้อมูลอย่างรอบด้านก่อนตัดสินใจลงทุน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DR01 data
+        const drData = {
+            "DR01": [
+                {
+                    "code": "NDX01",
+                    "issuer": "ChinaAMC NASDAQ 100 ETF",
+                    "underlyingIndex": "NASDAQ 100",
+                    "market": "US",
+                    "ratio": "340:1",
+                    "lastPrice": 20.87,
+                    "percentChange": "+0.25%",
+                    "dr1M": "+0.25%",
+                    "ul1M_THB": "+0.25%"
+                },
+                {
+                    "code": "SPX01",
+                    "issuer": "SPDR S&P 500 ETF Trust",
+                    "underlyingIndex": "S&P 500",
+                    "market": "US",
+                    "ratio": "120:1",
+                    "lastPrice": 18.55,
+                    "percentChange": "-0.12%",
+                    "dr1M": "+1.12%",
+                    "ul1M_THB": "+1.25%"
+                },
+                {
+                    "code": "QQQ01",
+                    "issuer": "Invesco QQQ Trust",
+                    "underlyingIndex": "NASDAQ 100",
+                    "market": "US",
+                    "ratio": "95:1",
+                    "lastPrice": 27.40,
+                    "percentChange": "+0.88%",
+                    "dr1M": "+3.52%",
+                    "ul1M_THB": "+3.41%"
+                },
+                {
+                    "code": "SPY01",
+                    "issuer": "SPDR S&P 500 ETF",
+                    "underlyingIndex": "S&P 500",
+                    "market": "US",
+                    "ratio": "110:1",
+                    "lastPrice": 22.10,
+                    "percentChange": "+0.33%",
+                    "dr1M": "+1.20%",
+                    "ul1M_THB": "+1.15%"
+                },
+                {
+                    "code": "DOW01",
+                    "issuer": "SPDR Dow Jones Industrial Average ETF",
+                    "underlyingIndex": "Dow Jones",
+                    "market": "US",
+                    "ratio": "150:1",
+                    "lastPrice": 14.80,
+                    "percentChange": "-0.05%",
+                    "dr1M": "+0.90%",
+                    "ul1M_THB": "+1.02%"
+                }
+            ]
+        };
+
+        // Initialize
+        let currentDR = drData.DR01[0];
+        let currentRatio = 1 / parseInt(currentDR.ratio.split(':')[0], 10);
+
+        const drInput = document.getElementById('calculator-dr-code');
+        const dropdownList = document.getElementById('dropdownList');
+        const searchIcon = document.querySelector('.calculator-search-icon');
+        const assetPriceInput = document.getElementById('assetPrice');
+        const exchangeRateInput = document.getElementById('exchangeRate');
+        const fairPriceDisplay = document.getElementById('fairPrice');
+
+
+        let isDropdownOpen = false;
+
+        // Update calculator display
+        function updateCalculatorDisplay(dr) {
+            drInput.value = dr.code;
+            document.getElementById('calculator-etf-name').textContent = dr.issuer;
+            document.getElementById('calculator-ratio').textContent = dr.ratio;
+
+
+            const ratioParts = dr.ratio.split(':');
+            currentRatio = 1 / parseInt(ratioParts[0], 10);
+
+            calculateFairPrice();
+        }
+
+        // Calculate fair price
+        function calculateFairPrice() {
+            const assetPrice = parseFloat(assetPriceInput.value) || 0;
+            const exchangeRate = parseFloat(exchangeRateInput.value) || 33.68;
+            const fairPrice = (assetPrice * exchangeRate) * currentRatio;
+            fairPriceDisplay.textContent = fairPrice.toFixed(2);
+        }
+
+        // Search icon click
+        searchIcon.addEventListener('click', function (e) {
+            e.stopPropagation();
+            isDropdownOpen = !isDropdownOpen;
+
+            if (isDropdownOpen) {
+                drInput.focus();
+                drInput.select();
+                filterDropdownItems(drInput.value);
+                dropdownList.classList.add('active');
+            } else {
+                dropdownList.classList.remove('active');
+            }
+        });
+
+        // Input change
+        drInput.addEventListener('input', function () {
+            if (isDropdownOpen) {
+                filterDropdownItems(this.value);
+            }
+        });
+
+        // Click outside to close
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.calculator-input-container')) {
+                dropdownList.classList.remove('active');
+                isDropdownOpen = false;
+            }
+        });
+
+        // Filter dropdown items
+        function filterDropdownItems(searchTerm) {
+            const filtered = drData.DR01.filter(dr => {
+                const searchLower = searchTerm.toLowerCase();
+                return dr.code.toLowerCase().includes(searchLower) ||
+                    dr.issuer.toLowerCase().includes(searchLower);
+            });
+
+            renderDropdownItems(filtered);
+        }
+
+        // Render dropdown items
+        function renderDropdownItems(items) {
+            dropdownList.innerHTML = '';
+
+            if (items.length === 0) {
+                dropdownList.innerHTML = '<li style="padding: 20px; text-align: center; color: #777e90;">ไม่พบข้อมูล</li>';
+                return;
+            }
+
+            items.forEach(dr => {
+                const li = document.createElement('li');
+                li.className = 'calculator-dropdown-item';
+                li.innerHTML = `
+                    <div class="calculator-dropdown-item-code">${dr.code}</div>
+                    <div class="calculator-dropdown-item-name">${dr.issuer}</div>
+                `;
+
+                li.addEventListener('click', function () {
+                    currentDR = dr;
+                    updateCalculatorDisplay(dr);
+                    dropdownList.classList.remove('active');
+                    isDropdownOpen = false;
+                });
+
+                dropdownList.appendChild(li);
+            });
+        }
+
+        // Event listeners for calculation
+        assetPriceInput.addEventListener('input', calculateFairPrice);
+        exchangeRateInput.addEventListener('input', calculateFairPrice);
+
+        // Initialize display
+        updateCalculatorDisplay(currentDR);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!-- Accordion Component -->
+<div style="background: #ffffff; width: 100%; max-width: 1170px; margin: 0 auto; font-family: 'BLS Text', sans-serif;"
+    data-name="Accordion Component">
+
+    <!-- Section 1: Text Content -->
+    <div style="border-bottom: 1px solid #e6e8ed;">
+        <button onclick="toggleAccordion('section1')"
+            style="width: 100%; padding: 24px 0; background: none; border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; text-align: left;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0d0d0e;">คว้าโอกาสลงทุน
+                ETF ทั่วประเทศจีน</span>
+            <span id="icon-section1" style="transition: transform 0.3s ease; display: inline-block;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+        <div id="section1" style="display: block; overflow: hidden; transition: max-height 0.3s ease;">
+            <div style="padding-bottom: 24px; color: #353945; font-size: 16px; line-height: 1.6;">
+                <p style="margin-bottom: 16px;">
+                    "CN01" เป็น DR ที่มีหลักทรัพย์อ้างอิงคือกองทุน ChinaAMC CSI 300 Index ETF (3188.HK) ที่อิงกับดัชนี
+                    CSI 300 ประกอบไปด้วยหุ้นจีน A-Share จากบริษัทขนาดใหญ่ชั้นนำ 300 ตัวแรกตามมูลค่าตลาด
+                    ทั้งพอร์ตอยู่ในตลาดหลักทรัพย์เซี่ยงไฮ้และเสินเจิ้น สะท้อนภาพรวมของเศรษฐกิจจีนโดยรวม
+                </p>
+                <p>
+                    การลงทุนในหุ้น A-Share ผ่าน CN01<br>
+                    หุ้น A-Share เป็นหุ้นจีนที่จดทะเบียนในตลาดหลักทรัพย์เซี่ยงไฮ้ และตลาดหลักทรัพย์เสินเจิ้น ประเทศจีน
+                    ซึ่งโดยปกติแล้วนักลงทุนต่างชาติจะเข้าลงทุนโดยตรงได้ยาก จะต้องเป็นนักลงทุนสถาบันที่ได้รับสิทธิพิเศษ
+                    (QFIIs) และผู้ที่ลงทุนผ่าน Stock Connect ที่สามารถลงทุนได้ ยกตัวอย่างหุ้นที่น่าสนใจ เช่น Kweichow
+                    Moutai, Contemporary Amperex Tech, Ping An Insurance Group, China Merchants Bank และ LONGI Green
+                    Energy Tech เป็นต้น
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Info Table -->
+    <div style="border-bottom: 1px solid #e6e8ed;">
+        <button onclick="toggleAccordion('section2')"
+            style="width: 100%; padding: 24px 0; background: none; border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; text-align: left;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #1e90ff;">ข้อมูลหลักทรัพย์อ้างอิง
+                : ChinaAMC CSI 300 Index ETF (3188.HK)</span>
+            <span id="icon-section2"
+                style="transition: transform 0.3s ease; display: inline-block; transform: rotate(180deg);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+        <div id="section2" style="display: none; overflow: hidden; transition: max-height 0.3s ease;">
+            <div style="padding-bottom: 24px;">
+                <div style="border: 1px solid #e6e8ed; border-radius: 16px; overflow: hidden; padding: 24px 16px;">
+                    <!-- Table Detail -->
+                    <div style="display: flex; flex-direction: column; gap: 0; width: 100%;">
+
+                        <!-- Row 1 (White) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;">
+                                ผู้ออก DR</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;">
+                                บริษัทหลักทรัพย์ บัวหลวง จำกัด (มหาชน)</div>
+                        </div>
+
+                        <!-- Row 2 (Gray) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;">
+                                สัญลักษณ์ DR</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;">
+                                CN01</div>
+                        </div>
+
+                        <!-- Row 3 (White) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;">
+                                อัตราอ้างอิงของ DR</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;">
+                                1 หลักทรัพย์อ้างอิง : 10 DR</div>
+                        </div>
+
+                        <!-- Row 4 (Gray) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;">
+                                วันที่เริ่มซื้อขาย DR</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;">
+                                26 ก.ค. 2565</div>
+                        </div>
+
+                        <!-- Row 5 (White) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;">
+                                หลักทรัพย์อ้างอิง</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;">
+                                ChinaAMC CSI 300 Index ETF (3188)</div>
+                        </div>
+
+                        <!-- Row 6 (Gray) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;">
+                                ประเภทของหลักทรัพย์อ้างอิง</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;">
+                                Exchange Traded Fund (ETF)</div>
+                        </div>
+
+                        <!-- Row 7 (White) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;">
+                                ตลาดหลักทรัพย์อ้างอิงจดทะเบียน</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;">
+                                ตลาดหลักทรัพย์ฮ่องกง</div>
+                        </div>
+
+                        <!-- Row 8 (Gray) -->
+                        <div style="display: flex; align-items: center; width: 100%;">
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;">
+                                เว็บไซต์ผู้ออกหลักทรัพย์อ้างอิง</div>
+                            <div
+                                style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;">
+                                <a href="https://www.chinaamc.com.hk/product/chinaamc-csi-300-index-etf-3188-hk-83188-hk"
+                                    target="_blank"
+                                    style="color: #1e90ff; text-decoration: underline; word-break: break-all;">https://www.chinaamc.com.hk/product/chinaamc-csi-300-index-etf-3188-hk-83188-hk</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <p style="margin-top: 16px; font-size: 12px; color: #777e90;">
+                    ที่มา : ChinaAMC, Bloomberg ณ วันที่ 5 ม.ค. 2567<br>
+                    อัตราแลกเปลี่ยน 1 ดอลลาร์ฮ่องกง เท่ากับ 4.50 บาท
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Image -->
+    <div style="border-bottom: 1px solid #e6e8ed;">
+        <button onclick="toggleAccordion('section3')"
+            style="width: 100%; padding: 24px 0; background: none; border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; text-align: left;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0d0d0e;">เวลาที่เหมาะกับการซื้อขาย
+                DR</span>
+            <span id="icon-section3"
+                style="transition: transform 0.3s ease; display: inline-block; transform: rotate(180deg);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+        <div id="section3" style="display: none; overflow: hidden; transition: max-height 0.3s ease;">
+            <div style="padding-bottom: 24px;">
+                <img src="http://localhost:3845/assets/5a939bd1c0bb15d82d2ee988905dd44ba01a1b88.png"
+                    alt="เวลาซื้อขาย DR" style="width: 100%; border-radius: 16px; display: block;">
+                <p style="margin-top: 16px; font-size: 14px; color: #353945;">
+                    ในช่วงที่เวลาซื้อขาย DR และเวลาเปิดทำการของตลาดหุ้นฮ่องกงเปิดตรงกัน เหมาะกับการซื้อขาย DR CN01
+                    เนื่องจากเป็นช่วงที่ Market Maker สามารถดูแลสภาพคล่องได้ดีกว่าช่วงเวลาอื่น
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Section 5: Monthly Newsletter -->
+    <div style="border-bottom: 1px solid #e6e8ed;">
+        <button onclick="toggleAccordion('section5')"
+            style="width: 100%; padding: 24px 0; background: none; border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; text-align: left;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0d0d0e;">รายงานประจำเดือน
+                CN01 Monthly Newsletter</span>
+            <span id="icon-section5"
+                style="transition: transform 0.3s ease; display: inline-block; transform: rotate(180deg);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+        <div id="section5" style="display: none; overflow: hidden; transition: max-height 0.3s ease;">
+            <div style="padding-bottom: 24px; display: flex; flex-direction: column; gap: 12px;">
+                <a href="#" style="color: #1e90ff; text-decoration: none; font-size: 16px;">เดือนกันยายน 2567</a>
+                <a href="#" style="color: #1e90ff; text-decoration: none; font-size: 16px;">เดือนสิงหาคม 2567</a>
+                <a href="#" style="color: #1e90ff; text-decoration: none; font-size: 16px;">เดือนกรกฎาคม 2567</a>
+                <a href="#" style="color: #1e90ff; text-decoration: none; font-size: 16px;">เดือนมิถุนายน 2567</a>
+                <a href="#" style="color: #1e90ff; text-decoration: none; font-size: 16px;">เดือนพฤษภาคม 2567</a>
+                <a href="#" style="color: #1e90ff; text-decoration: none; font-size: 16px;">เดือนเมษายน 2567</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleAccordion(sectionId) {
+        const content = document.getElementById(sectionId);
+        const icon = document.getElementById('icon-' + sectionId);
+
+        // Toggle display
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            icon.style.transform = 'rotate(180deg)'; // Arrow up
+        } else {
+            content.style.display = 'none';
+            icon.style.transform = 'rotate(0deg)'; // Arrow down
+        }
+    }
+
+    // Initialize state logic if needed (currently inline styles handle initial state)
+    // Section 1 is open by default as per styled code, others closed.
+    // Ensure icons match initial state:
+    // Section 1: block -> rotate(180deg)
+    // Others: none -> rotate(0deg)
+
+    // Fix initial icon rotation based on content display
+    window.addEventListener('DOMContentLoaded', () => {
+        const sections = ['section1', 'section2', 'section3', 'section5'];
+        sections.forEach(id => {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            if (content.style.display === 'block') {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+</script>

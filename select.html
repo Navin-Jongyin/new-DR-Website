@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Stock</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            flex-shrink: 0;
+        }
+
+        .stock-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .stock-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+
+        .stock-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .stock-item:last-child {
+            border-bottom: none;
+        }
+
+        .stock-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stock-symbol {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .stock-name {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .btn-chart {
+            background-color: #2962ff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .btn-chart:hover {
+            background-color: #1e4bd1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Select a Stock</h1>
+        <ul class="stock-list">
+            <!-- List of 10 Example Stocks -->
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">NDX01</span>
+                    <span class="stock-name">NASDAQ 100</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:NDX" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">SPY01</span>
+                    <span class="stock-name">S&P 500</span>
+                </div>
+                <a href="chart.html?symbol=AMEX:SPY" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">QQQ01</span>
+                    <span class="stock-name">Invesco QQQ</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:QQQ" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">AAPL</span>
+                    <span class="stock-name">Apple Inc.</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:AAPL" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">TSLA</span>
+                    <span class="stock-name">Tesla Inc.</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:TSLA" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">GOOGL</span>
+                    <span class="stock-name">Alphabet Inc.</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:GOOGL" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">MSFT</span>
+                    <span class="stock-name">Microsoft Corp</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:MSFT" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">NVDA</span>
+                    <span class="stock-name">NVIDIA Corp</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:NVDA" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">AMZN</span>
+                    <span class="stock-name">Amazon.com Inc.</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:AMZN" class="btn-chart">See Chart</a>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                    <span class="stock-symbol">META</span>
+                    <span class="stock-name">Meta Platforms</span>
+                </div>
+                <a href="chart.html?symbol=NASDAQ:META" class="btn-chart">See Chart</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

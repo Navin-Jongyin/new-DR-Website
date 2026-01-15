@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TradingView Chart</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #2962ff;
+        }
+
+        .dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 8px;
+            list-style: none;
+            padding: 0;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .dropdown-list.active {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .item-symbol {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .item-name {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        #tv {
+            height: 500px;
+            width: 800px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Removed border-radius as requested */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Search Component -->
+        <div class="search-container">
+            <input type="text" class="search-input" id="stockSearch"
+                placeholder="Search for a stock (e.g. AAPL, NDX01)...">
+            <ul class="dropdown-list" id="stockList">
+                <!-- Dropdown items will be injected here -->
+            </ul>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="tradingview-widget-container" id="tv">
+            <div id="tv-widget-placeholder" class="tradingview-widget-container__widget" style="height:100%;width:100%">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Stock Data
+        const stocks = [
+            { symbol: "NDX01", name: "NASDAQ 100", tvSymbol: "NASDAQ:NDX" },
+            { symbol: "SPY01", name: "S&P 500", tvSymbol: "AMEX:SPY" },
+            { symbol: "QQQ01", name: "Invesco QQQ", tvSymbol: "NASDAQ:QQQ" },
+            { symbol: "AAPL", name: "Apple Inc.", tvSymbol: "NASDAQ:AAPL" },
+            { symbol: "TSLA", name: "Tesla Inc.", tvSymbol: "NASDAQ:TSLA" },
+            { symbol: "GOOGL", name: "Alphabet Inc.", tvSymbol: "NASDAQ:GOOGL" },
+            { symbol: "MSFT", name: "Microsoft Corp", tvSymbol: "NASDAQ:MSFT" },
+            { symbol: "NVDA", name: "NVIDIA Corp", tvSymbol: "NASDAQ:NVDA" },
+            { symbol: "AMZN", name: "Amazon.com Inc.", tvSymbol: "NASDAQ:AMZN" },
+            { symbol: "META", name: "Meta Platforms", tvSymbol: "NASDAQ:META" }
+        ];
+
+        const searchInput = document.getElementById('stockSearch');
+        const dropdownList = document.getElementById('stockList');
+        const tvContainer = document.getElementById('tv');
+
+        // Initial render logic
+        let currentSymbol = "NASDAQ:AAPL"; // Default
+
+        // Function to load/reload chart
+        function loadChart(tvSymbol) {
+            // Clear existing widget content
+            const widgetPlaceholder = document.getElementById('tv-widget-placeholder');
+            if (widgetPlaceholder) {
+                widgetPlaceholder.innerHTML = ''; // Clear previous if any (though usually we replace the whole script)
+            }
+
+            // We need to completely clear the container to remove the old script and iframe
+            tvContainer.innerHTML = '<div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>';
+
+            const config = {
+                autosize: false,
+                width: "800",
+                height: "500",
+                symbol: tvSymbol,
+                interval: "D",
+                timezone: "Asia/Bangkok",
+                theme: "light",
+                style: "1",
+                locale: "en",
+                allow_symbol_change: false,
+                save_image: false,
+                calendar: false,
+                hide_top_toolbar: true,
+                hide_side_toolbar: true
+            };
+
+            const script = document.createElement("script");
+            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+            script.async = true;
+            script.innerHTML = JSON.stringify(config);
+
+            tvContainer.appendChild(script);
+        }
+
+        // Initialize Chart
+        loadChart(currentSymbol);
+
+        // Search Logic
+        function renderDropdown(items) {
+            dropdownList.innerHTML = '';
+            if (items.length === 0) {
+                dropdownList.classList.remove('active');
+                return;
+            }
+
+            items.forEach(stock => {
+                const li = document.createElement('li');
+                li.className = 'dropdown-item';
+                li.innerHTML = `
+                    <span class="item-symbol">${stock.symbol}</span>
+                    <span class="item-name">${stock.name}</span>
+                `;
+                li.addEventListener('click', () => {
+                    searchInput.value = `${stock.symbol} - ${stock.name}`;
+                    dropdownList.classList.remove('active');
+                    loadChart(stock.tvSymbol);
+                });
+                dropdownList.appendChild(li);
+            });
+
+            dropdownList.classList.add('active');
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (!query) {
+                dropdownList.classList.remove('active');
+                return;
+            }
+
+            const filtered = stocks.filter(s =>
+                s.symbol.toLowerCase().includes(query) ||
+                s.name.toLowerCase().includes(query)
+            );
+            renderDropdown(filtered);
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                dropdownList.classList.remove('active');
+            }
+        });
+
+        // Show full list on focus if empty
+        searchInput.addEventListener('focus', () => {
+            if (!searchInput.value) {
+                renderDropdown(stocks);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

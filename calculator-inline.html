@@ -1,0 +1,294 @@
+<!-- Calculator Container -->
+<div style="background: #ffffff; border: 1px solid #e6e8ed; border-radius: 32px; display: flex !important; flex-direction: row !important; gap: 0; width: 100%; max-width: 100%; overflow: hidden;"
+    data-node-id="16801:73266">
+    <!-- Left Panel: Input Form -->
+    <div style="flex: 1; padding: 40px; display: flex; flex-direction: column; gap: 24px;" data-node-id="16801:73267">
+        <!-- Header with DR Code -->
+        <div
+            style="border-bottom: 1px solid #cbd3df; padding-bottom: 8px; display: flex; gap: 8px; align-items: center;">
+            <div style="position: relative; flex: 1; display: flex; align-items: center; gap: 12px;">
+                <input type="text" id="calculator-dr-code" value="NDX01" placeholder="พิมพ์ DR code..."
+                    style="font-family: 'BLS', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.2; color: #1e90ff; border: none; outline: none; background: transparent; padding: 0; margin: 0; flex: 1; min-width: 0;">
+                <img src="http://localhost:3845/assets/12f59a6012b467787309179f59907b0871b5ad33.svg" alt="search"
+                    style="width: 28px; height: 28px; flex-shrink: 0; opacity: 0.6; cursor: pointer;"
+                    class="calculator-search-icon">
+
+                <!-- Dropdown List -->
+                <ul id="dropdownList"
+                    style="display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: white; border: 1px solid #cbd3df; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); z-index: 1000; list-style: none; margin: 0; padding: 0; max-height: 250px; overflow-y: auto;">
+                    <!-- Items populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- ETF Name -->
+        <p id="calculator-etf-name"
+            style="font-family: 'BLS', sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5; letter-spacing: -0.18px; color: #23262f; margin: 0;">
+            ChinaAMC NASDAQ 100 ETF (3086)
+        </p>
+
+        <!-- Ratio Info -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <p
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90; margin: 0;">
+                อัตราส่วนต่อสินทรัพย์อ้างอิง (สินทรัพย์อ้างอิง : DR)
+            </p>
+            <p id="calculator-ratio"
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
+                340 : 1
+            </p>
+        </div>
+
+        <!-- Input: Asset Price -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90;">ราคาสินทรัพย์อ้างอิง</label>
+            <div
+                style="background: #fff; border: 1px solid #cbd3df; border-radius: 8px; height: 44px; display: flex; align-items: center; padding: 12px 16px; gap: 16px;">
+                <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice"
+                    style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
+                <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">USD</span>
+            </div>
+        </div>
+
+        <!-- Input: Exchange Rate -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90;">อัตราแลกเปลี่ยน</label>
+            <div
+                style="background: #fff; border: 1px solid #cbd3df; border-radius: 8px; height: 44px; display: flex; align-items: center; padding: 12px 16px; gap: 16px;">
+                <input type="number" value="33.68" id="exchangeRate"
+                    style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
+                <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD/THB</span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Right Panel: Result Display -->
+    <div
+        style="flex: 1; background: #1b3664; padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+            <!-- Widget Title -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <h3
+                    style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; color: #fff; margin: 0;">
+                    ราคา DR โดยประมาณ</h3>
+                <div style="height: 1px; background: #cbd3df;"></div>
+            </div>
+
+            <!-- Fair Price Display -->
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <p
+                    style="flex: 1; font-family: 'BLS', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.2; color: #fff; margin: 0;">
+                    Fair Price (THB)</p>
+                <p id="fairPrice"
+                    style="font-family: 'BLS', sans-serif; font-size: 40px; font-weight: 800; line-height: 1.2; color: #fff; margin: 0;">
+                    0.00</p>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <p
+                style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.5; color: #e6e8ed; margin: 0;">
+                Disclaimer</p>
+            <p
+                style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.5; color: #e6e8ed; margin: 0;">
+                ราคา DR ที่แสดงเป็นการคำนวณโดยอ้างอิงจากราคาสินทรัพย์อ้างอิง อัตราแลกเปลี่ยน
+                และอัตราส่วนต่อสินทรัพย์อ้างอิง ซึ่งเป็นเพียงการประมาณการเบื้องต้นเท่านั้น ราคาดังกล่าว
+                อาจไม่สอดคล้องกับราคาซื้อขายจริงในตลาด เนื่องจากยังมีปัจจัยที่ส่งผลต่อราคา DR เช่น
+                ความต้องการซื่อขายในตลาด (Demand & Supply) ช่วงเวลาการเปิด-ปิดของตลาดหลักทรัพย์ต่างประเทศ
+                ผู้ลงทุนควรพิจารณาข้อมูลอย่างรอบด้านก่อนตัดสินใจลงทุน
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // DR01 data
+    const drData = {
+        "DR01": [
+            {
+                "code": "NDX01",
+                "issuer": "ChinaAMC NASDAQ 100 ETF",
+                "underlyingIndex": "NASDAQ 100",
+                "market": "US",
+                "ratio": "340:1",
+                "lastPrice": 20.87,
+                "percentChange": "+0.25%",
+                "dr1M": "+0.25%",
+                "ul1M_THB": "+0.25%"
+            },
+            {
+                "code": "SPX01",
+                "issuer": "SPDR S&P 500 ETF Trust",
+                "underlyingIndex": "S&P 500",
+                "market": "US",
+                "ratio": "120:1",
+                "lastPrice": 18.55,
+                "percentChange": "-0.12%",
+                "dr1M": "+1.12%",
+                "ul1M_THB": "+1.25%"
+            },
+            {
+                "code": "QQQ01",
+                "issuer": "Invesco QQQ Trust",
+                "underlyingIndex": "NASDAQ 100",
+                "market": "US",
+                "ratio": "95:1",
+                "lastPrice": 27.40,
+                "percentChange": "+0.88%",
+                "dr1M": "+3.52%",
+                "ul1M_THB": "+3.41%"
+            },
+            {
+                "code": "SPY01",
+                "issuer": "SPDR S&P 500 ETF",
+                "underlyingIndex": "S&P 500",
+                "market": "US",
+                "ratio": "110:1",
+                "lastPrice": 22.10,
+                "percentChange": "+0.33%",
+                "dr1M": "+1.20%",
+                "ul1M_THB": "+1.15%"
+            },
+            {
+                "code": "DOW01",
+                "issuer": "SPDR Dow Jones Industrial Average ETF",
+                "underlyingIndex": "Dow Jones",
+                "market": "US",
+                "ratio": "150:1",
+                "lastPrice": 14.80,
+                "percentChange": "-0.05%",
+                "dr1M": "+0.90%",
+                "ul1M_THB": "+1.02%"
+            }
+        ]
+    };
+
+    // Initialize
+    let currentDR = drData.DR01[0];
+    let currentRatio = 1 / parseInt(currentDR.ratio.split(':')[0], 10);
+
+    const drInput = document.getElementById('calculator-dr-code');
+    const dropdownList = document.getElementById('dropdownList');
+    const searchIcon = document.querySelector('.calculator-search-icon');
+    const assetPriceInput = document.getElementById('assetPrice');
+    const exchangeRateInput = document.getElementById('exchangeRate');
+    const fairPriceDisplay = document.getElementById('fairPrice');
+
+
+    let isDropdownOpen = false;
+
+
+
+    // Update calculator display
+    function updateCalculatorDisplay(dr) {
+        drInput.value = dr.code;
+        document.getElementById('calculator-etf-name').textContent = dr.issuer;
+        document.getElementById('calculator-ratio').textContent = dr.ratio;
+
+
+        const ratioParts = dr.ratio.split(':');
+        currentRatio = 1 / parseInt(ratioParts[0], 10);
+
+        calculateFairPrice();
+    }
+
+    // Calculate fair price
+    function calculateFairPrice() {
+        const assetPrice = parseFloat(assetPriceInput.value) || 0;
+        const exchangeRate = parseFloat(exchangeRateInput.value) || 33.68;
+        const fairPrice = (assetPrice * exchangeRate) * currentRatio;
+        fairPriceDisplay.textContent = fairPrice.toFixed(2);
+    }
+
+    // Search icon click
+    searchIcon.addEventListener('click', function (e) {
+        e.stopPropagation();
+        isDropdownOpen = !isDropdownOpen;
+
+        if (isDropdownOpen) {
+            drInput.focus();
+            drInput.select();
+            filterDropdownItems(drInput.value);
+            dropdownList.style.display = 'block';
+        } else {
+            dropdownList.style.display = 'none';
+        }
+    });
+
+    // Input change
+    drInput.addEventListener('input', function () {
+        if (isDropdownOpen) {
+            filterDropdownItems(this.value);
+        }
+    });
+
+    // Click outside to close
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('#calculator-dr-code') && !e.target.closest('.calculator-search-icon') && !e.target.closest('#dropdownList')) {
+            dropdownList.style.display = 'none';
+            isDropdownOpen = false;
+        }
+    });
+
+    // Filter dropdown items
+    function filterDropdownItems(searchTerm) {
+        const filtered = drData.DR01.filter(dr => {
+            const searchLower = searchTerm.toLowerCase();
+            return dr.code.toLowerCase().includes(searchLower) ||
+                dr.issuer.toLowerCase().includes(searchLower);
+        });
+
+        renderDropdownItems(filtered);
+    }
+
+    // Render dropdown items
+    function renderDropdownItems(items) {
+        dropdownList.innerHTML = '';
+
+        if (items.length === 0) {
+            dropdownList.innerHTML = '<li style="padding: 20px; text-align: center; color: #777e90;">ไม่พบข้อมูล</li>';
+            return;
+        }
+
+        items.forEach(dr => {
+            const li = document.createElement('li');
+            li.style.cssText = 'padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #f1f4f8;';
+            li.innerHTML = `
+                <div style="font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #1e90ff; margin-bottom: 4px;">${dr.code}</div>
+                <div style="font-family: 'BLS Text', sans-serif; font-size: 12px; color: #777e90; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${dr.issuer}</div>
+            `;
+
+            li.addEventListener('mouseenter', function () {
+                this.style.backgroundColor = '#f1f4f8';
+            });
+            li.addEventListener('mouseleave', function () {
+                this.style.backgroundColor = '';
+            });
+
+            li.addEventListener('click', function () {
+                currentDR = dr;
+                updateCalculatorDisplay(dr);
+                dropdownList.style.display = 'none';
+                isDropdownOpen = false;
+            });
+
+            dropdownList.appendChild(li);
+        });
+    }
+
+    // Event listeners for calculation
+    assetPriceInput.addEventListener('input', calculateFairPrice);
+    exchangeRateInput.addEventListener('input', calculateFairPrice);
+
+
+
+    // Initialize display
+    updateCalculatorDisplay(currentDR);
+</script>

@@ -1,0 +1,311 @@
+<style>
+    .dr-flag-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        background-color: #0047BB;
+        /* Fallback BLS Blue */
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    /* US Flag URL provided */
+    .flag-us {
+        background-image: url('/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png');
+    }
+
+    /* Placeholder URLs for other regions - Replace these with your Kentico paths later */
+    .flag-hk {
+        background-image: url('/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg');
+    }
+
+    .flag-vn {
+        background-image: url('/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png');
+    }
+
+    .flag-cn {
+        background-image: url('/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp');
+    }
+
+    .flag-ind {
+        background-image: url('/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png');
+    }
+
+    .flag-jp {
+        background-image: url('/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg');
+    }
+
+    .flag-fr {
+        background-image: url('/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png');
+    }
+
+    .flag-nl {
+        background-image: url('/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png');
+    }
+
+    .flag-eu {
+        background-image: url('https://via.placeholder.com/24/003399/ffffff?text=EU');
+    }
+
+    /* Custom Scrollbar for the table container */
+    #dr-scroll-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #dr-scroll-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    #dr-scroll-container::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+        .responsive-flex-wrapper {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+        }
+
+        .responsive-filter-group {
+            width: 100% !important;
+            flex-direction: column !important;
+        }
+
+        .responsive-filter-item {
+            width: 100% !important;
+            max-width: none !important;
+        }
+
+        .market-cell {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            max-width: 100%;
+        }
+    }
+</style>
+
+<div id="dr-table-wrapper"
+    style="width: 100%; padding: 40px 16px; box-sizing: border-box; font-family: 'BLS', sans-serif; color: #141416;">
+    <h1 style="font-size: 28px; font-weight: 800; margin: 0 0 24px 0;">เวลาที่เหมาะสมสำหรับการซื้อขาย DR</h1>
+    <div style="height: 1px; background: #E6E8ED; width: 100%; margin-bottom: 24px;"></div>
+
+    <div class="responsive-flex-wrapper"
+        style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px;">
+        <div class="responsive-filter-group" style="display: flex; gap: 32px; flex-wrap: wrap;">
+            <div class="responsive-filter-item" style="display: flex; flex-direction: column; gap: 8px; width: 268px;">
+                <label style="font-size: 16px;">รหัส DR01</label>
+                <div
+                    style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; padding: 10px 16px; height: 44px; box-sizing: border-box; display: flex; align-items: center;">
+                    <input type="text" id="tradingSearchInput" placeholder="ค้นหา DR01"
+                        style="border: none; outline: none; width: 100%; font-size: 16px; background: transparent;">
+                </div>
+            </div>
+
+            <div id="marketDropdown" class="responsive-filter-item"
+                style="display: flex; flex-direction: column; gap: 8px; width: 268px; position: relative;">
+                <label style="font-size: 16px;">ตลาดที่หลักทรัพย์อ้างอิงจดทะเบียน</label>
+                <div
+                    style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; padding: 10px 16px; height: 44px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                    <span id="selectedMarketText">ทั้งหมด</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+                <div id="marketOptions"
+                    style="display: none; position: absolute; top: 80px; left: 0; width: 100%; background: white; border: 1px solid #CBD3DF; border-radius: 8px; z-index: 200; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden;">
+                    <div class="m-option" data-value="all"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">ทั้งหมด</div>
+                    <div class="m-option" data-value="hk"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">Hong Kong</div>
+                    <div class="m-option" data-value="us"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">US (Nasdaq/NYSE)
+                    </div>
+                    <div class="m-option" data-value="vn"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">Vietnam</div>
+                    <div class="m-option" data-value="cn"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">China</div>
+                    <div class="m-option" data-value="ind"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">India</div>
+                    <div class="m-option" data-value="jp"
+                        style="padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #eee;">Japan</div>
+                    <div class="m-option" data-value="eu" style="padding: 12px 16px; cursor: pointer;">Europe</div>
+                </div>
+            </div>
+        </div>
+
+        <button id="tradingClearBtn"
+            style="background: transparent; border: none; font-size: 16px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #141416;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4v5h5M20 20v-5h-5M20.49 9A9 9 0 005.64 5.64L4 9m16 6l-1.64 3.36a9 9 0 01-14.85-3.36" />
+            </svg>
+            ล้างการค้นหา
+        </button>
+    </div>
+
+    <div id="dr-scroll-container"
+        style="width: 100%; border-radius: 12px; border: 1px solid #E6E8ED; max-height: 600px; overflow-y: auto !important; overflow-x: auto !important; position: relative;">
+        <table
+            style="width: 100%; min-width: 600px; border-collapse: separate; border-spacing: 0; table-layout: fixed;">
+            <thead>
+                <tr>
+                    <th
+                        style="background-color: #353945; color: #FFFFFF; padding: 16px 24px; text-align: left; position: sticky; top: 0; z-index: 100; width: 25%; border: none;">
+                        DR01</th>
+                    <th
+                        style="background-color: #353945; color: #FFFFFF; padding: 16px 24px; text-align: center; position: sticky; top: 0; z-index: 90; width: 40%; border: none;">
+                        เวลาที่เหมาะสมสำหรับการซื้อขาย DR</th>
+                    <th
+                        style="background-color: #353945; color: #FFFFFF; padding: 16px 24px; text-align: left; position: sticky; top: 0; z-index: 90; width: 35%; border: none;">
+                        ตลาดหลักทรัพย์อ้างอิง</th>
+                </tr>
+            </thead>
+            <tbody id="trading-time-body">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    (function () {
+        const initDRTable = function () {
+            const symbols = [
+                'AAPL01', 'AMZN01', 'CRM01', 'GOOGL01', 'ISRG01', 'META01', 'MICRON01', 'MSFT01', 'NDX01', 'NVDA01', 'ORCL01', 'PLTR01', 'SP50001', 'TSLA01',
+                'LVMH01', 'ASML01', 'CN01', 'STAR5001', 'E1FVN3001', 'FUEVFVND01', 'INDIA01', 'JAPAN10001', 'BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01',
+                'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'
+            ];
+
+            function getMarketInfo(symbol) {
+                const hk = ['BABA01', 'TENCENT01', 'BYDCOM01', 'BIDU01', 'CATL01', 'PINGAN01', 'XIAOMI01', 'HK01', 'HKCE01', 'KUAISHO01', 'SMIC01', 'TENCENT01', 'CNTECH01'];
+                const vn = ['E1FVN3001', 'FUEVFVND01'];
+                const eu = ['LVMH01', 'ASML01'];
+                const ind = ['INDIA01'];
+                const jp = ['JAPAN10001'];
+                const cn = ['CN01', 'STAR5001'];
+
+                if (hk.includes(symbol)) return { market: 'The Stock Exchange of Hong Kong Limited', flag: 'hk', time: '10:00 - 11:00 และ 12:00 - 15:00' };
+                if (vn.includes(symbol)) return { market: 'Ho Chi Minh Stock Exchange', flag: 'vn', time: '10:00 - 11:30 และ 13:30 - 16:00' };
+                if (ind.includes(symbol)) return { market: 'National Stock Exchange of India', flag: 'ind', time: '10:45 - 11:00 และ 12:00 - 15:00' };
+                if (jp.includes(symbol)) return { market: 'Tokyo Stock Exchange', flag: 'jp', time: '10:30 - 11:00 และ 12:00 - 13:30' };
+                if (cn.includes(symbol)) return { market: 'Shanghai Stock Exchange', flag: 'cn', time: '10:00 - 10:30 และ 12:00 - 14:00' };
+                if (eu.includes(symbol)) {
+                    const isAsml = symbol === 'ASML01';
+                    return {
+                        market: isAsml ? 'Euronext Amsterdam' : 'Euronext Paris',
+                        flag: isAsml ? 'nl' : 'fr',
+                        filter: 'eu',
+                        time: '15:00 - 16:30 และ 19:00 - 23:30'
+                    };
+                }
+                return { market: 'The Nasdaq Global Select Market', flag: 'us', time: '10:00 - 16:30 และ 19:00 - 03:00' };
+            }
+
+            const tbody = document.getElementById('trading-time-body');
+            const tradingSearchInput = document.getElementById('tradingSearchInput');
+            const marketDropdown = document.getElementById('marketDropdown');
+            const marketOptions = document.getElementById('marketOptions');
+            const selectedText = document.getElementById('selectedMarketText');
+            const tradingClearBtn = document.getElementById('tradingClearBtn');
+
+            if (!tbody) return;
+
+            let currentMarket = 'all';
+
+            function render() {
+                let html = "";
+                symbols.forEach((sym, index) => {
+                    const info = getMarketInfo(sym);
+                    const bg = (index % 2 === 0) ? '#FFFFFF' : '#F1F4F8';
+                    const td = "padding: 16px 24px; font-family: 'BLS Text', sans-serif; font-size: 16px; border-bottom: 1px solid #E6E8ED; vertical-align: middle; background-color: inherit !important;";
+
+                    html += `
+                    <tr class="dr-row" data-symbol="${sym}" data-market="${info.filter || info.flag}" data-bg="${bg}" style="background-color: ${bg} !important;">
+                        <td style="${td}">
+                            <div style="display: flex; align-items: center; gap: 12px; font-weight: 700;">
+                                <div class="dr-flag-icon flag-${info.flag}"></div>
+                                ${sym}
+                            </div>
+                        </td>
+                        <td style="${td} text-align: center;">${info.time}</td>
+                        <td class="market-cell" style="${td} text-align: left;">${info.market}</td>
+                    </tr>`;
+                });
+                tbody.innerHTML = html;
+            }
+
+            function updateHighlights() {
+                const term = tradingSearchInput.value.toUpperCase().trim();
+                const rows = tbody.querySelectorAll('.dr-row');
+                rows.forEach(row => {
+                    const sym = row.getAttribute('data-symbol');
+                    const mkt = row.getAttribute('data-market');
+                    const matchesSearch = term === "" ? false : sym.includes(term);
+                    const matchesMarket = currentMarket === "all" ? false : mkt === currentMarket;
+
+                    // Highlight logic: Highlight if it matches the active search OR the active market filter
+                    if (matchesSearch || matchesMarket) {
+                        row.style.setProperty('background-color', '#FFF9C4', 'important');
+                    } else {
+                        row.style.setProperty('background-color', row.getAttribute('data-bg'), 'important');
+                    }
+                });
+            }
+
+            // Dropdown Click
+            marketDropdown.onclick = function (e) {
+                marketOptions.style.display = marketOptions.style.display === 'none' ? 'block' : 'none';
+                e.stopPropagation();
+            };
+
+            window.onclick = function () { marketOptions.style.display = 'none'; };
+
+            // Option Selection
+            document.querySelectorAll('.m-option').forEach(opt => {
+                opt.onclick = function () {
+                    currentMarket = this.getAttribute('data-value');
+                    selectedText.innerText = this.innerText;
+                    updateHighlights();
+                };
+            });
+
+            tradingSearchInput.oninput = updateHighlights;
+
+            tradingClearBtn.onclick = function () {
+                tradingSearchInput.value = "";
+                currentMarket = "all";
+                selectedText.innerText = "ทั้งหมด";
+                updateHighlights();
+            };
+
+            // Sort symbols by Custom Region Order then Alphabetical
+            const regionOrder = ['us', 'eu', 'hk', 'cn', 'vn', 'jp', 'ind'];
+
+            symbols.sort((a, b) => {
+                const infoA = getMarketInfo(a);
+                const infoB = getMarketInfo(b);
+                const regionA = (infoA.filter || infoA.flag);
+                const regionB = (infoB.filter || infoB.flag);
+
+                const indexA = regionOrder.indexOf(regionA);
+                const indexB = regionOrder.indexOf(regionB);
+
+                if (indexA !== indexB) {
+                    return indexA - indexB;
+                }
+                return a.localeCompare(b);
+            });
+
+            render();
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDRTable);
+        } else {
+            initDRTable();
+        }
+    })();
+</script>

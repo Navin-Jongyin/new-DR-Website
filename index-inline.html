@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DR01</title>
+</head>
+
+<body style="margin: 0; padding: 0; font-family: 'BLS', sans-serif;">
+    <section id="iNAV" class="iNav-section" style="padding: 64px 0; gap: 16px; display: flex; flex-direction: column;">
+        <div class="header"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 0 16px;">
+            <h1 class="section-title"
+                style="font-size: 28px; font-weight: 800; color: #000000; line-height: 120%; margin: 0;">ข้อมูล DR01
+                iNAV</h1>
+        </div>
+
+        <hr style="background-color: #CBD3DF; margin-bottom: 16px; margin-top: 16px; height: 1px; border: none;">
+
+        <!-- Tabs -->
+        <div class="tabs" id="tabs-holidays"
+            style="display: flex; gap: 6px; margin-bottom: 16px; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding: 0 16px;">
+            <button class="tab" aria-selected="true" data-tab="etf"
+                style="padding: 6px 12px; border-radius: 100px; background: #1565B3; border: none; color: #fff; cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all .15s ease; font-size: 14px; line-height: 16px; font-family: 'BLS', sans-serif; white-space: nowrap;">DR
+                อ้างอิง ETF</button>
+            <button class="tab" aria-selected="false" data-tab="stock"
+                style="padding: 6px 12px; border-radius: 100px; background: transparent; border: none; color: #9aa3b2; cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all .15s ease; font-size: 14px; line-height: 16px; font-family: 'BLS', sans-serif; white-space: nowrap;">DR
+                อ้างอิงหุ้น</button>
+            <button class="tab" aria-selected="false" data-tab="calculator"
+                style="padding: 6px 12px; border-radius: 100px; background: transparent; border: none; color: #9aa3b2; cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: all .15s ease; font-size: 14px; line-height: 16px; font-family: 'BLS', sans-serif; white-space: nowrap;">เครื่องมือคำนวณราคา
+                DR</button>
+        </div>
+
+        <!-- Tab Content: ETF -->
+        <div class="tab-content" data-content="etf" style="display: block; padding: 0 16px;">
+            <!-- Inserted selected layer (converted table) -->
+            <div class="dr-table-card" id="dr-table-component"
+                style="background: #fff; border: 1px solid #E6E8ED; border-radius: 16px; padding: 24px 16px; margin-top: 8px; overflow: hidden;">
+                <div class="dr-table-scroll" style="overflow-x: auto; overflow-y: auto; max-height: 400px;">
+                    <table class="dr-table" role="table"
+                        style="width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 16px;">
+                        <thead>
+                            <tr>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    DR01</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    สินทรัพย์อ้างอิง</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    ตลาดสินทรัพย์อ้างอิง</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    อัตราส่วนสินทรัพย์อ้างอิง</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    มูลค่าตลาด</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    ราคาปิดล่าสุด (บาท)</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    %เปลี่ยนแปลง</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    &DR 1 M</th>
+                                <th
+                                    style="background: #353945; color: #fff; padding: 8px 16px; text-align: center; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; border-bottom: 1px solid #D6D8E0; width: 180px; white-space: nowrap; position: sticky; top: 0; z-index: 10;">
+                                    %UL 1 M (adj. THB)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dr-table-body">
+                            <!-- Table rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Stock -->
+        <div class="tab-content" data-content="stock" style="display: none; padding: 0 16px;">
+            <div class="dr-table-card"
+                style="background: #fff; border: 1px solid #E6E8ED; border-radius: 16px; padding: 24px 16px; margin-top: 8px; overflow: hidden;">
+                <p
+                    style="text-align: center; padding: 40px; color: #777E90; font-family: 'BLS Text', sans-serif; font-size: 14px;">
+                    DR อ้างอิงหุ้น - Coming Soon</p>
+            </div>
+        </div>
+
+        <!-- Tab Content: Calculator -->
+        <div class="tab-content" data-content="calculator" style="display: none; padding: 0 16px;">
+            <!-- Calculator Inline Content Reused Here -->
+            <div style="background: #ffffff; border: 1px solid #e6e8ed; border-radius: 32px; display: flex !important; flex-direction: row !important; gap: 0; width: 1170px; max-width: 100%; overflow: hidden;"
+                data-node-id="16801:73266">
+                <!-- Left Panel: Input Form -->
+                <div style="flex: 1; padding: 40px; display: flex; flex-direction: column; gap: 24px;"
+                    data-node-id="16801:73267">
+                    <!-- Header with DR Code -->
+                    <div
+                        style="border-bottom: 1px solid #cbd3df; padding-bottom: 8px; display: flex; gap: 8px; align-items: center;">
+                        <div style="position: relative; flex: 1; display: flex; align-items: center; gap: 12px;">
+                            <input type="text" id="calculator-dr-code" value="NDX01" placeholder="พิมพ์ DR code..."
+                                style="font-family: 'BLS', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.2; color: #1e90ff; border: none; outline: none; background: transparent; padding: 0; margin: 0; flex: 1; min-width: 0;">
+                            <img src="http://localhost:3845/assets/12f59a6012b467787309179f59907b0871b5ad33.svg"
+                                alt="search"
+                                style="width: 28px; height: 28px; flex-shrink: 0; opacity: 0.6; cursor: pointer;"
+                                class="calculator-search-icon">
+
+                            <!-- Dropdown List -->
+                            <ul id="dropdownList"
+                                style="display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: white; border: 1px solid #cbd3df; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); z-index: 1000; list-style: none; margin: 0; padding: 0; max-height: 250px; overflow-y: auto;">
+                                <!-- Items populated by JavaScript -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ETF Name -->
+                    <p id="calculator-etf-name"
+                        style="font-family: 'BLS', sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5; letter-spacing: -0.18px; color: #23262f; margin: 0;">
+                        ChinaAMC NASDAQ 100 ETF (3086)</p>
+
+                    <!-- Ratio Info -->
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <p
+                            style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90; margin: 0;">
+                            อัตราส่วนต่อสินทรัพย์อ้างอิง (สินทรัพย์อ้างอิง : DR)</p>
+                        <p id="calculator-ratio"
+                            style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
+                            1 : 10</p>
+                    </div>
+
+                    <!-- Input: Asset Price -->
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label
+                            style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90;">ราคาสินทรัพย์อ้างอิง</label>
+                        <div
+                            style="background: #ffffff; border: 1px solid #cbd3df; border-radius: 8px; height: 44px; display: flex; align-items: center; padding: 12px 16px; gap: 16px;">
+                            <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice"
+                                style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
+                            <img src="http://localhost:3845/assets/05470d5ed16c7380181b5391d1e6798836511b84.svg" alt=""
+                                style="width: 1px; height: 14px; opacity: 0.2; transform: rotate(0deg);">
+                            <span
+                                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">USD</span>
+                        </div>
+                    </div>
+
+                    <!-- Input: Exchange Rate -->
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label
+                            style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90;">อัตราแลกเปลี่ยน</label>
+                        <div
+                            style="background: #ffffff; border: 1px solid #cbd3df; border-radius: 8px; height: 44px; display: flex; align-items: center; padding: 12px 16px; gap: 16px;">
+                            <input type="number" value="33.68" id="exchangeRate"
+                                style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
+                            <img src="http://localhost:3845/assets/05470d5ed16c7380181b5391d1e6798836511b84.svg" alt=""
+                                style="width: 1px; height: 14px; opacity: 0.2; transform: rotate(0deg);">
+                            <span
+                                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD/THB</span>
+                        </div>
+                    </div>
+
+                    <!-- View Button -->
+                    <button class="calculator-view-button"
+                        style="width: 100%; height: 44px; border: 2px solid #1e90ff; background: transparent; border-radius: 8px; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; letter-spacing: -0.16px; color: #1e90ff; cursor: pointer; margin-top: 24px; transition: all 0.2s;"
+                        onmouseover="this.style.background='#1e90ff'; this.style.color='#fff';"
+                        onmouseout="this.style.background='transparent'; this.style.color='#1e90ff';">
+                        ดูข้อมูล NDX01
+                    </button>
+                    <!-- Script for button text update handled in main JS -->
+                </div>
+
+                <!-- Right Panel: Result Display -->
+                <div style="flex: 1; background: #1b3664; padding: 40px; display: flex; flex-direction: column; justify-content: space-between;"
+                    data-node-id="16801:73319">
+                    <div style="display: flex; flex-direction: column; gap: 32px;">
+                        <!-- Widget Title -->
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <h3
+                                style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; color: #ffffff; margin: 0;">
+                                ราคา DR โดยประมาณ</h3>
+                            <div style="height: 1px; background: #cbd3df; opacity: 0.2;"></div>
+                        </div>
+
+                        <!-- Fair Price Display -->
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <p
+                                style="flex: 1; font-family: 'BLS', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.2; color: #ffffff; margin: 0;">
+                                Fair Price (THB)</p>
+                            <p id="fairPrice"
+                                style="font-family: 'BLS', sans-serif; font-size: 40px; font-weight: 800; line-height: 1.2; color: #ffffff; margin: 0;">
+                                3.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <p
+                            style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.5; color: #e6e8ed; margin: 0; opacity: 0.8;">
+                            Disclaimer</p>
+                        <p
+                            style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.5; color: #e6e8ed; margin: 0; opacity: 0.6;">
+                            ราคา DR ที่แสดงเป็นการคำนวณโดยอ้างอิงจากราคาสินทรัพย์อ้างอิง อัตราแลกเปลี่ยน
+                            และอัตราส่วนต่อสินทรัพย์อ้างอิง
+                            ซึ่งเป็นเพียงการประมาณการเบื้องต้นเท่านั้น ราคาดังกล่าว
+                            อาจไม่สอดคล้องกับราคาซื้อขายจริงในตลาด
+                            เนื่องจากยังมีปัจจัยที่ส่งผลต่อราคา DR เช่น ความต้องการซื่อขายในตลาด (Demand & Supply)
+                            ช่วงเวลาการเปิด-ปิดของตลาดหลักทรัพย์ต่างประเทศ
+                            ผู้ลงทุนควรพิจารณาข้อมูลอย่างรอบด้านก่อนตัดสินใจลงทุน
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="notice" style="padding: 0 16px;">
+            <hr style="background-color: #CBD3DF; margin-bottom: 16px; margin-top: 16px; height: 1px; border: none;">
+            <p
+                style="font-family: 'BLS Text', sans-serif; font-size: 14px; color: #777E90; line-height: 1.5; font-style: normal; font-weight: 400; margin: 0;">
+                Disclaimer</p>
+            <p
+                style="font-family: 'BLS Text', sans-serif; font-size: 14px; color: #777E90; line-height: 1.5; font-style: normal; font-weight: 400; margin: 0;">
+                ราคา iNAV ของ DR คือ ราคาโดยประมาณที่สะท้อนมูลค่าของตราสารแสดงสิทธิในหลักทรัพย์ต่างประเทศ
+                ซึ่งคำนวณมาจากมูลค่าล่าสุดของหลักทรัพย์อ้างอิง ที่ประกาศโดยผู้ออก ETF (ซึ่งแสดงข้อมูลช้ากว่า
+                ข้อมูลจริง 15 นาที บนหลักทรัพย์อ้างอิงบางประเทศ) ในทางปฏิบัติของการซื้อขาย DR
+                ผู้ดูแลสภาพคล่องอาจไม่สามารถวางราคาเสนอซื้อ-เสนอขาย ให้อยู่ในระดับราคา iNAV
+                ได้เนื่องจากการซื้อขายหลักทรัพย์
+                อ้างอิงสำหรับรองรับ DR นั้นอาจมีราคาและส่วนต่างของราคาเสนอซื้อและเสนอขายที่แตกต่างจาก iNAV
+                ที่มาจากการคำนวณข้างต้น หรืออาจมีสภาพคล่องไม่เพียงพอต่อการซื้อขาย รวมทั้งมีต้นทุนของธุรกรรม
+                ที่เกี่ยวข้อง ทำให้ราคาเสนอซื้อ-เสนอขายของ DR อาจแตกต่างจากราคา iNAV ทั้งนี้ หลักการคำนวน iNAV ดังกล่าว
+                และการคำนวณราคาเสนอซื้อขายของผู้ดูแลสภาพคล่อง มีหลักการเดียวกันกับหน่วยลงทุน ETF อื่นๆ
+                ที่ซื้อขายทั่วไปในตลาดหลักทรัพย์ไทย
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // DR01 data from data.json
+        const drData = {
+            "DR01": [
+                {
+                    "code": "NDX01",
+                    "issuer": "ChinaAMC NASDAQ 100 ETF",
+                    "underlyingIndex": "NASDAQ 100",
+                    "market": "US",
+                    "ratio": "340:1",
+                    "lastPrice": 20.87,
+                    "percentChange": "+0.25%",
+                    "dr1M": "+0.25%",
+                    "ul1M_THB": "+0.25%"
+                },
+                {
+                    "code": "SP50001",
+                    "issuer": "Hang Seng S&P 500 Index ETF",
+                    "underlyingIndex": "NASDAQ",
+                    "market": "US",
+                    "ratio": "120:1",
+                    "lastPrice": 18.55,
+                    "percentChange": "-0.12%",
+                    "dr1M": "+1.12%",
+                    "ul1M_THB": "+1.25%"
+                },
+                {
+                    "code": "QQQ01",
+                    "issuer": "Invesco QQQ Trust",
+                    "underlyingIndex": "NASDAQ 100",
+                    "market": "US",
+                    "ratio": "95:1",
+                    "lastPrice": 27.40,
+                    "percentChange": "+0.88%",
+                    "dr1M": "+3.52%",
+                    "ul1M_THB": "+3.41%"
+                },
+                {
+                    "code": "SPY01",
+                    "issuer": "SPDR S&P 500 ETF",
+                    "underlyingIndex": "S&P 500",
+                    "market": "US",
+                    "ratio": "110:1",
+                    "lastPrice": 22.10,
+                    "percentChange": "+0.33%",
+                    "dr1M": "+1.20%",
+                    "ul1M_THB": "+1.15%"
+                },
+                {
+                    "code": "DOW01",
+                    "issuer": "SPDR Dow Jones Industrial Average ETF",
+                    "underlyingIndex": "Dow Jones",
+                    "market": "US",
+                    "ratio": "150:1",
+                    "lastPrice": 14.80,
+                    "percentChange": "-0.05%",
+                    "dr1M": "+0.90%",
+                    "ul1M_THB": "+1.02%"
+                },
+                {
+                    "code": "HKC01",
+                    "issuer": "ChinaAMC Hang Seng TECH ETF",
+                    "underlyingIndex": "Hang Seng TECH",
+                    "market": "Hong Kong",
+                    "ratio": "85:1",
+                    "lastPrice": 9.74,
+                    "percentChange": "+0.80%",
+                    "dr1M": "+4.22%",
+                    "ul1M_THB": "+4.05%"
+                },
+                {
+                    "code": "HST01",
+                    "issuer": "iShares Hang Seng TECH ETF",
+                    "underlyingIndex": "Hang Seng TECH",
+                    "market": "Hong Kong",
+                    "ratio": "90:1",
+                    "lastPrice": 8.90,
+                    "percentChange": "+0.50%",
+                    "dr1M": "+3.80%",
+                    "ul1M_THB": "+3.60%"
+                },
+                {
+                    "code": "HSH01",
+                    "issuer": "Tracker Fund of Hong Kong",
+                    "underlyingIndex": "Hang Seng Index",
+                    "market": "Hong Kong",
+                    "ratio": "100:1",
+                    "lastPrice": 5.55,
+                    "percentChange": "-0.40%",
+                    "dr1M": "-1.10%",
+                    "ul1M_THB": "-1.05%"
+                },
+                {
+                    "code": "CSI01",
+                    "issuer": "CSOP FTSE China A50 ETF",
+                    "underlyingIndex": "FTSE China A50",
+                    "market": "China",
+                    "ratio": "55:1",
+                    "lastPrice": 11.62,
+                    "percentChange": "+0.10%",
+                    "dr1M": "-0.82%",
+                    "ul1M_THB": "-0.95%"
+                },
+                {
+                    "code": "CHT01",
+                    "issuer": "iShares China Tech ETF",
+                    "underlyingIndex": "MSCI China Tech",
+                    "market": "US",
+                    "ratio": "65:1",
+                    "lastPrice": 10.42,
+                    "percentChange": "+0.77%",
+                    "dr1M": "+2.65%",
+                    "ul1M_THB": "+2.50%"
+                },
+                {
+                    "code": "JPN01",
+                    "issuer": "iShares MSCI Japan ETF",
+                    "underlyingIndex": "MSCI Japan",
+                    "market": "Japan",
+                    "ratio": "130:1",
+                    "lastPrice": 7.80,
+                    "percentChange": "+0.20%",
+                    "dr1M": "+1.60%",
+                    "ul1M_THB": "+1.55%"
+                },
+                {
+                    "code": "NKY01",
+                    "issuer": "Nikkei 225 ETF",
+                    "underlyingIndex": "Nikkei 225",
+                    "market": "Japan",
+                    "ratio": "140:1",
+                    "lastPrice": 12.40,
+                    "percentChange": "+0.60%",
+                    "dr1M": "+3.10%",
+                    "ul1M_THB": "+3.05%"
+                },
+                {
+                    "code": "EUR01",
+                    "issuer": "iShares MSCI Europe ETF",
+                    "underlyingIndex": "MSCI Europe",
+                    "market": "Europe",
+                    "ratio": "90:1",
+                    "lastPrice": 9.22,
+                    "percentChange": "+0.12%",
+                    "dr1M": "+1.85%",
+                    "ul1M_THB": "+1.70%"
+                },
+                {
+                    "code": "UK01",
+                    "issuer": "iShares FTSE 100 ETF",
+                    "underlyingIndex": "FTSE 100",
+                    "market": "UK",
+                    "ratio": "100:1",
+                    "lastPrice": 6.70,
+                    "percentChange": "-0.02%",
+                    "dr1M": "+0.75%",
+                    "ul1M_THB": "+0.84%"
+                },
+                {
+                    "code": "GLD01",
+                    "issuer": "SPDR Gold Trust",
+                    "underlyingAsset": "Gold Spot",
+                    "market": "US",
+                    "ratio": "950:1",
+                    "lastPrice": 32.40,
+                    "percentChange": "+0.55%",
+                    "dr1M": "+2.13%",
+                    "ul1M_THB": "+2.00%"
+                },
+                {
+                    "code": "SLV01",
+                    "issuer": "iShares Silver Trust",
+                    "underlyingAsset": "Silver Spot",
+                    "market": "US",
+                    "ratio": "600:1",
+                    "lastPrice": 11.10,
+                    "percentChange": "-0.30%",
+                    "dr1M": "+1.95%",
+                    "ul1M_THB": "+1.80%"
+                },
+                {
+                    "code": "XLF01",
+                    "issuer": "Financial Select Sector SPDR Fund",
+                    "underlyingIndex": "S&P Financials",
+                    "market": "US",
+                    "ratio": "85:1",
+                    "lastPrice": 8.40,
+                    "percentChange": "+0.18%",
+                    "dr1M": "+0.95%",
+                    "ul1M_THB": "+1.00%"
+                },
+                {
+                    "code": "XLE01",
+                    "issuer": "Energy Select Sector SPDR Fund",
+                    "underlyingIndex": "S&P Energy",
+                    "market": "US",
+                    "ratio": "70:1",
+                    "lastPrice": 10.55,
+                    "percentChange": "-0.50%",
+                    "dr1M": "-1.22%",
+                    "ul1M_THB": "-1.15%"
+                },
+                {
+                    "code": "ARK01",
+                    "issuer": "ARK Innovation ETF",
+                    "underlyingIndex": "ARKK Tech Growth",
+                    "market": "US",
+                    "ratio": "50:1",
+                    "lastPrice": 15.75,
+                    "percentChange": "+1.20%",
+                    "dr1M": "+6.35%",
+                    "ul1M_THB": "+6.00%"
+                },
+                {
+                    "code": "EVT01",
+                    "issuer": "iShares Global Clean Energy ETF",
+                    "underlyingIndex": "Global Clean Energy",
+                    "market": "Global",
+                    "ratio": "60:1",
+                    "lastPrice": 7.10,
+                    "percentChange": "-0.15%",
+                    "dr1M": "+0.45%",
+                    "ul1M_THB": "+0.40%"
+                }
+            ]
+        };
+
+        // Map market names to flag image URLs
+        const marketFlags = {
+            'US': '/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/10881/ts/638997473200641370/readonly/0/h/89a165d554e5d12bd18b1c05bb010d90f848cd48f0100174f8e19b0040cf406a/-/getmedia/ec5cbc55-dc98-4468-b4ec-d1d7b96d1943/US.png?uh=596a960a3022ebb0c3b47ee2b7afc1a37d38dc61921b17ee4189dbf6ff832916',
+            'China': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/CN.png',
+            'Hong Kong': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/HK.png',
+            'Japan': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/JP.png',
+            'Europe': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/EU.png',
+            'UK': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/UK.png',
+            'Global': '/getmedia/1169b947-4586-4787-b06d-7ad611ced4a1/GLOBAL.png'
+        };
+
+        // Function to populate DR table
+        function populateDRTable() {
+            const tableBody = document.getElementById('dr-table-body');
+            if (!tableBody) return;
+
+            tableBody.innerHTML = '';
+
+            drData.DR01.forEach((dr, index) => {
+                const row = document.createElement('tr');
+                row.style.height = '40px';
+                row.style.background = '#fff';
+
+                if (index % 2 === 1) {
+                    row.style.background = '#F1F4F8';
+                }
+
+                const flagUrl = marketFlags[dr.market] || marketFlags['US'];
+                const underlyingAsset = dr.underlyingIndex || dr.underlyingAsset || '';
+
+                // Common cell style
+                const cellStyle = "padding: 8px; text-align: center; border-bottom: 1px solid #D6D8E0; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; width: 180px; white-space: nowrap;";
+                // First cell style override
+                const firstCellStyle = "padding: 8px; border-bottom: 1px solid #D6D8E0; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; width: 180px; white-space: nowrap; text-align: left; display: flex; align-items: center; gap: 8px;";
+
+                row.innerHTML = `
+                    <td style="${firstCellStyle}">
+                        <img src="${flagUrl}" alt="${dr.market}" style="width: 16px; height: 16px; border-radius: 0; flex-shrink: 0;">
+                        <strong style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; color: #141416;">${dr.code}</strong>
+                    </td>
+                    <td style="${cellStyle}; overflow: hidden; text-overflow: ellipsis;">${dr.issuer}</td>
+                    <td style="${cellStyle}">${underlyingAsset}</td>
+                    <td style="${cellStyle}">${dr.ratio}</td>
+                    <td style="${cellStyle}">${dr.lastPrice}</td>
+                    <td style="${cellStyle}">${dr.lastPrice}</td>
+                    <td style="${cellStyle}">${dr.percentChange}</td>
+                    <td style="${cellStyle}">${dr.dr1M}</td>
+                    <td style="${cellStyle}">${dr.ul1M_THB}</td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        // --- RUN AFTER DOM IS READY ---
+        document.addEventListener('DOMContentLoaded', function () {
+            // Populate DR table with data
+            populateDRTable();
+
+            // ----- TABS -----
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+
+                    tabs.forEach(t => {
+                        t.setAttribute('aria-selected', 'false');
+                        // Reset style to inactive
+                        t.style.background = 'transparent';
+                        t.style.color = '#9aa3b2';
+                    });
+
+                    tab.setAttribute('aria-selected', 'true');
+                    // Set style to active
+                    tab.style.background = '#1565B3';
+                    tab.style.color = '#fff';
+
+                    tabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+
+                    const activeContent = document.querySelector(`[data-content="${tabName}"]`);
+                    if (activeContent) {
+                        activeContent.style.display = 'block';
+                    }
+
+                    localStorage.setItem('activeTab', index);
+                });
+            });
+
+            // Restore active tab
+            const savedTabIndex = localStorage.getItem('activeTab');
+            if (savedTabIndex !== null && tabs[savedTabIndex]) {
+                // Click the saved tab to trigger the style update logic above
+                tabs[savedTabIndex].click();
+            }
+
+            // ----- CALCULATOR -----
+            // (Using the logic from index.html but ensuring it targets the ids in the inline code)
+            const assetPriceInput = document.getElementById('assetPrice');
+            const exchangeRateInput = document.getElementById('exchangeRate');
+            const fairPriceDisplay = document.getElementById('fairPrice');
+            const viewButton = document.querySelector('.calculator-view-button');
+
+            let currentDR = drData.DR01[0];
+            let currentRatio = 1 / parseInt(currentDR.ratio.split(':')[0], 10);
+
+            function updateCalculatorDisplay(dr) {
+                const drInput = document.getElementById('calculator-dr-code');
+                drInput.value = dr.code;
+                document.getElementById('calculator-etf-name').textContent = dr.issuer;
+                document.getElementById('calculator-ratio').textContent = dr.ratio;
+
+                if (viewButton) {
+                    viewButton.textContent = `ดูข้อมูล ${dr.code}`;
+                    // Update click action for button
+                    viewButton.onclick = function () {
+                        const code = dr.code.toLowerCase();
+                        let targetUrl;
+                        if (code === 'ndx01') {
+                            targetUrl = 'https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/cn01';
+                        } else {
+                            targetUrl = `https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${code}`;
+                        }
+                        window.open(targetUrl, '_blank');
+                    };
+                }
+
+                const ratioParts = dr.ratio.split(':');
+                currentRatio = 1 / parseInt(ratioParts[0], 10);
+
+                calculateFairPrice();
+            }
+
+            // Initialize calculator with first DR
+            if (viewButton) {
+                // Initial setup for default button
+                viewButton.onclick = function () {
+                    const code = currentDR.code.toLowerCase();
+                    let targetUrl;
+                    if (code === 'ndx01') {
+                        targetUrl = 'https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/cn01';
+                    } else {
+                        targetUrl = `https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${code}`;
+                    }
+                    window.open(targetUrl, '_blank');
+                };
+            }
+            updateCalculatorDisplay(currentDR);
+
+            const drInput = document.getElementById('calculator-dr-code');
+            const dropdownList = document.getElementById('dropdownList');
+            const searchIcon = document.querySelector('.calculator-search-icon');
+            let isDropdownOpen = false;
+
+            if (searchIcon) {
+                searchIcon.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    isDropdownOpen = !isDropdownOpen;
+
+                    if (isDropdownOpen) {
+                        drInput.focus();
+                        drInput.select();
+                        filterDropdownItems(drInput.value);
+                        dropdownList.style.display = 'block';
+                    } else {
+                        dropdownList.style.display = 'none';
+                    }
+                });
+            }
+
+            if (drInput) {
+                drInput.addEventListener('input', function () {
+                    if (isDropdownOpen) {
+                        filterDropdownItems(this.value);
+                    }
+                });
+            }
+
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.calculator-input-container')) { // Note: .calculator-input-container is not in inline HTML? 
+                    // Wait, inline HTML uses style="position: relative..." for the search container div. I need to make sure I can target it. 
+                    // The div wrapping input and search icon is: <div style="position: relative; flex: 1; display: flex; align-items: center; gap: 12px;">
+                    // It has no class. I should check if I can use ID or logic.
+                    // Actually, I can just check if target is NOT searchIcon and NOT drInput and NOT dropdown
+                    if (dropdownList && e.target !== searchIcon && e.target !== drInput && !dropdownList.contains(e.target)) {
+                        dropdownList.style.display = 'none';
+                        isDropdownOpen = false;
+                    }
+                }
+            });
+
+            function filterDropdownItems(searchTerm) {
+                const filtered = drData.DR01.filter(dr => {
+                    const searchLower = searchTerm.toLowerCase();
+                    return dr.code.toLowerCase().includes(searchLower) ||
+                        dr.issuer.toLowerCase().includes(searchLower);
+                });
+
+                renderDropdownItems(filtered);
+            }
+
+            function renderDropdownItems(items) {
+                dropdownList.innerHTML = '';
+
+                if (items.length === 0) {
+                    dropdownList.innerHTML = '<li class="calculator-dropdown-empty" style="padding: 20px; text-align: center; color: #777E90; font-family: \'BLS Text\', sans-serif; font-size: 14px;">ไม่พบข้อมูล</li>';
+                    return;
+                }
+
+                items.forEach(dr => {
+                    const li = document.createElement('li');
+                    li.className = 'calculator-dropdown-item';
+                    li.style.cssText = "padding: 12px 16px; cursor: pointer; transition: background-color 0.2s; border-bottom: 1px solid #F1F4F8;";
+                    li.onmouseover = function () { this.style.backgroundColor = '#F1F4F8'; };
+                    li.onmouseout = function () { this.style.backgroundColor = 'transparent'; };
+
+                    li.innerHTML = `
+                    <div class="calculator-dropdown-item-code" style="font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #1E90FF; margin-bottom: 4px;">${dr.code}</div>
+                    <div class="calculator-dropdown-item-name" style="font-family: 'BLS Text', sans-serif; font-size: 12px; color: #777E90; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${dr.issuer}</div>
+                `;
+
+                    li.addEventListener('click', function () {
+                        currentDR = dr;
+                        updateCalculatorDisplay(dr);
+                        dropdownList.style.display = 'none';
+                        isDropdownOpen = false;
+                    });
+
+                    dropdownList.appendChild(li);
+                });
+            }
+
+            function calculateFairPrice() {
+                const assetPrice = parseFloat(assetPriceInput.value) || 0;
+                const exchangeRate = parseFloat(exchangeRateInput.value) || 33.68;
+                const fairPrice = (assetPrice * exchangeRate) * currentRatio;
+                fairPriceDisplay.textContent = fairPrice.toFixed(2);
+            }
+
+            if (assetPriceInput && exchangeRateInput) {
+                assetPriceInput.addEventListener('input', calculateFairPrice);
+                exchangeRateInput.addEventListener('input', calculateFairPrice);
+            }
+        });
+    </script>
+</body>
+
+</html>
