@@ -1,0 +1,138 @@
+<div style="padding: 40px 16px; font-family: 'BLS', sans-serif;">
+    <!-- Main Header -->
+    <div style="padding-bottom: 24px;">
+        <h1
+            style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; color: #141416; margin: 0 0 16px 0;">
+            กราฟความเคลื่อนไหว DR01 และหลักทรัพย์อ้างอิง
+        </h1>
+        <hr style="border: 0; border-top: 1px solid #E6E8ED; margin: 0;">
+    </div>
+
+    <!-- Controls Section -->
+    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; justify-content: center;">
+        <span style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #23262F;">
+            เปรียบเทียบ
+        </span>
+
+        <!-- Button: AAPL (Active) -->
+        <button id="btn-aapl" onclick="switchGraph('AAPL')" style="
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 8px 16px; 
+            background: #1565B3; 
+            border-radius: 99px; 
+            border: none; 
+            cursor: pointer;
+        ">
+            <span id="text-aapl"
+                style="font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; line-height: 16px;">
+                AAPL
+            </span>
+        </button>
+
+        <!-- Button: AAPL01 (Inactive) -->
+        <button id="btn-aapl01" onclick="switchGraph('AAPL01')" style="
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 8px 16px; 
+            background: #FFFFFF; 
+            border: 1px solid #E6E8ED; 
+            border-radius: 99px; 
+            cursor: pointer;
+        ">
+            <span id="text-aapl01"
+                style="font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #777E90; line-height: 16px;">
+                AAPL01
+            </span>
+        </button>
+
+        <!-- Button: USD/THB (Inactive) -->
+        <button id="btn-usdthb" onclick="switchGraph('USD/THB')" style="
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 8px 16px; 
+            background: #FFFFFF; 
+            border: 1px solid #E6E8ED; 
+            border-radius: 99px; 
+            cursor: pointer;
+        ">
+            <span id="text-usdthb"
+                style="font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #777E90; line-height: 16px;">
+                USD/THB
+            </span>
+        </button>
+    </div>
+
+    <!-- Chart Container -->
+    <div style="
+        border: 1px solid #E6E8ED; 
+        border-radius: 16px; 
+        padding: 24px; 
+        background: #FFFFFF;
+    ">
+
+
+        <!-- Chart Image -->
+        <div id="chart-image" style="width: 100%; overflow: hidden; border-radius: 8px; margin-bottom: 16px;">
+            <img src="/getmedia/9daeca56-b63b-4c56-9fd0-f59e0db1699c/Screenshot-2568-10-28-at-15-26-58-1.png"
+                alt="AAPL Chart" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <!-- Chart Footer -->
+        <div style="text-align: left;">
+            <p style="font-family: 'BLS Text', sans-serif; font-size: 12px; color: #777E90; margin: 0;">
+                แหล่งข้อมูล: <span style="color: #23262F;">tradingview</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchGraph(type) {
+        // IDs
+        const btnAAPL = document.getElementById('btn-aapl');
+        const btnAAPL01 = document.getElementById('btn-aapl01');
+        const btnUSDTHB = document.getElementById('btn-usdthb');
+
+        const textAAPL = document.getElementById('text-aapl');
+        const textAAPL01 = document.getElementById('text-aapl01');
+        const textUSDTHB = document.getElementById('text-usdthb');
+
+        const chartImage = document.querySelector('#chart-image img'); // Assuming you might change image later
+
+        // Reset all buttons to inactive style
+        const inactiveButtonStyle = "display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8px 16px; background: #FFFFFF; border: 1px solid #E6E8ED; border-radius: 99px; cursor: pointer;";
+        const inactiveTextStyle = "font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #777E90; line-height: 16px;";
+
+        [btnAAPL, btnAAPL01, btnUSDTHB].forEach(btn => btn.style.cssText = inactiveButtonStyle);
+        [textAAPL, textAAPL01, textUSDTHB].forEach(text => text.style.cssText = inactiveTextStyle);
+
+        // Active Styles
+        const activeButtonStyle = "display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8px 16px; background: #1565B3; border-radius: 99px; border: none; cursor: pointer;";
+        const activeTextStyle = "font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; line-height: 16px;";
+
+        // Update selected button and content
+        if (type === 'AAPL') {
+            btnAAPL.style.cssText = activeButtonStyle;
+            textAAPL.style.cssText = activeTextStyle;
+            chartTitle.innerText = "กราฟ AAPL (ราคาตลาดจริง USD)";
+            chartSubtitle.innerHTML = 'อัตราแลกเปลี่ยน: <span style="font-weight: 700; color: #23262F;">USD/THB</span>';
+        } else if (type === 'AAPL01') {
+            btnAAPL01.style.cssText = activeButtonStyle;
+            textAAPL01.style.cssText = activeTextStyle;
+            chartTitle.innerText = "กราฟ AAPL01 (ราคาตลาดไทย THB)";
+            chartSubtitle.innerHTML = 'ราคาปิด: <span style="font-weight: 700; color: #23262F;">14.80 THB</span>';
+        } else if (type === 'USD/THB') {
+            btnUSDTHB.style.cssText = activeButtonStyle;
+            textUSDTHB.style.cssText = activeTextStyle;
+            chartTitle.innerText = "กราฟอัตราแลกเปลี่ยน USD/THB";
+            chartSubtitle.innerHTML = 'อัตราแลกเปลี่ยนปัจจุบัน: <span style="font-weight: 700; color: #23262F;">33.68</span>';
+        }
+    }
+</script>

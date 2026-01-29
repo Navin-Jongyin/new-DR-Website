@@ -1,0 +1,156 @@
+<!-- Calculator Container -->
+
+<div style="padding: 40px 16px" id="calculator">
+    <div style="padding-bottom: 16px;">
+        <h1 style="font-size:28px;">เครื่องมือคำนวณราคา DR</h1>
+        <hr>
+    </div>
+    <div
+        style="background: #ffffff; border: 1px solid #e6e8ed; border-radius: 32px; display: flex !important; flex-direction: row !important; gap: 0; width: 100%; max-width: 100%; overflow: hidden;">
+        <!-- Left Panel: Input Form -->
+        <div style="flex: 1; padding: 40px; display: flex; flex-direction: column; gap: 32px;">
+            <!-- Header with DR Code -->
+            <div
+                style="border-bottom: 1px solid #cbd3df; padding-bottom: 8px; display: flex; gap: 8px; align-items: center;">
+                <div style="position: relative; flex: 1; display: flex; align-items: center; gap: 12px;">
+                    <input type="text" id="calculator-dr-code" value="MSFT01" readonly
+                        style="font-family: 'BLS', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.2; color: #1e90ff; border: none; outline: none; background: transparent; padding: 0; margin: 0; flex: 1; min-width: 0; cursor: default;">
+                </div>
+            </div>
+
+            <!-- ETF Name -->
+            <p id="calculator-etf-name"
+                style="font-family: 'BLS', sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5; letter-spacing: -0.18px; color: #23262f; margin: 0;">
+                -
+            </p>
+
+            <!-- Ratio Info -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <p
+                    style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90; margin: 0;">
+                    อัตราส่วนต่อสินทรัพย์อ้างอิง (สินทรัพย์อ้างอิง : DR)
+                </p>
+                <p id="calculator-ratio"
+                    style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
+                    3,400 : 1
+                </p>
+            </div>
+
+            <!-- Input: Asset Price -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label
+                    style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90;">ราคาสินทรัพย์อ้างอิง</label>
+                <div
+                    style="background: #fff; border: 1px solid #cbd3df; border-radius: 8px; height: 44px; display: flex; align-items: center; padding: 12px 16px; gap: 16px;">
+                    <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice"
+                        style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
+                    <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD</span>
+                </div>
+            </div>
+
+            <!-- Input: Exchange Rate -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label
+                    style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #777e90;">อัตราแลกเปลี่ยน</label>
+                <div
+                    style="background: #fff; border: 1px solid #cbd3df; border-radius: 8px; height: 44px; display: flex; align-items: center; padding: 12px 16px; gap: 16px;">
+                    <input type="number" value="33.68" id="exchangeRate"
+                        style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
+                    <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD/THB</span>
+                </div>
+
+
+            </div>
+
+            <!-- See Info Button -->
+
+        </div>
+
+        <!-- Right Panel: Result Display -->
+        <div
+            style="flex: 1; background: #1b3664; padding: 40px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+                <!-- Widget Title -->
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <h3
+                        style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; color: #fff; margin: 0;">
+                        ราคา DR โดยประมาณ</h3>
+                    <div style="height: 1px; background: #cbd3df;"></div>
+                </div>
+
+                <!-- Fair Price Display -->
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <p
+                        style="flex: 1; font-family: 'BLS', sans-serif; font-size: 24px; font-weight: 800; line-height: 1.2; color: #fff; margin: 0;">
+                        Estimated Price (THB)</p>
+                    <p id="fairPrice"
+                        style="font-family: 'BLS', sans-serif; font-size: 40px; font-weight: 800; line-height: 1.2; color: #fff; margin: 0;">
+                        0.00</p>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <p
+                    style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.5; color: #e6e8ed; margin: 0;">
+                    Disclaimer</p>
+                <p
+                    style="font-family: 'BLS Text', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.5; color: #e6e8ed; margin: 0;">
+                    ราคา DR ที่แสดงเป็นการคำนวณโดยอ้างอิงจากราคาสินทรัพย์อ้างอิง อัตราแลกเปลี่ยน
+                    และอัตราส่วนต่อสินทรัพย์อ้างอิง ซึ่งเป็นเพียงการประมาณการเบื้องต้นเท่านั้น ราคาดังกล่าว
+                    อาจไม่สอดคล้องกับราคาซื้อขายจริงในตลาด เนื่องจากยังมีปัจจัยที่ส่งผลต่อราคา DR เช่น
+                    ความต้องการซื่อขายในตลาด (Demand & Supply) ช่วงเวลาการเปิด-ปิดของตลาดหลักทรัพย์ต่างประเทศ
+                    ผู้ลงทุนควรพิจารณาข้อมูลอย่างรอบด้านก่อนตัดสินใจลงทุน
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    // DR01 data
+    // Initialize AAPL01 data directly
+    const currentDR = {
+        "code": "MSFT01",
+        "issuer": "Microsoft Corp.",
+
+        "ratio": "3400:1",
+
+    };
+
+    let currentRatio = 1 / parseInt(currentDR.ratio.split(':')[0], 10);
+
+    const drInput = document.getElementById('calculator-dr-code');
+    const assetPriceInput = document.getElementById('assetPrice');
+    const exchangeRateInput = document.getElementById('exchangeRate');
+    const fairPriceDisplay = document.getElementById('fairPrice');
+
+    // Update calculator display
+    function updateCalculatorDisplay(dr) {
+        drInput.value = dr.code;
+        document.getElementById('calculator-etf-name').textContent = dr.issuer;
+        document.getElementById('calculator-ratio').textContent = dr.ratio;
+
+        const ratioParts = dr.ratio.split(':');
+        currentRatio = 1 / parseInt(ratioParts[0], 10);
+
+        calculateFairPrice();
+    }
+
+    // Calculate fair price
+    function calculateFairPrice() {
+        const assetPrice = parseFloat(assetPriceInput.value) || 0;
+        const exchangeRate = parseFloat(exchangeRateInput.value) || 33.68;
+        const fairPrice = (assetPrice * exchangeRate) * currentRatio;
+        fairPriceDisplay.textContent = fairPrice.toFixed(2);
+    }
+
+    // Event listeners for calculation
+    assetPriceInput.addEventListener('input', calculateFairPrice);
+    exchangeRateInput.addEventListener('input', calculateFairPrice);
+
+    // Initialize display
+    updateCalculatorDisplay(currentDR);
+</script>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR01 Top Ranking</title>
+    <style>
+        /* Fonts */
+        @font-face {
+            font-family: 'BLS';
+            src: local('BLS Bold'), local('BLS-Bold'), url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'BLS Text';
+            src: local('BLS Regular'), local('BLS-Regular'), url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8852dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-');
+            font-weight: 400;
+        }
+
+        /* Flag Icons */
+        .dr-flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #E6E8ED;
+            display: inline-block;
+            flex-shrink: 0;
+            vertical-align: middle;
+        }
+
+        .flag-us {
+            background-image: url('/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png');
+        }
+
+        .flag-hk {
+            background-image: url('/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg');
+        }
+
+        .flag-vn {
+            background-image: url('/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png');
+        }
+
+        .flag-cn {
+            background-image: url('/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp');
+        }
+
+        .flag-ind {
+            background-image: url('/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png');
+        }
+
+        .flag-jp {
+            background-image: url('/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg');
+        }
+
+        .flag-fr {
+            background-image: url('/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png');
+        }
+
+        .flag-nl {
+            background-image: url('/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png');
+        }
+
+        .flag-eu {
+            background-image: url('https://via.placeholder.com/24/003399/ffffff?text=EU');
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body
+    style="font-family: 'BLS', 'Inter', sans-serif; margin: 0; padding: 16px 0; background-color: #FFFFFF; color: #141416;">
+
+    <section id="top-DR"
+        style="width: 100%; max-width: none; margin: 0; padding: 40px 16px; display: flex; flex-direction: column; gap: 48px;">
+        <!-- Header -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <h2
+                    style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; margin: 0; color: #141416;">
+                    สรุป DR01 Top Ranking</h2>
+                <div style="display: flex; gap: 8px; width: fit-content; flex-wrap: wrap;">
+                    <button id="tab-active"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #1565B3; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #1565B3; color: #FFFFFF;">Most
+                        Active Volume</button>
+                    <button id="tab-value"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Most
+                        Active Value</button>
+                    <button id="tab-gainer"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Top
+                        Gainer</button>
+                    <button id="tab-loser"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Top
+                        Loser</button>
+                </div>
+            </div>
+            <a href="https://kenticoweb-test.bualuang.co.th/dr-page/calculator"
+                style="display: flex; align-items: center; justify-content: center; padding: 12px 24px; border: 1.5px solid #1E90FF; border-radius: 8px; background: transparent; color: #1E90FF; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: none;">เครื่องมือคำนวณราคา
+                DR</a>
+        </div>
+
+
+
+        <!-- New Table Section -->
+        <div style="width: 100%; overflow-x: auto; border: 1px solid #E6E8ED; border-radius: 12px; margin-top: 24px;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 1200px;">
+                <thead>
+                    <tr>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; left: 0; z-index: 2; padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            DR01 ⇅</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            มูลค่าซื้อขาย (ล้านบาท)</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 100px; white-space: nowrap;">
+                            ปริมาณ (หน่วย)</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            ราคาล่าสุด</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            % เปลี่ยนแปลง 1 วัน</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 150px; white-space: nowrap;">
+                            มูลค่าตลาด (ล้านบาท)</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Content will be rendered by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Disclaimer -->
+        <div
+            style="margin-top: 24px; font-family: 'BLS Text', sans-serif; font-size: 14px; color: #777E90; line-height: 1.5;">
+            <p style="margin: 0; color: #777E90; font-weight: 700;">Disclaimer</p>
+            <p style="margin-top: 8px;">
+                ราคา iNAV ของ DR คือ ราคาโดยประมาณที่สะท้อนมูลค่าของตราสารแสดงสิทธิในหลักทรัพย์ต่างประเทศ
+                ซึ่งคำนวณมาจากมูลค่าล่าสุดของหลักทรัพย์อ้างอิง ที่ประกาศโดยผู้ออก ETF (ซึ่งแสดงข้อมูลช้ากว่า ข้อมูลจริง
+                15 นาที บนหลักทรัพย์อ้างอิงบางประเทศ) ในทางปฏิบัติของการซื้อขาย DR
+                ผู้ดูแลสภาพคล่องอาจไม่สามารถวางราคาเสนอซื้อ-เสนอขาย ให้อยู่ในระดับราคา iNAV
+                ได้เนื่องจากการซื้อขายหลักทรัพย์ อ้างอิงสำหรับรองรับ DR
+                นั้นอาจมีราคาและส่วนต่างของราคาเสนอซื้อและเสนอขายที่แตกต่างจาก iNAV ที่มาจากการคำนวณข้างต้น
+                หรืออาจมีสภาพคล่องไม่เพียงพอต่อการซื้อขาย รวมทั้งมีต้นทุนของธุรกรรม ที่เกี่ยวข้อง
+                ทำให้ราคาเสนอซื้อ-เสนอขายของ DR อาจแตกต่างจากราคา iNAV ทั้งนี้ หลักการคำนวน iNAV ดังกล่าว
+                และการคำนวณราคาเสนอซื้อขายของผู้ดูแลสภาพคล่อง มีหลักการเดียวกันกับหน่วยลงทุน ETF อื่นๆ
+                ที่ซื้อขายทั่วไปในตลาดหลักทรัพย์ไทย
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        const tableData = {
+            'active': [
+                { symbol: 'AMD80', value: '1.55', quantity: '30,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'TSLA80', value: '2.86', quantity: '15,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'NVDA80', value: '31.50', quantity: '12,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'AMZN80', value: '2.02', quantity: '10,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'GOOGL80', value: '4.62', quantity: '8,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'META80', value: '2.76', quantity: '5,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'NVDA01', value: '18.55', quantity: '4,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'TSLA01', value: '42.00', quantity: '3,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'MNST06', value: '3.28', quantity: '2,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'KUAISH23', value: '2.04', quantity: '1,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'hk' },
+            ],
+            'value': [
+                { symbol: 'NVDA80', value: '31.50', quantity: '30,243,032', price: '20.87', change: '+0.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'TSLA80', value: '28.50', quantity: '15,243,032', price: '124.28', change: '-12.24', marketValue: '124.28', flag: 'us' },
+                { symbol: 'BABA80', value: '25.30', quantity: '12,243,032', price: '88.09', change: '+1.35', marketValue: '88.09', flag: 'hk' },
+                { symbol: 'TENCENT80', value: '20.10', quantity: '10,243,032', price: '334.00', change: '+3.35', marketValue: '334.00', flag: 'hk' },
+                { symbol: 'MSFT80', value: '18.90', quantity: '8,243,032', price: '239.82', change: '-44.60', marketValue: '239.82', flag: 'us' },
+                { symbol: 'AMZN80', value: '15.42', quantity: '7,243,032', price: '85.42', change: '+0.50', marketValue: '85.42', flag: 'us' },
+                { symbol: 'GOOGL80', value: '12.33', quantity: '6,243,032', price: '89.23', change: '-1.20', marketValue: '89.23', flag: 'us' },
+                { symbol: 'META80', value: '10.55', quantity: '5,243,032', price: '130.02', change: '+2.10', marketValue: '130.02', flag: 'us' },
+                { symbol: 'AMD80', value: '8.44', quantity: '4,243,032', price: '64.55', change: '+1.55', marketValue: '64.55', flag: 'us' },
+                { symbol: 'AAPL80', value: '6.77', quantity: '3,243,032', price: '129.93', change: '-0.30', marketValue: '129.93', flag: 'us' },
+            ],
+            'gainer': [
+                { symbol: 'TENCENT80', value: '20.10', quantity: '10,243,032', price: '334.00', change: '+3.35', marketValue: '334.00', flag: 'hk' },
+                { symbol: 'BABA80', value: '25.30', quantity: '12,243,032', price: '88.09', change: '+1.35', marketValue: '88.09', flag: 'hk' },
+                { symbol: 'NDX80', value: '5.60', quantity: '1,243,032', price: '20.87', change: '+0.25', marketValue: '20.87', flag: 'us' },
+                { symbol: 'CN01', value: '4.20', quantity: '2,100,000', price: '27.40', change: '+0.88', marketValue: '27.40', flag: 'cn' },
+                { symbol: 'E1VFVN3001', value: '3.10', quantity: '1,500,000', price: '18.50', change: '+1.25', marketValue: '18.50', flag: 'vn' },
+                { symbol: 'NVDA80', value: '31.50', quantity: '30,243,032', price: '20.87', change: '+0.87', marketValue: '20.87', flag: 'us' },
+                { symbol: 'AMZN80', value: '15.42', quantity: '7,243,032', price: '85.42', change: '+0.50', marketValue: '85.42', flag: 'us' },
+                { symbol: 'META80', value: '10.55', quantity: '5,243,032', price: '130.02', change: '+2.10', marketValue: '130.02', flag: 'us' },
+                { symbol: 'AMD80', value: '8.44', quantity: '4,243,032', price: '64.55', change: '+1.55', marketValue: '64.55', flag: 'us' },
+                { symbol: 'HK01', value: '2.30', quantity: '1,800,000', price: '14.80', change: '+0.05', marketValue: '14.80', flag: 'hk' },
+            ],
+            'loser': [
+                { symbol: 'MSFT80', value: '18.90', quantity: '8,243,032', price: '239.82', change: '-44.60', marketValue: '239.82', flag: 'us' },
+                { symbol: 'TSLA80', value: '28.50', quantity: '15,243,032', price: '124.28', change: '-12.24', marketValue: '124.28', flag: 'us' },
+                { symbol: 'SP50001', value: '1.20', quantity: '500,000', price: '18.55', change: '-0.12', marketValue: '18.55', flag: 'us' },
+                { symbol: 'GOOGL80', value: '12.33', quantity: '6,243,032', price: '89.23', change: '-1.20', marketValue: '89.23', flag: 'us' },
+                { symbol: 'AAPL80', value: '6.77', quantity: '3,243,032', price: '129.93', change: '-0.30', marketValue: '129.93', flag: 'us' },
+                { symbol: 'JAPAN10001', value: '2.50', quantity: '1,200,000', price: '12.50', change: '-0.50', marketValue: '12.50', flag: 'jp' },
+                { symbol: 'INDIA01', value: '1.80', quantity: '900,000', price: '15.80', change: '-0.20', marketValue: '15.80', flag: 'ind' },
+                { symbol: 'STAR5001', value: '0.90', quantity: '400,000', price: '10.50', change: '-0.15', marketValue: '10.50', flag: 'cn' },
+                { symbol: 'PINGAN80', value: '1.10', quantity: '600,000', price: '45.20', change: '-0.80', marketValue: '45.20', flag: 'hk' },
+                { symbol: 'XIAOMI80', value: '0.95', quantity: '500,000', price: '10.20', change: '-0.10', marketValue: '10.20', flag: 'hk' },
+            ]
+        };
+
+        const tableBody = document.getElementById('table-body');
+        const tabs = {
+            active: document.getElementById('tab-active'),
+            value: document.getElementById('tab-value'),
+            gainer: document.getElementById('tab-gainer'),
+            loser: document.getElementById('tab-loser')
+        };
+
+        function renderTable(type) {
+            tableBody.innerHTML = '';
+            const data = tableData[type] || tableData['active'];
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                if (index % 2 !== 0) {
+                    tr.style.background = '#F1F4F8';
+                } else {
+                    tr.style.background = '#FFFFFF';
+                }
+                tr.style.borderTop = '1px solid #E6E8ED';
+
+                // Symbol Styling
+                const symbolStyle = "padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-weight: 700; color: #1E90FF; display: flex; align-items: center; gap: 8px; font-size: 14px; vertical-align: middle; white-space: nowrap; position: sticky; left: 0; background: inherit; z-index: 1;";
+
+                // Base Cell Styling
+                const cellStyle = "padding: 12px 16px; font-family: 'BLS Text', sans-serif; font-size: 14px; color: #353945; vertical-align: middle; white-space: nowrap;";
+                const cellRight = cellStyle + " text-align: right;";
+                // const cellLeft = cellStyle + " text-align: left;"; // This variable is no longer used.
+
+                // Change Color Logic
+                let changeColor = '#353945';
+                if (row.change.includes('+')) changeColor = '#077D55'; // Green
+                if (row.change.includes('-')) changeColor = '#D92D20'; // Red
+                const cellChange = `${cellRight} color: ${changeColor}; font-weight: 700;`;
+
+                const flagHtml = row.flag ? `<div class="dr-flag-icon flag-${row.flag}"></div>` : '';
+
+                tr.innerHTML = `
+                    <td style="${symbolStyle}">${flagHtml} ${row.symbol}</td>
+                    <td style="${cellRight}">${row.value}</td>
+                    <td style="${cellRight}">${row.quantity}</td>
+                    <td style="${cellRight}">${row.price}</td>
+                    <td style="${cellChange}">${row.change}</td>
+                    <td style="${cellRight}">${row.marketValue}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function switchTab(selectedType) {
+            Object.keys(tabs).forEach(type => {
+                const tab = tabs[type];
+                if (type === selectedType) {
+                    tab.style.background = '#1565B3';
+                    tab.style.color = '#FFFFFF';
+                    tab.style.border = '1px solid #1565B3';
+                } else {
+                    tab.style.background = '#FFFFFF';
+                    tab.style.color = '#777E90';
+                    tab.style.border = '1px solid #E6E8ED';
+                }
+            });
+            renderTable(selectedType);
+        }
+
+        // Event Listeners
+        Object.keys(tabs).forEach(type => {
+            tabs[type].addEventListener('click', () => switchTab(type));
+        });
+
+        // Initialize
+        renderTable('active');
+
+    </script>
+</body>
+
+</html>

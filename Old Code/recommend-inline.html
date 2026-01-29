@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR01 Top Ranking</title>
+    <style>
+        /* Fonts */
+        @font-face {
+            font-family: 'BLS';
+            src: local('BLS Bold'), local('BLS-Bold'), url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-');
+            font-weight: 700;
+        }
+
+
+
+        /* Flag Icons from Trading Time Table */
+        .dr-flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #E6E8ED;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .flag-us {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png?uh=bfbce81239ff30d9de9b04a94e97a70765b27092b02244113fca3c6fd805a61c');
+        }
+
+        .flag-hk {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg?uh=0a7f1286996d50d9b256581746cc50f001fb0f91489ecc1b2a5b09d90cc6e342');
+        }
+
+        .flag-vn {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png?uh=e9766b10f204fe9ff9517ee191ad09384cd4b044dbb2c57174cde2dcaace58fd');
+        }
+
+        .flag-cn {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp?uh=5633e87705bdfc1efb704711395e9fd228215b8aa99ba01822a6a96eec22fe92');
+        }
+
+        .flag-ind {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png?uh=ad40bd3f689f26261c8a6185f6dce6889e1ea11aa414fa57ea54d58839c5efbe');
+        }
+
+        .flag-jp {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg?uh=a058fa82810d4bfd3772de4bc3a7a36f0ee7dee9da16471081f42a7bc0b93a5b');
+        }
+
+        .flag-fr {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png?uh=09d2ffa2d45f83757fbf84dcc8b720d95ef9c9224c3c5f36c4cb9bd2793b682a');
+        }
+
+        .flag-nl {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4160/cid/1/cdid/11711/readonly/0/pbmode/edit/h/0568b8848dd79b534aa897dcaa0b63587a22923a9d518be8e3eaea47e26f5dce/-/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png?uh=178f7372233a7800453dc5ac887140b52f6696b3a3655c5a958d1427f428969d');
+        }
+
+        .flag-eu {
+            background-image: url('https://via.placeholder.com/24/003399/ffffff?text=EU');
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body
+    style="font-family: 'BLS', 'Inter', sans-serif; margin: 0; padding: 16px 0; background-color: #FFFFFF; color: #141416;">
+
+    <section id="top-DR"
+        style="width: 100%; max-width: none; margin: 0; padding: 40px 16px; display: flex; flex-direction: column; gap: 48px;">
+        <!-- Header -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <h2
+                    style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; margin: 0; color: #141416;">
+                    สรุป DR01 Top Ranking</h2>
+                <div style="display: flex; gap: 8px; width: fit-content; flex-wrap: wrap;">
+                    <button id="tab-active"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #1565B3; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #1565B3; color: #FFFFFF;">Most
+                        Active Volume</button>
+                    <button id="tab-trade"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Most
+                        Active Value</button>
+                    <button id="tab-gainer"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Top
+                        Gainer</button>
+                    <button id="tab-loser"
+                        style="padding: 8px 24px; border-radius: 100px; border: 1px solid #E6E8ED; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; background: #FFFFFF; color: #777E90;">Top
+                        Loser</button>
+                </div>
+            </div>
+            <a href="https://kenticoweb-test.bualuang.co.th/dr-page/calculator"
+                style="display: flex; align-items: center; justify-content: center; padding: 12px 24px; border: 1.5px solid #1E90FF; border-radius: 8px; background: transparent; color: #1E90FF; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: none;">เครื่องมือคำนวณราคา
+                DR</a>
+        </div>
+
+        <!-- New Table Section -->
+        <div style="width: 100%; overflow-x: auto; border: 1px solid #E6E8ED; border-radius: 12px; margin-top: 24px;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 1200px;">
+                <thead>
+                    <tr>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            DR01 ⇅</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 180px; white-space: nowrap;">
+                            สินทรัพย์อ้างอิง</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            ราคาล่าสุด (บาท)</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 100px; white-space: nowrap;">
+                            %เปลี่ยนแปลง</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 80px; white-space: nowrap;">
+                            1M ⇅</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 80px; white-space: nowrap;">
+                            3M ⇅</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 80px; white-space: nowrap;">
+                            6M ⇅</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: right; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 80px; white-space: nowrap;">
+                            YTD ⇅</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 100px; padding-left: 24px; white-space: nowrap;">
+                            ดัชนี</th>
+                        <th
+                            style="background: #353945; position: sticky; top: 0; padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-size: 14px; font-weight: 700; color: #FFFFFF; min-width: 120px; white-space: nowrap;">
+                            ตลาดหลักทรัพย์</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Content will be rendered by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Disclaimer -->
+        <div
+            style="margin-top: 24px; font-family: 'BLS Text', sans-serif; font-size: 14px; color: #777E90; line-height: 1.5;">
+            <p style="margin: 0; color: #777E90; font-weight: 700;">Disclaimer</p>
+            <p style="margin-top: 8px;">
+                ราคา iNAV ของ DR คือ ราคาโดยประมาณที่สะท้อนมูลค่าของตราสารแสดงสิทธิในหลักทรัพย์ต่างประเทศ
+                ซึ่งคำนวณมาจากมูลค่าล่าสุดของหลักทรัพย์อ้างอิง ที่ประกาศโดยผู้ออก ETF (ซึ่งแสดงข้อมูลช้ากว่า ข้อมูลจริง
+                15 นาที บนหลักทรัพย์อ้างอิงบางประเทศ) ในทางปฏิบัติของการซื้อขาย DR
+                ผู้ดูแลสภาพคล่องอาจไม่สามารถวางราคาเสนอซื้อ-เสนอขาย ให้อยู่ในระดับราคา iNAV
+                ได้เนื่องจากการซื้อขายหลักทรัพย์ อ้างอิงสำหรับรองรับ DR
+                นั้นอาจมีราคาและส่วนต่างของราคาเสนอซื้อและเสนอขายที่แตกต่างจาก iNAV ที่มาจากการคำนวณข้างต้น
+                หรืออาจมีสภาพคล่องไม่เพียงพอต่อการซื้อขาย รวมทั้งมีต้นทุนของธุรกรรม ที่เกี่ยวข้อง
+                ทำให้ราคาเสนอซื้อ-เสนอขายของ DR อาจแตกต่างจากราคา iNAV ทั้งนี้ หลักการคำนวน iNAV ดังกล่าว
+                และการคำนวณราคาเสนอซื้อขายของผู้ดูแลสภาพคล่อง มีหลักการเดียวกันกับหน่วยลงทุน ETF อื่นๆ
+                ที่ซื้อขายทั่วไปในตลาดหลักทรัพย์ไทย
+            </p>
+        </div>
+
+    </section>
+
+    <script>
+        const tableData = {
+            'active': [
+                { symbol: 'NDX01', name: 'ChinaAMC NASDAQ 100 ETF', price: '20.87', change: '+0.25%', m1: '+0.25%', m3: '+0.25%', m6: '+0.25%', ytd: '+0.25%', index: 'NASDAQ 100', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'SP50001', name: 'Hang Seng S&P 500 Index ETF', price: '18.55', change: '-0.12%', m1: '+1.12%', m3: '+1.25%', m6: '+1.25%', ytd: '+1.25%', index: 'S&P 500', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'CN01', name: 'ChinaAMC CSI 300 Index ETF', price: '27.40', change: '+0.88%', m1: '+3.52%', m3: '+3.41%', m6: '+3.41%', ytd: '+3.41%', index: 'CSI 300', market: 'China', flag: 'cn' },
+                { symbol: 'STAR5001', name: 'Premia China STAR50 ETF', price: '22.10', change: '+0.33%', m1: '+1.20%', m3: '+1.15%', m6: '+1.15%', ytd: '+1.15%', index: 'STAR50', market: 'China', flag: 'cn' },
+                { symbol: 'CNTECH01', name: 'ChinaAMC Hang Seng TECH', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'Hang Seng TECH', market: 'The Hong Kong', flag: 'hk' }, // Assumed 01
+                { symbol: 'HK01', name: 'Tracker Fund of Hong Kong', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'Hang Seng', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'HKCE01', name: 'Hang Seng China Enterprises', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HSCEI', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'E1VFVN3001', name: 'DCVFMVN30 ETF', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'VN30', market: 'Ho Chi Minh', flag: 'vn' },
+                { symbol: 'FUEVFND01', name: 'DCVFMVN DIAMOND ETF', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'VN DIAMOND', market: 'Ho Chi Minh', flag: 'vn' },
+                { symbol: 'INDIA01', name: 'ChinaAMC MSCI India ETF', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'MSCI India', market: 'India', flag: 'ind' },
+                { symbol: 'JAPAN10001', name: 'Hang Seng Japan TOPIX 100', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'TOPIX 100', market: 'Japan', flag: 'jp' },
+                { symbol: 'AAPL01', name: 'Apple Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'AMZN01', name: 'Amazon.com, Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'CRM01', name: 'Salesforce Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NYSE', market: 'The NASDAQ', flag: 'us' }, // CRM is NYSE but keeping consistent
+                { symbol: 'GOOGL01', name: 'Alphabet Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'ISRG01', name: 'Intuitive Surgical Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'META01', name: 'Meta Platforms, Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'MICRON01', name: 'Micron Technology, Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'MSFT01', name: 'Microsoft Corporation', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'NVDA01', name: 'Nvidia Corporation', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'ORCL01', name: 'Oracle Corporation', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NYSE', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'PLTR01', name: 'Palantir Technologies Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NYSE', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'TSLA01', name: 'Tesla, Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'BABA01', name: 'Alibaba Group Holding', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'BIDU01', name: 'Baidu Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'BILIBILI01', name: 'Bilibili Inc.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'BYDCOM01', name: 'BYD Company Limited', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'CATL01', name: 'Contemporary Amperex', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'Use Code', market: 'The Hong Kong', flag: 'hk' }, // Check Mkt
+                { symbol: 'KUAISH01', name: 'Kuaishou Technology', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'PINGAN01', name: 'Ping An Insurance', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'SMIC01', name: 'Semiconductor Manufacturing', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'TENCENT01', name: 'Tencent Holdings Ltd.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'XIAOMI01', name: 'Xiaomi Corporation', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'ASML01', name: 'ASML Holding N.V.', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'Euronext', market: 'Euronext Amsterdam', flag: 'nl' },
+                { symbol: 'LVMH01', name: 'LVMH Moët Hennessy', price: '14.80', change: '-0.05%', m1: '+0.90%', m3: '+1.02%', m6: '+1.02%', ytd: '+1.02%', index: 'Euronext', market: 'Euronext Paris', flag: 'fr' }
+            ],
+            'trade': [
+                { symbol: 'TSLA01', name: 'Tesla Inc.', price: '20.87', change: '+1.25%', m1: '+1.25%', m3: '+1.25%', m6: '+1.25%', ytd: '+1.25%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'MSFT01', name: 'Microsoft Corporation', price: '20.87', change: '+0.55%', m1: '+0.55%', m3: '+0.55%', m6: '+0.55%', ytd: '+0.55%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'BABA01', name: 'Alibaba Group Holding', price: '20.87', change: '+0.15%', m1: '+0.15%', m3: '+0.15%', m6: '+0.15%', ytd: '+0.15%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'TENCENT01', name: 'Tencent Holdings', price: '20.87', change: '+0.35%', m1: '+0.35%', m3: '+0.35%', m6: '+0.35%', ytd: '+0.35%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' }
+            ],
+            'gainer': [
+                { symbol: 'CATL01', name: 'Contemporary Amperex', price: '20.87', change: '+4.32%', m1: '+4.32%', m3: '+4.32%', m6: '+4.32%', ytd: '+4.32%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'NVDA01', name: 'Nvidia Corporation', price: '20.87', change: '+2.32%', m1: '+2.32%', m3: '+2.32%', m6: '+2.32%', ytd: '+2.32%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' },
+                { symbol: 'TSLA01', name: 'Tesla Inc.', price: '20.87', change: '+1.87%', m1: '+1.87%', m3: '+1.87%', m6: '+1.87%', ytd: '+1.87%', index: 'NASDAQ', market: 'The NASDAQ', flag: 'us' }
+            ],
+            'loser': [
+                { symbol: 'XIAOMI01', name: 'Xiaomi Corporation', price: '20.87', change: '-4.32%', m1: '-4.32%', m3: '-4.32%', m6: '-4.32%', ytd: '-4.32%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'BYDCOM01', name: 'BYD Company Limited', price: '20.87', change: '-2.32%', m1: '-2.32%', m3: '-2.32%', m6: '-2.32%', ytd: '-2.32%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' },
+                { symbol: 'BIDU01', name: 'Baidu Inc.', price: '20.87', change: '-1.32%', m1: '-1.32%', m3: '-1.32%', m6: '-1.32%', ytd: '-1.32%', index: 'HKEX', market: 'The Hong Kong', flag: 'hk' }
+            ]
+        };
+
+        const tableBody = document.getElementById('table-body');
+        const tabs = {
+            active: document.getElementById('tab-active'),
+            trade: document.getElementById('tab-trade'),
+            gainer: document.getElementById('tab-gainer'),
+            loser: document.getElementById('tab-loser')
+        };
+
+        function renderTable(type) {
+            tableBody.innerHTML = '';
+            const data = tableData[type] || tableData['active'];
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                if (index % 2 !== 0) {
+                    tr.style.background = '#F1F4F8';
+                } else {
+                    tr.style.background = '#FFFFFF';
+                }
+                tr.style.borderTop = '1px solid #E6E8ED';
+
+                // Symbol Styling
+                const symbolStyle = "padding: 12px 16px; text-align: left; font-family: 'BLS', sans-serif; font-weight: 700; color: #1E90FF; display: flex; align-items: center; gap: 8px; font-size: 14px; vertical-align: middle; white-space: nowrap;";
+
+                // Base Cell Styling
+                const cellStyle = "padding: 12px 16px; font-family: 'BLS Text', sans-serif; font-size: 14px; color: #353945; vertical-align: middle; white-space: nowrap;";
+                const cellRight = cellStyle + " text-align: right;";
+                const cellLeft = cellStyle + " text-align: left;";
+
+                // Change Color Logic
+                let changeColor = '#353945';
+                if (row.change.includes('+')) changeColor = '#077D55'; // Green
+                if (row.change.includes('-')) changeColor = '#D92D20'; // Red
+                const cellChange = `${cellRight} color: ${changeColor}; font-weight: 700;`;
+
+                const flagHtml = row.flag ? `<div class="dr-flag-icon flag-${row.flag}"></div>` : '';
+
+                tr.innerHTML = `
+                    <td style="${symbolStyle}">${flagHtml} ${row.symbol}</td>
+                    <td style="${cellLeft}">${row.name}</td>
+                    <td style="${cellRight}">${row.price}</td>
+                    <td style="${cellChange}">${row.change}</td>
+                    <td style="${cellRight}">${row.m1}</td>
+                    <td style="${cellRight}">${row.m3}</td>
+                    <td style="${cellRight}">${row.m6}</td>
+                    <td style="${cellRight}">${row.ytd}</td>
+                    <td style="${cellLeft} padding-left: 24px;">${row.index}</td>
+                    <td style="${cellLeft}">${row.market}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function switchTab(selectedType) {
+            Object.keys(tabs).forEach(type => {
+                const tab = tabs[type];
+                if (type === selectedType) {
+                    tab.style.background = '#1565B3';
+                    tab.style.color = '#FFFFFF';
+                    tab.style.border = '1px solid #1565B3';
+                } else {
+                    tab.style.background = '#FFFFFF';
+                    tab.style.color = '#777E90';
+                    tab.style.border = '1px solid #E6E8ED';
+                }
+            });
+            renderTable(selectedType);
+        }
+
+        // Event Listeners
+        Object.keys(tabs).forEach(type => {
+            tabs[type].addEventListener('click', () => switchTab(type));
+        });
+
+        // Initialize
+        renderTable('active');
+
+    </script>
+</body>
+
+</html>
