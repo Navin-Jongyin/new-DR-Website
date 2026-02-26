@@ -1,0 +1,83 @@
+<hr>
+<div
+    style="font-family: 'BLS', sans-serif; margin: 0; padding: 24px 16px; box-sizing: border-box; background-color: #fff;">
+    <!-- Header Section -->
+    <div style="margin-bottom: 24px;">
+        <h1
+            style="font-family: 'BLS', sans-serif; font-size: 28px; font-weight: 800; line-height: 1.2; color: #0d0d0e; margin: 0;">
+            กราฟความเคลื่อนไหว DR01 และหลักทรัพย์อ้างอิง</h1>
+        <hr style="border: none; border-top: 1px solid #E6E8ED; margin-top: 16px;">
+    </div>
+
+    <!-- Controls Row -->
+    <div
+        style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 24px; justify-content: center;">
+        <span
+            style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; color: #0d0d0e;">เปรียบเทียบ</span>
+
+        <!-- Button: 3188 -->
+        <button id="btn-underlying" onclick="selectCompareTab('underlying')"
+            style="padding: 8px 24px; border-radius: 999px; border: 1px solid #1565B3; background: #1565B3; color: #fff; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">3410</button>
+
+        <!-- Button: CN01 -->
+        <button id="btn-dr01" onclick="selectCompareTab('dr01')"
+            style="padding: 8px 24px; border-radius: 999px; border: 1px solid #E6E8ED; background: #fff; color: #777E90; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">JAPAN10001</button>
+
+        <!-- Button: USD/THB -->
+        <button id="btn-usdthb" onclick="selectCompareTab('usdthb')"
+            style="padding: 8px 24px; border-radius: 999px; border: 1px solid #E6E8ED; background: #fff; color: #777E90; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">USD/THB</button>
+    </div>
+
+    <!-- Graph Placeholder / CTA Area -->
+    <div
+        style="width: 100%; height: 240px; background: #E9F4FF; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+        <a id="indicative-link" href="https://www.tradingview.com/chart/?symbol=HKEX%3A3410" target="_blank"
+            style="text-decoration: none;">
+            <button
+                style="display: flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; border: 2px solid #1E90FF; background: #fff; color: #1E90FF; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">
+                <span id="indicative-text">ดูราคาอ้างอิง 3410</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5 4.5L21 12M21 12L13.5 19.5M21 12H3" stroke="#1E90FF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </a>
+    </div>
+
+    <script>
+        function selectCompareTab(tabId) {
+            // Define styles
+            const activeStyle = "padding: 8px 24px; border-radius: 999px; border: 1px solid #1565B3; background: #1565B3; color: #fff; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;";
+            const inactiveStyle = "padding: 8px 24px; border-radius: 999px; border: 1px solid #E6E8ED; background: #fff; color: #777E90; font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;";
+
+            // Get buttons
+            // Get buttons
+            const btnUnderlying = document.getElementById('btn-underlying');
+            const btnDr01 = document.getElementById('btn-dr01');
+            const btnUsdthb = document.getElementById('btn-usdthb');
+
+            // Reset all to inactive
+            if (btnUnderlying) btnUnderlying.style.cssText = inactiveStyle;
+            if (btnDr01) btnDr01.style.cssText = inactiveStyle;
+            if (btnUsdthb) btnUsdthb.style.cssText = inactiveStyle;
+
+            // Link and Text Element
+            const linkElem = document.getElementById('indicative-link');
+            const textElem = document.getElementById('indicative-text');
+
+            // Set active
+            if (tabId === 'underlying' && btnUnderlying) {
+                btnUnderlying.style.cssText = activeStyle;
+                if (linkElem) linkElem.href = "https://www.tradingview.com/chart/?symbol=HKEX%3A3410";
+                if (textElem) textElem.textContent = "ดูราคาอ้างอิง 3410";
+            } else if (tabId === 'dr01' && btnDr01) {
+                btnDr01.style.cssText = activeStyle;
+                if (linkElem) linkElem.href = "https://www.tradingview.com/chart/?symbol=SET%3AJAPAN10001";
+                if (textElem) textElem.textContent = "ดูราคาอ้างอิง JAPAN10001";
+            } else if (tabId === 'usdthb' && btnUsdthb) {
+                btnUsdthb.style.cssText = activeStyle;
+                // Keep default or previous link for now, or define a specific one if needed
+            }
+        }
+    </script>
+</div>

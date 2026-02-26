@@ -1,0 +1,366 @@
+<div style="margin: 0; padding: 20px; font-family: 'BLS', sans-serif; background-color: #F5F6F8; color: #141416;">
+
+    <!-- Header -->
+    <h1 style="font-size: 28px; font-weight: 800; margin: 0 0 24px 0;">DR01 ที่ออกโดยหลักทรัพย์บัวหลวง</h1>
+    <div style="height: 1px; background: #E6E8ED; width: 100%; margin-bottom: 24px;"></div>
+
+    <!-- Filters Grid -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px;">
+        <!-- 1. Search -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">รหัส DR01</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; align-items: center;">
+                <input type="text" id="searchInput" placeholder="ค้นหา DR01"
+                    style="border: none; outline: none; width: 100%; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416; background: transparent;">
+            </div>
+        </div>
+
+        <!-- 2. Type -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเภท DR</label>
+            <div id="typeDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Country -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเทศที่ต้องการลงทุน</label>
+            <div id="countryDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Market -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ตลาดที่หลักทรัพย์อ้างอิงจดทะเบียน</label>
+            <div id="marketDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Theme -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ธีมการลงทุน</label>
+            <div id="themeDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 7. Dividend -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประวัติการจ่ายปันผล</label>
+            <div id="divDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Session -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">Trading Session</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                    style="width: 24px; height: 24px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons (Figma Integration) -->
+    <div
+        style="display: flex; gap: 32px; align-items: center; justify-content: flex-end; width: 100%; margin-bottom: 24px;">
+        <!-- Clear Button -->
+        <button id="clearBtn"
+            style="display: flex; gap: 8px; align-items: center; cursor: pointer; background: none; border: none; padding: 0;">
+            <div style="width: 16px; height: 16px; position: relative;">
+                <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/46314a6b-c3a9-45ca-a7cf-8132aa500b9a/Refresh-Icon.png?uh=46487756a049dd4d6babb1e76fe11f6bf5907779f49a5d4b511d7e7b60529472"
+                    style="width: 100%; height: 100%; display: block;">
+            </div>
+            <span
+                style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 14px; color: #0d0d0e; line-height: 1.5;">ล้างการค้นหา</span>
+        </button>
+
+        <!-- Search Button -->
+        <button id="mainSearchBtn"
+            style="background-color: #1E90FF; display: flex; height: 44px; align-items: center; justify-content: center; padding: 0 24px; border-radius: 8px; width: 200px; cursor: pointer; border: none;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF; line-height: 1.5;">ค้นหา</span>
+        </button>
+    </div>
+
+    <div style="background: #FFFFFF; border-radius: 12px; border: 1px solid #E6E8ED; overflow: hidden;">
+
+        <div style="max-height: 900px; overflow-y: auto; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: separate; border-spacing: 0; min-width: 1200px;">
+                <thead>
+                    <tr>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 20; white-space: nowrap; left: 0; min-width: 180px;">
+                            DR01</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap; width: 180px; min-width: 180px; max-width: 180px; overflow: hidden; text-overflow: ellipsis;">
+                            สินทรัพย์อ้างอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ราคาล่าสุด (บาท)</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            %เปลี่ยนแปลง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            1M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            3M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            6M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            YTD</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ตลาดหลักทรัพย์อ้าอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            อัตราแปลงสภาพ</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            มูลค่าตลาด (ล้านบาท)</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            การจ่ายปันผล</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            Trading Session</th>
+                    </tr>
+                </thead>
+                <tbody id="dr-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const orderedSymbols = [
+                'AAPL01', 'AMZN01', 'CRM01', 'GOOGL01', 'ISRG01', 'META01', 'MICRON01', 'MSFT01', 'NVDA01', 'ORCL01', 'PLTR01', 'TSLA01',
+                'BABA01', 'BIDU01', 'BILIBILI01', 'BYDCOM01', 'CATL01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01', 'ASML01', 'LVMH01',
+                'NDX01', 'SP50001', 'CN01', 'STAR5001', 'CNTECH01', 'HK01', 'HKCE01', 'E1VFVN3001', 'FUEVFND01', 'INDIA01', 'JAPAN10001'
+            ];
+
+            const symbolThemeMap = {
+                'AAPL01': "Consumer Tech",
+                'AMZN01': "E-Commerce",
+                'CRM01': "Software",
+                'GOOGL01': "Software",
+                'ISRG01': "Health Tech",
+                'META01': "Internet Platform",
+                'MICRON01': "Semiconductor",
+                'MSFT01': "Software",
+                'NVDA01': "Semiconductor",
+                'ORCL01': "Software",
+                'PLTR01': "Software",
+                'TSLA01': "Future Mobility",
+                'BABA01': "E-Commerce",
+                'BIDU01': "Internet Platform",
+                'BILIBILI01': "Internet Platform",
+                'BYDCOM01': "Future Mobility",
+                'CATL01': "Future Mobility",
+                'KUAISHO01': "Internet Platform",
+                'PINGAN01': "Longevity",
+                'SMIC01': "Semiconductor",
+                'TENCENT01': "Internet Platform",
+                'XIAOMI01': "Consumer Tech",
+                'ASML01': "Semiconductor",
+                'LVMH01': "Luxury",
+                'NDX01': "US Technology",
+                'SP50001': "US Large-Cap",
+                'CN01': "China Large-Cap",
+                'STAR5001': "China Technology",
+                'CNTECH01': "HK Technology",
+                'HK01': "HK Large-Cap",
+                'HKCE01': "HK Large-Cap",
+                'E1VFVN3001': "VN Large-Cap",
+                'FUEVFND01': "VN Large-Cap",
+                'INDIA01': "India Large & Mid-Cap",
+                'JAPAN10001': "Japan Large-Cap"
+            };
+
+            const typeOptions = ["DR on STOCK", "DR on ETF"];
+            const countryOptions = ["สหรัฐอเมริกา", "ฮ่องกง", "เวียดนาม", "จีน", "อินเดีย", "ญี่ปุ่น", "ฝรั่งเศส", "เนเธอร์แลนด์"];
+            const marketOptions = ["Nasdaq", "NYSE", "HKEX", "Ho Chi Minh Stock Exchange", "Euronext Paris", "Euronext Amsterdam", "China", "NSE India", "TSE"];
+            const divOptions = ["จ่าย", "ไม่จ่าย"];
+
+            function getSymbolInfo(symbol) {
+                if (symbol === 'LVMH01') return { market: 'Euronext Paris', flag: 'fr', asset: 'LVMH Moët Hennessy Louis Vuitton SE', country: 'ฝรั่งเศส', type: 'DR on STOCK' };
+                if (symbol === 'ASML01') return { market: 'Euronext Amsterdam', flag: 'nl', asset: 'ASML Holding N.V.', country: 'เนเธอร์แลนด์', type: 'DR on STOCK' };
+                if (['FUEVFND01', 'E1VFVN3001'].includes(symbol)) return { market: 'Ho Chi Minh Stock Exchange', flag: 'vn', asset: 'Vietnam ETF', country: 'เวียดนาม', type: 'DR on ETF' };
+                if (symbol === 'INDIA01') return { market: 'NSE India', flag: 'ind', asset: 'ChinaAMC MSCI India ETF', country: 'อินเดีย', type: 'DR on ETF' };
+                if (symbol === 'JAPAN10001') return { market: 'TSE', flag: 'jp', asset: 'Hang Seng Japan TOPIX 100 ETF', country: 'ญี่ปุ่น', type: 'DR on ETF' };
+                if (['CN01', 'STAR5001'].includes(symbol)) return { market: 'China', flag: 'cn', asset: 'China ETF', country: 'จีน', type: 'DR on ETF' };
+
+                const hkList = ['BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01', 'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'];
+                if (hkList.includes(symbol)) {
+                    const isEtf = ['CNTECH01', 'HK01', 'HKCE01'].includes(symbol);
+                    return {
+                        market: 'HKEX',
+                        flag: 'hk',
+                        asset: symbol.replace('01', '') + ' (HK)',
+                        country: 'ฮ่องกง',
+                        type: isEtf ? 'DR on ETF' : 'DR on STOCK'
+                    };
+                }
+
+                const isEtfUS = ['NDX01', 'SP50001'].includes(symbol);
+                const nyseList = ['CRM01', 'ISRG01', 'ORCL01', 'PLTR01', 'TSLA01', 'BABA01'];
+                const market = nyseList.includes(symbol) ? 'NYSE' : 'Nasdaq';
+
+                return {
+                    market: market,
+                    flag: 'us',
+                    asset: symbol.replace('01', '') + ' Inc.',
+                    country: 'สหรัฐอเมริกา',
+                    type: isEtfUS ? 'DR on ETF' : 'DR on STOCK'
+                };
+            }
+
+            const tableData = orderedSymbols.map((symbol) => {
+                const info = getSymbolInfo(symbol);
+                return {
+                    symbol: symbol,
+                    asset: info.asset,
+                    price: '-',
+                    change: '-',
+                    change1m: '-',
+                    change3m: '-',
+                    change6m: '-',
+                    ytd: '-',
+                    market: info.market,
+                    theme: symbolThemeMap[symbol] || "Other",
+                    type: info.type,
+                    country: info.country,
+                    ratio: '1 : 1000',
+                    cap: '-',
+                    div: 'จ่าย',
+                    session: '10:00 - 16:30',
+                    flag: info.flag
+                };
+            });
+
+            const overrides = {
+                'TSLA01': { price: '124.28', change: '-12.24%', change1m: '-5.4%', change3m: '+10.2%', change6m: '-8.5%', ytd: '-12.2%' },
+                'BABA01': { price: '88.09', change: '+1.35%', change1m: '+4.2%', change3m: '-2.1%', change6m: '+5.5%', ytd: '+1.3%' },
+                'TENCENT01': { price: '334.00', change: '+3.35%', change1m: '+8.1%', change3m: '+12.5%', change6m: '+15.2%', ytd: '+3.3%' },
+                'NDX01': { price: '20.87', change: '+0.25%', change1m: '+1.5%', change3m: '+4.8%', change6m: '+9.2%', ytd: '+0.2%' },
+                'SP50001': { price: '18.55', change: '-0.12%', change1m: '-0.5%', change3m: '+2.1%', change6m: '+4.5%', ytd: '-0.1%' },
+                'CN01': { price: '27.40', change: '+0.88%', change1m: '+3.2%', change3m: '-1.5%', change6m: '+2.8%', ytd: '+0.8%' },
+                'HK01': { price: '14.80', change: '-0.05%', change1m: '-1.2%', change3m: '-3.5%', change6m: '-2.1%', ytd: '-0.0%' },
+                'MSFT01': { price: '239.82', change: '-44.60%', change1m: '-5.2%', change3m: '-8.5%', change6m: '-12.1%', ytd: '-44.6%' },
+                'NVDA01': { price: '148.59', change: '+0.08%', change1m: '+12.5%', change3m: '+25.4%', change6m: '+45.2%', ytd: '+0.1%' },
+                'E1VFVN3001': { price: '18.50', change: '+1.25%', change1m: '+2.1%', change3m: '+5.4%', change6m: '+8.2%', ytd: '+1.2%' }
+            };
+
+            tableData.forEach(item => {
+                if (overrides[item.symbol]) {
+                    Object.assign(item, overrides[item.symbol]);
+                }
+            });
+
+            const tbody = document.getElementById('dr-table-body');
+            const searchInput = document.getElementById('searchInput');
+            const mainSearchBtn = document.getElementById('mainSearchBtn');
+            const clearBtn = document.getElementById('clearBtn');
+
+            const filterState = { theme: "", type: "", country: "", market: "", div: "" };
+
+            function render() {
+                const searchTerm = searchInput ? searchInput.value.trim().toUpperCase() : '';
+                let html = '';
+                const filteredData = tableData.filter(item => {
+                    return (!searchTerm || item.symbol.includes(searchTerm)) &&
+                        (!filterState.theme || item.theme === filterState.theme) &&
+                        (!filterState.type || item.type === filterState.type) &&
+                        (!filterState.country || item.country === filterState.country) &&
+                        (!filterState.market || item.market === filterState.market) &&
+                        (!filterState.div || item.div === filterState.div);
+                });
+
+                filteredData.forEach((item, index) => {
+                    const bgColor = index % 2 === 0 ? '#FFFFFF' : '#F4F5F6';
+
+                    html += `
+                <tr style="background-color:${bgColor}">
+                    <td style="position:sticky;left:0;background:${bgColor}">
+                        <a href="https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${item.symbol}"
+                           style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;font-weight:700;">
+                            <span class="dr-flag-icon flag-${item.flag}"></span>
+                            <span>${item.symbol}</span>
+                        </a>
+                    </td>
+                </tr>`;
+                });
+
+                tbody.innerHTML = html;
+            }
+
+            render();
+
+            /* ✅ Kentico-safe navigation (same tab) */
+            tbody.addEventListener('click', function (e) {
+                const link = e.target.closest('a[href]');
+                if (!link) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                window.location.href = link.href;
+            }, true);
+
+        })();
+    </script>
+
+    </script>

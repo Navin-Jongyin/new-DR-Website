@@ -120,7 +120,7 @@
 
     };
 
-    let currentRatio = 1 / parseInt(currentDR.ratio.split(':')[0], 10);
+    let currentRatio = parseInt(currentDR.ratio.split(':')[0], 10);
 
     const drInput = document.getElementById('calculator-dr-code');
     const assetPriceInput = document.getElementById('assetPrice');
@@ -134,7 +134,7 @@
         document.getElementById('calculator-ratio').textContent = dr.ratio;
 
         const ratioParts = dr.ratio.split(':');
-        currentRatio = 1 / parseInt(ratioParts[0], 10);
+        currentRatio = parseInt(ratioParts[0], 10);
 
         calculateFairPrice();
     }
@@ -143,7 +143,7 @@
     function calculateFairPrice() {
         const assetPrice = parseFloat(assetPriceInput.value) || 0;
         const exchangeRate = parseFloat(exchangeRateInput.value) || 33.68;
-        const fairPrice = (assetPrice * exchangeRate) * currentRatio;
+        const fairPrice = (assetPrice * exchangeRate) / currentRatio;
         fairPriceDisplay.textContent = fairPrice.toFixed(2);
     }
 

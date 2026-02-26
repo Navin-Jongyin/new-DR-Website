@@ -104,9 +104,9 @@
             </div>
             <div
                 style="flex: 1; padding: 8px 16px; display: flex; align-items: center; border-bottom: 1px solid #d6d8e0; box-sizing: border-box; background-color: #FFFFFF;">
-                <a href="#"
+                <a href="#" id="analysis-link"
                     style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; color: #1e90ff; text-decoration: underline; cursor: pointer;">
-                    ข้อมูลบทวิเคราะห์ ณ วันที่ dd mm yyyy
+                    ข้อมูลบทวิเคราะห์ ณ วันที่ <span id="analysis-date"></span>
                 </a>
             </div>
         </div>
@@ -125,3 +125,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        (function () {
+            const dateSpan = document.getElementById('analysis-date');
+            if (dateSpan) {
+                const now = new Date();
+                const thaiDate = now.toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+                dateSpan.textContent = thaiDate;
+            }
+        })();
+    </script>
+</div>

@@ -19,11 +19,15 @@
         <!-- 2. Type -->
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเภท DR</label>
-            <div
-                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
-                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
-                    style="width: 24px; height: 24px;">
+            <div id="typeDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
             </div>
         </div>
 
@@ -31,11 +35,15 @@
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label
                 style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเทศที่ต้องการลงทุน</label>
-            <div
-                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
-                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
-                    style="width: 24px; height: 24px;">
+            <div id="countryDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
             </div>
         </div>
 
@@ -43,22 +51,30 @@
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label
                 style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ตลาดที่หลักทรัพย์อ้างอิงจดทะเบียน</label>
-            <div
-                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
-                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
-                    style="width: 24px; height: 24px;">
+            <div id="marketDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
             </div>
         </div>
 
         <!-- 5. Theme -->
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ธีมการลงทุน</label>
-            <div
-                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
-                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
-                    style="width: 24px; height: 24px;">
+            <div id="themeDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
             </div>
         </div>
 
@@ -68,11 +84,15 @@
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label
                 style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประวัติการจ่ายปันผล</label>
-            <div
-                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
-                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
-                    style="width: 24px; height: 24px;">
+            <div id="divDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
+                </div>
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
+                </div>
             </div>
         </div>
 
@@ -82,7 +102,7 @@
             <div
                 style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
                 <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
-                <img src="/getmedia/bef03939-6115-44d7-8cc2-361c2ab81bc7/chevron-down.png"
+                <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
                     style="width: 24px; height: 24px;">
             </div>
         </div>
@@ -95,8 +115,8 @@
         <button id="clearBtn"
             style="display: flex; gap: 8px; align-items: center; cursor: pointer; background: none; border: none; padding: 0;">
             <div style="width: 16px; height: 16px; position: relative;">
-                <img src="
-/getmedia/46314a6b-c3a9-45ca-a7cf-8132aa500b9a/Refresh-Icon.png" style="width: 100%; height: 100%; display: block;">
+                <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/46314a6b-c3a9-45ca-a7cf-8132aa500b9a/Refresh-Icon.png?uh=46487756a049dd4d6babb1e76fe11f6bf5907779f49a5d4b511d7e7b60529472"
+                    style="width: 100%; height: 100%; display: block;">
             </div>
             <span
                 style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 14px; color: #0d0d0e; line-height: 1.5;">ล้างการค้นหา</span>
@@ -120,7 +140,7 @@
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 20; white-space: nowrap; left: 0; min-width: 180px;">
                             DR01</th>
                         <th
-                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap; width: 180px; min-width: 180px; max-width: 180px; overflow: hidden; text-overflow: ellipsis;">
                             สินทรัพย์อ้างอิง</th>
                         <th
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
@@ -130,19 +150,28 @@
                             %เปลี่ยนแปลง</th>
                         <th
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
-                            ตลาดหลักทรัพย์อ้างอิง</th>
+                            1M</th>
                         <th
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
-                            ธีมการลงทุน</th>
+                            3M</th>
                         <th
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            6M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            YTD</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ตลาดหลักทรัพย์อ้าอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
                             อัตราแปลงสภาพ</th>
                         <th
-                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
                             มูลค่าตลาด (ล้านบาท)</th>
                         <th
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
-                            ประวัติการจ่ายปันผล</th>
+                            การจ่ายปันผล</th>
                         <th
                             style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
                             Trading Session</th>
@@ -164,141 +193,433 @@
             border: 1px solid #E6E8ED;
             display: inline-block;
             flex-shrink: 0;
+            pointer-events: none;
+            /* Prevent icon from intercepting clicks */
         }
 
         .flag-us {
-            background-image: url('/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png?uh=bfbce81239ff30d9de9b04a94e97a70765b27092b02244113fca3c6fd805a61c');
         }
 
         .flag-hk {
-            background-image: url('/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg?uh=0a7f1286996d50d9b256581746cc50f001fb0f91489ecc1b2a5b09d90cc6e342');
         }
 
         .flag-vn {
-            background-image: url('/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png?uh=e9766b10f204fe9ff9517ee191ad09384cd4b044dbb2c57174cde2dcaace58fd');
         }
 
         .flag-cn {
-            background-image: url('/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp?uh=5633e87705bdfc1efb704711395e9fd228215b8aa99ba01822a6a96eec22fe92');
         }
 
         .flag-ind {
-            background-image: url('/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png?uh=ad40bd3f689f26261c8a6185f6dce6889e1ea11aa414fa57ea54d58839c5efbe');
         }
 
         .flag-jp {
-            background-image: url('/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg?uh=a058fa82810d4bfd3772de4bc3a7a36f0ee7dee9da16471081f42a7bc0b93a5b');
         }
 
         .flag-fr {
-            background-image: url('/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png?uh=09d2ffa2d45f83757fbf84dcc8b720d95ef9c9224c3c5f36c4cb9bd2793b682a');
         }
 
         .flag-nl {
-            background-image: url('/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png');
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png?uh=178f7372233a7800453dc5ac887140b52f6696b3a3655c5a958d1427f428969d');
+        }
+
+        /* Custom Dropdown Styles */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            height: 44px;
+        }
+
+        .dropdown-trigger {
+            background: #FFFFFF;
+            border: 1px solid #CBD3DF;
+            border-radius: 8px;
+            height: 100%;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .dropdown-trigger span {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            color: #141416;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #CBD3DF;
+            border-radius: 8px;
+            margin-top: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-options.show {
+            display: block;
+        }
+
+        .dropdown-option {
+            padding: 10px 16px;
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            color: #141416;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-option:hover {
+            background-color: #F5F6F8;
+        }
+
+        .dropdown-option.selected {
+            background-color: #E6F0FF;
+            color: #1E90FF;
+            font-weight: 700;
         }
     </style>
+</div>
 
-    <script>
-        (function () {
-            const symbols = [
-                'AAPL01', 'AMZN01', 'CRM01', 'GOOGL01', 'ISRG01', 'META01', 'MICRON01', 'MSFT01', 'NDX01', 'NVDA01', 'ORCL01', 'PLTR01', 'SP50001', 'TSLA01',
-                'LVMH01', 'ASML01', 'CN01', 'STAR5001', 'E1FVN3001', 'FUEVFVND01', 'INDIA01', 'JAPAN10001',
-                'BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01', 'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'
-            ];
+<script>
+    (function () {
+        const orderedSymbols = [
+            'AAPL01', 'AMZN01', 'CRM01', 'GOOGL01', 'ISRG01', 'META01', 'MICRON01', 'MSFT01', 'NVDA01', 'ORCL01', 'PLTR01', 'TSLA01',
+            'BABA01', 'BIDU01', 'BILIBILI01', 'BYDCOM01', 'CATL01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01', 'ASML01', 'LVMH01',
+            'NDX01', 'SP50001', 'CN01', 'STAR5001', 'CNTECH01', 'HK01', 'HKCE01', 'E1VFVN3001', 'FUEVFND01', 'INDIA01', 'JAPAN10001'
+        ];
 
-            function getSymbolInfo(symbol) {
-                if (symbol === 'LVMH01') return { market: 'Euronext Paris', flag: 'fr', index: 'CAC 40', asset: 'Moet Hennessy Louis Vuitton' };
-                if (symbol === 'ASML01') return { market: 'Euronext Amsterdam', flag: 'nl', index: 'AEX', asset: 'ASML Holding N.V.' };
-                if (['E1FVN3001', 'FUEVFVND01'].includes(symbol)) return { market: 'HOSE', flag: 'vn', index: 'VN30', asset: 'Vietnam ETF' };
-                if (symbol === 'INDIA01') return { market: 'NSE India', flag: 'ind', index: 'Nifty 50', asset: 'India Eagle ETF' };
-                if (symbol === 'JAPAN10001') return { market: 'TSE', flag: 'jp', index: 'TOPIX', asset: 'Japan 100 ETF' };
-                if (['CN01', 'STAR5001'].includes(symbol)) return { market: 'SSE', flag: 'cn', index: 'SSE', asset: 'China ETF' };
-                const hkList = ['BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01', 'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'];
-                if (hkList.includes(symbol)) return { market: 'HKEX', flag: 'hk', index: 'HSI / HSCEI', asset: symbol.replace('01', '') + ' (HK)' };
-                return { market: 'Nasdaq', flag: 'us', index: 'NASDAQ / S&P 500', asset: symbol.replace('01', '') + ' Inc.' };
+        const symbolThemeMap = {
+            'AAPL01': "Consumer Tech",
+            'AMZN01': "E-Commerce",
+            'CRM01': "Software",
+            'GOOGL01': "Software",
+            'ISRG01': "Health Tech",
+            'META01': "Internet Platform",
+            'MICRON01': "Semiconductor",
+            'MSFT01': "Software",
+            'NVDA01': "Semiconductor",
+            'ORCL01': "Software",
+            'PLTR01': "Software",
+            'TSLA01': "Future Mobility",
+            'BABA01': "E-Commerce",
+            'BIDU01': "Internet Platform",
+            'BILIBILI01': "Internet Platform",
+            'BYDCOM01': "Future Mobility",
+            'CATL01': "Future Mobility",
+            'KUAISHO01': "Internet Platform",
+            'PINGAN01': "Longevity",
+            'SMIC01': "Semiconductor",
+            'TENCENT01': "Internet Platform",
+            'XIAOMI01': "Consumer Tech",
+            'ASML01': "Semiconductor",
+            'LVMH01': "Luxury",
+            'NDX01': "US Technology",
+            'SP50001': "US Large-Cap",
+            'CN01': "China Large-Cap",
+            'STAR5001': "China Technology",
+            'CNTECH01': "HK Technology",
+            'HK01': "HK Large-Cap",
+            'HKCE01': "HK Large-Cap",
+            'E1VFVN3001': "VN Large-Cap",
+            'FUEVFND01': "VN Large-Cap",
+            'INDIA01': "India Large & Mid-Cap",
+            'JAPAN10001': "Japan Large-Cap"
+        };
+
+        // Filter Options
+        const typeOptions = ["DR on STOCK", "DR on ETF"];
+        const countryOptions = ["สหรัฐอเมริกา", "ฮ่องกง", "เวียดนาม", "จีน", "อินเดีย", "ญี่ปุ่น", "ฝรั่งเศส", "เนเธอร์แลนด์"];
+        const marketOptions = ["Nasdaq", "NYSE", "HKEX", "Ho Chi Minh Stock Exchange", "Euronext Paris", "Euronext Amsterdam", "China", "NSE India", "TSE"];
+        const divOptions = ["จ่าย", "ไม่จ่าย"];
+
+        // Helper to get basic info if missing
+        function getSymbolInfo(symbol) {
+            if (symbol === 'LVMH01') return { market: 'Euronext Paris', flag: 'fr', asset: 'LVMH Moët Hennessy Louis Vuitton SE', country: 'ฝรั่งเศส', type: 'DR on STOCK' };
+            if (symbol === 'ASML01') return { market: 'Euronext Amsterdam', flag: 'nl', asset: 'ASML Holding N.V.', country: 'เนเธอร์แลนด์', type: 'DR on STOCK' };
+            if (['FUEVFND01', 'E1VFVN3001'].includes(symbol)) return { market: 'Ho Chi Minh Stock Exchange', flag: 'vn', asset: 'Vietnam ETF', country: 'เวียดนาม', type: 'DR on ETF' };
+            if (symbol === 'INDIA01') return { market: 'NSE India', flag: 'ind', asset: 'ChinaAMC MSCI India ETF', country: 'อินเดีย', type: 'DR on ETF' };
+            if (symbol === 'JAPAN10001') return { market: 'TSE', flag: 'jp', asset: 'Hang Seng Japan TOPIX 100 ETF', country: 'ญี่ปุ่น', type: 'DR on ETF' };
+            if (['CN01', 'STAR5001'].includes(symbol)) return { market: 'China', flag: 'cn', asset: 'China ETF', country: 'จีน', type: 'DR on ETF' };
+
+            const hkList = ['BABA01', 'BIDU01', 'BYDCOM01', 'BILIBILI01', 'CATL01', 'CNTECH01', 'HK01', 'HKCE01', 'KUAISHO01', 'PINGAN01', 'SMIC01', 'TENCENT01', 'XIAOMI01'];
+            if (hkList.includes(symbol)) {
+                const isEtf = ['CNTECH01', 'HK01', 'HKCE01'].includes(symbol);
+                return {
+                    market: 'HKEX',
+                    flag: 'hk',
+                    asset: symbol.replace('01', '') + ' (HK)',
+                    country: 'ฮ่องกง',
+                    type: isEtf ? 'DR on ETF' : 'DR on STOCK'
+                };
             }
 
-            const tbody = document.getElementById('dr-table-body');
-            const searchInput = document.getElementById('searchInput'); // Now targeting the input by ID
-            const cellStyle = "padding: 12px 16px; font-size: 14px; color: #141416; border-bottom: 1px solid #E6E8ED; vertical-align: middle; white-space: nowrap;";
-            const stickyFirstColStyle = "position: sticky; left: 0; z-index: 5; border-right: 1px solid #E6E8ED;";
+            // Default US
+            const isEtfUS = ['NDX01', 'SP50001'].includes(symbol);
+            // Simple logic for NYSE vs Nasdaq based on common knowledge or default to Nasdaq
+            const nyseList = ['CRM01', 'ISRG01', 'ORCL01', 'PLTR01', 'TSLA01', 'BABA01']; // Adjust as needed
+            const market = nyseList.includes(symbol) ? 'NYSE' : 'Nasdaq';
 
-            // Sort Order: US, EU, HK, China, Vietnam, Japan, India
-            const regionOrder = ['us', 'eu', 'hk', 'cn', 'vn', 'jp', 'ind'];
+            return {
+                market: market,
+                flag: 'us',
+                asset: symbol.replace('01', '') + ' Inc.',
+                country: 'สหรัฐอเมริกา',
+                type: isEtfUS ? 'DR on ETF' : 'DR on STOCK'
+            };
+        }
 
-            const tableData = [
-                { symbol: 'TSLA01', name: 'Tesla Inc.', price: '124.28', change: '-12.24%', market: 'The NASDAQ', index: 'NASDAQ', asset: 'Tesla Inc.', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'ไม่จ่าย', session: '10:00 - 16:30', flag: 'us' },
-                { symbol: 'BABA01', name: 'Alibaba Group Holding', price: '88.09', change: '+1.35%', market: 'The Hong Kong', index: 'HKEX', asset: 'Alibaba Group Holding', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'hk' },
-                { symbol: 'TENCENT01', name: 'Tencent Holdings Ltd.', price: '334.00', change: '+3.35%', market: 'The Hong Kong', index: 'HKEX', asset: 'Tencent Holdings Ltd.', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'hk' },
-                { symbol: 'NDX01', name: 'ChinaAMC NASDAQ 100 ETF', price: '20.87', change: '+0.25%', market: 'The NASDAQ', index: 'NASDAQ 100', asset: 'ChinaAMC NASDAQ 100 ETF', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'us' },
-                { symbol: 'SP50001', name: 'Hang Seng S&P 500 Index ETF', price: '18.55', change: '-0.12%', market: 'The NASDAQ', index: 'S&P 500', asset: 'Hang Seng S&P 500', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'us' },
-                { symbol: 'CN01', name: 'ChinaAMC CSI 300 Index ETF', price: '27.40', change: '+0.88%', market: 'China', index: 'CSI 300', asset: 'ChinaAMC CSI 300', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'cn' },
-                { symbol: 'HK01', name: 'Tracker Fund of Hong Kong', price: '14.80', change: '-0.05%', market: 'The Hong Kong', index: 'Hang Seng', asset: 'Tracker Fund of Hong Kong', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'hk' },
-                { symbol: 'MSFT01', name: 'Microsoft Corporation', price: '239.82', change: '-44.60%', market: 'The NASDAQ', index: 'NASDAQ', asset: 'Microsoft Corporation', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'us' },
-                { symbol: 'NVDA01', name: 'Nvidia Corporation', price: '148.59', change: '+0.08%', market: 'The NASDAQ', index: 'NASDAQ', asset: 'Nvidia Corporation', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'us' },
-                { symbol: 'E1VFVN3001', name: 'DCVFMVN30 ETF', price: '18.50', change: '+1.25%', market: 'Ho Chi Minh', index: 'VN30', asset: 'DCVFMVN30 ETF', theme: 'Technology', ratio: '1 : 1000', cap: '-', div: 'จ่าย', session: '10:00 - 16:30', flag: 'vn' },
-            ];
+        // Generate full table data
+        const tableData = orderedSymbols.map((symbol, index) => {
+            const info = getSymbolInfo(symbol);
+            return {
+                symbol: symbol,
+                asset: info.asset,
+                price: '-',
+                change: '-',
+                change1m: '-',
+                change3m: '-',
+                change6m: '-',
+                ytd: '-',
+                market: info.market,
+                ytd: '-',
+                market: info.market,
+                theme: symbolThemeMap[symbol] || "Other",
+                type: info.type,
+                country: info.country,
+                ratio: '1 : 1000',
+                cap: '-',
+                div: 'จ่าย', // Default assumption
+                session: '10:00 - 16:30',
+                flag: info.flag
+            };
+        });
 
-            function render(term = '') {
-                let html = '';
-                const sortedData = tableData.filter(item => {
-                    if (!term) return true;
-                    return item.symbol.toUpperCase().includes(term.toUpperCase());
+        // Override with specific data where we have it
+        const overrides = {
+            'TSLA01': { price: '124.28', change: '-12.24%', change1m: '-5.4%', change3m: '+10.2%', change6m: '-8.5%', ytd: '-12.2%' },
+            'BABA01': { price: '88.09', change: '+1.35%', change1m: '+4.2%', change3m: '-2.1%', change6m: '+5.5%', ytd: '+1.3%' },
+            'TENCENT01': { price: '334.00', change: '+3.35%', change1m: '+8.1%', change3m: '+12.5%', change6m: '+15.2%', ytd: '+3.3%' },
+            'NDX01': { price: '20.87', change: '+0.25%', change1m: '+1.5%', change3m: '+4.8%', change6m: '+9.2%', ytd: '+0.2%' },
+            'SP50001': { price: '18.55', change: '-0.12%', change1m: '-0.5%', change3m: '+2.1%', change6m: '+4.5%', ytd: '-0.1%' },
+            'CN01': { price: '27.40', change: '+0.88%', change1m: '+3.2%', change3m: '-1.5%', change6m: '+2.8%', ytd: '+0.8%' },
+            'HK01': { price: '14.80', change: '-0.05%', change1m: '-1.2%', change3m: '-3.5%', change6m: '-2.1%', ytd: '-0.0%' },
+            'MSFT01': { price: '239.82', change: '-44.60%', change1m: '-5.2%', change3m: '-8.5%', change6m: '-12.1%', ytd: '-44.6%' },
+            'NVDA01': { price: '148.59', change: '+0.08%', change1m: '+12.5%', change3m: '+25.4%', change6m: '+45.2%', ytd: '+0.1%' },
+            'E1VFVN3001': { price: '18.50', change: '+1.25%', change1m: '+2.1%', change3m: '+5.4%', change6m: '+8.2%', ytd: '+1.2%' },
+            'AAPL01': { asset: 'Apple Inc.', change1m: '+2.5%', change3m: '+5.1%', change6m: '+10.2%', ytd: '+1.5%' },
+            'AMZN01': { asset: 'Amazon.com Inc.', change1m: '-1.2%', change3m: '+3.5%', change6m: '+6.2%', ytd: '-0.5%' },
+            'GOOGL01': { asset: 'Alphabet Inc.', change1m: '+1.8%', change3m: '+4.2%', change6m: '+7.5%', ytd: '+0.8%' },
+            'META01': { asset: 'Meta Platforms Inc.', change1m: '+5.5%', change3m: '+15.2%', change6m: '+25.1%', ytd: '+3.5%' },
+        };
+
+        tableData.forEach(item => {
+            if (overrides[item.symbol]) {
+                Object.assign(item, overrides[item.symbol]);
+            }
+        });
+
+        const tbody = document.getElementById('dr-table-body');
+        const searchInput = document.getElementById('searchInput');
+        const mainSearchBtn = document.getElementById('mainSearchBtn');
+        const clearBtn = document.getElementById('clearBtn');
+
+        const cellStyle = "padding: 12px 16px; font-size: 14px; color: #141416; border-bottom: 1px solid #E6E8ED; vertical-align: middle; white-space: nowrap;";
+        const stickyFirstColStyle = "position: sticky; left: 0; z-index: 5; border-right: 1px solid #E6E8ED;";
+
+        // Global State for Filters
+        const filterState = {
+            theme: "",
+            type: "",
+            country: "",
+            market: "",
+            div: ""
+        };
+
+        // --- Generic Dropdown Logic ---
+        function setupDropdown(id, options, stateKey) {
+            const dropdown = document.getElementById(id);
+            const trigger = dropdown.querySelector('.dropdown-trigger');
+            const optionsContainer = dropdown.querySelector('.dropdown-options');
+            const label = trigger.querySelector('span');
+
+            // Populate Options
+            // Add "All" option
+            const allOption = document.createElement('div');
+            allOption.className = 'dropdown-option selected';
+            allOption.textContent = 'ทั้งหมด';
+            allOption.dataset.value = "";
+            optionsContainer.appendChild(allOption);
+
+            options.forEach(opt => {
+                const option = document.createElement('div');
+                option.className = 'dropdown-option';
+                option.textContent = opt;
+                option.dataset.value = opt;
+                optionsContainer.appendChild(option);
+            });
+
+            // Toggle Visibility
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Close others
+                document.querySelectorAll('.dropdown-options').forEach(el => {
+                    if (el !== optionsContainer) el.classList.remove('show');
                 });
+                optionsContainer.classList.toggle('show');
+            });
 
-                sortedData.forEach((item, index) => {
-                    const bgColor = index % 2 === 0 ? '#FFFFFF' : '#F4F5F6';
-                    let changeColor = '#353945';
-                    if (item.change.includes('+')) changeColor = '#00B16A'; // Green
-                    if (item.change.includes('-')) changeColor = '#D92D20'; // Red
+            // Select Option
+            optionsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('dropdown-option')) {
+                    const value = e.target.dataset.value;
+                    const text = e.target.textContent;
 
-                    html += `
+                    filterState[stateKey] = value;
+                    label.textContent = text;
+
+                    // Update UI selection
+                    dropdown.querySelectorAll('.dropdown-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    e.target.classList.add('selected');
+
+                    optionsContainer.classList.remove('show');
+                    render();
+                }
+            });
+
+            // Close on click outside
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    optionsContainer.classList.remove('show');
+                }
+            });
+
+            // Return reset helper
+            return () => {
+                filterState[stateKey] = "";
+                label.textContent = 'ทั้งหมด';
+                dropdown.querySelectorAll('.dropdown-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                    if (opt.dataset.value === "") opt.classList.add('selected');
+                });
+            };
+        }
+
+        // Initialize Dropdowns
+        const uniqueThemes = [...new Set(Object.values(symbolThemeMap))].sort();
+        const resetTheme = setupDropdown('themeDropdown', uniqueThemes, 'theme');
+        const resetType = setupDropdown('typeDropdown', typeOptions, 'type');
+        const resetCountry = setupDropdown('countryDropdown', countryOptions, 'country');
+        const resetMarket = setupDropdown('marketDropdown', marketOptions, 'market');
+        const resetDiv = setupDropdown('divDropdown', divOptions, 'div');
+
+        function render() {
+            const searchTerm = searchInput ? searchInput.value.trim().toUpperCase() : '';
+
+            let html = '';
+            const filteredData = tableData.filter(item => {
+                const matchesSearch = !searchTerm || item.symbol.toUpperCase().includes(searchTerm);
+                const matchesTheme = !filterState.theme || item.theme === filterState.theme;
+                const matchesType = !filterState.type || item.type === filterState.type;
+                const matchesCountry = !filterState.country || item.country === filterState.country;
+                const matchesMarket = !filterState.market || item.market === filterState.market;
+                const matchesDiv = !filterState.div || item.div === filterState.div;
+
+                return matchesSearch && matchesTheme && matchesType && matchesCountry && matchesMarket && matchesDiv;
+            });
+
+            if (filteredData.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="13" style="padding: 24px; text-align: center; color: #777E90;">ไม่พบข้อมูล</td></tr>`;
+                return;
+            }
+
+            filteredData.forEach((item, index) => {
+                const bgColor = index % 2 === 0 ? '#FFFFFF' : '#F4F5F6';
+
+                const getChangeColor = (val) => {
+                    if (!val || val === '-') return '#353945';
+                    if (val.includes('+')) return '#00B16A';
+                    if (val.includes('-')) return '#D92D20';
+                    return '#353945';
+                };
+
+                const changeColor = getChangeColor(item.change);
+                const change1mColor = getChangeColor(item.change1m);
+                const change3mColor = getChangeColor(item.change3m);
+                const change6mColor = getChangeColor(item.change6m);
+                const ytdColor = getChangeColor(item.ytd);
+
+                html += `
                         <tr style="background-color: ${bgColor};">
-                            <td style="${cellStyle} ${stickyFirstColStyle} background-color: ${bgColor};">
-                                <div style="display: flex; align-items: center; gap: 12px; font-weight: 700;">
-                                    <div class="dr-flag-icon flag-${item.flag}"></div>
-                                    ${item.symbol}
-                                </div>
-                            </td>
-                            <td style="${cellStyle} text-align: left;">${item.asset}</td>
+                             <td style="${cellStyle} ${stickyFirstColStyle} background-color: ${bgColor};">
+        <a href="//kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${item.symbol}"
+           target="_blank"
+           style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;font-weight:700;">
+            <span class="dr-flag-icon flag-${item.flag}"></span>
+            <span>${item.symbol}</span>
+        </a>
+    </td>
+                            <td style="${cellStyle} text-align: left; width: 180px; min-width: 180px; max-width: 180px; overflow: hidden; text-overflow: ellipsis;">${item.asset}</td>
                             <td style="${cellStyle} text-align: right;">${item.price}</td>
                             <td style="${cellStyle} text-align: right; color: ${changeColor};">${item.change}</td>
+                            <td style="${cellStyle} text-align: right; color: ${change1mColor};">${item.change1m}</td>
+                            <td style="${cellStyle} text-align: right; color: ${change3mColor};">${item.change3m}</td>
+                            <td style="${cellStyle} text-align: right; color: ${change6mColor};">${item.change6m}</td>
+                            <td style="${cellStyle} text-align: right; color: ${ytdColor};">${item.ytd}</td>
                             <td style="${cellStyle}">${item.market}</td>
-                            <td style="${cellStyle}">${item.theme}</td>
                             <td style="${cellStyle} text-align: right;">${item.ratio}</td>
                             <td style="${cellStyle} text-align: right;">${item.cap}</td>
                             <td style="${cellStyle} text-align: center;">${item.div}</td>
                             <td style="${cellStyle} text-align: center;">${item.session}</td>
                         </tr>
                     `;
-                });
-                tbody.innerHTML = html;
-            }
+            });
+            tbody.innerHTML = html;
+        }
 
-            const mainSearchBtn = document.getElementById('mainSearchBtn');
-            const clearBtn = document.getElementById('clearBtn');
+        if (searchInput) {
+            searchInput.addEventListener('input', render);
+        }
 
-            if (searchInput) {
-                searchInput.addEventListener('input', (e) => {
-                    render(e.target.value);
-                });
-            }
+        if (mainSearchBtn) {
+            mainSearchBtn.addEventListener('click', render);
+        }
 
-            if (mainSearchBtn) {
-                mainSearchBtn.addEventListener('click', () => {
-                    render(searchInput ? searchInput.value : '');
-                });
-            }
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (searchInput) searchInput.value = '';
 
-            if (clearBtn) {
-                clearBtn.addEventListener('click', () => {
-                    if (searchInput) searchInput.value = '';
-                    render('');
-                });
-            }
+                // Reset all custom dropdowns
+                resetTheme();
+                resetType();
+                resetCountry();
+                resetMarket();
+                resetDiv();
 
-            render();
-        })();
-    </script>
-</div>
+                render();
+            });
+        }
+
+        render();
+    })();
+</script>
