@@ -1,99 +1,447 @@
-<h2 style="font-family: 'BLS', sans-serif; font-size: 24px; font-weight: 800; color: #212529; margin-bottom: 24px;">
-    ข้อมูลหลักทรัพย์</h2>
-<hr>
-<!-- Table Container -->
-<div style="background: #ffffff; border: 1px solid #e6e8ed; border-radius: 16px; padding: 24px 16px; width: 100%; margin-block: 64px;"
-    data-name="Table" data-node-id="17778:10426">
-    <div style="display: flex; flex-direction: column; gap: 0; width: 100%;" data-name="detail"
-        data-node-id="17778:10427">
-        <div data-name="Table Detail" data-node-id="17778:10428">
+<div style="margin: 0; padding: 20px; font-family: 'BLS', sans-serif; background-color: #F5F6F8; color: #141416;">
 
-            <!-- Row 1 (White) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10429">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10430">
-                    สัญลักษณ์ DR
+    <!-- Header -->
+    <h1 style="font-size: 28px; font-weight: 800; margin: 0 0 24px 0;">DR01 ที่ออกโดยหลักทรัพย์บัวหลวง</h1>
+    <div style="height: 1px; background: #E6E8ED; width: 100%; margin-bottom: 24px;"></div>
+
+    <!-- Filters Grid -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px;">
+        <!-- 1. Search -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">รหัส DR01</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; align-items: center;">
+                <input type="text" id="searchInput" placeholder="ค้นหา DR01"
+                    style="border: none; outline: none; width: 100%; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416; background: transparent;">
+            </div>
+        </div>
+
+        <!-- 2. Type -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเภท DR</label>
+            <div id="typeDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
                 </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10431">
-                    AAPL01
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
                 </div>
             </div>
+        </div>
 
-            <!-- Row 2 (Gray) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10432">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10433">
-                    ชื่อหุ้น
+        <!-- 3. Country -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประเทศที่ต้องการลงทุน</label>
+            <div id="countryDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
                 </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10434">
-                    Apple Inc.
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
                 </div>
             </div>
+        </div>
 
-            <!-- Row 3 (White) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10435">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10436">
-                    ตลาดหลักทรัพย์
+        <!-- 4. Market -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ตลาดที่หลักทรัพย์อ้างอิงจดทะเบียน</label>
+            <div id="marketDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
                 </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10437">
-                    NASDAQ
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
                 </div>
             </div>
+        </div>
 
-            <!-- Row 4 (Gray) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10438">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10439">
-                    อัตราส่วนต่อหุ้นอ้างอิง
+        <!-- 5. Theme -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ธีมการลงทุน</label>
+            <div id="themeDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
                 </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10440">
-                    1 : 1
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
                 </div>
             </div>
+        </div>
 
-            <!-- Row 5 (White) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10441">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10442">
-                    ราคาปิดล่าสุด (บาท)
+
+
+        <!-- 7. Dividend -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label
+                style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">ประวัติการจ่ายปันผล</label>
+            <div id="divDropdown" class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span>ทั้งหมด</span>
+                    <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                        style="width: 24px; height: 24px;">
                 </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10443">
-                    6,750.00
+                <div class="dropdown-options">
+                    <!-- Options populated by JS -->
                 </div>
             </div>
+        </div>
 
-            <!-- Row 6 (Gray) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10444">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10445">
-                    %เปลี่ยนแปลง
-                </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #f1f4f8; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10446">
-                    +2.50%
-                </div>
+        <!-- 8. Session -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #0d0d0e;">Trading Session</label>
+            <div
+                style="background: #FFFFFF; border: 1px solid #CBD3DF; border-radius: 8px; height: 44px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #141416;">ทั้งหมด</span>
+                <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a0166905-3a6e-45eb-9a7a-53f1eebea3a2/chevron-down.png?uh=24d1fdf284c2c631df2c270e2b3e3818a53ac8245bcf90264c38a898fb8c8434"
+                    style="width: 24px; height: 24px;">
             </div>
-
-            <!-- Row 7 (White) -->
-            <div style="display: flex; align-items: center; width: 100%;" data-name="TD" data-node-id="17778:10447">
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; width: 400px; flex-shrink: 0;"
-                    data-name="Table detail" data-node-id="17778:10448">
-                    บทวิเคราะห์
-                </div>
-                <div style="padding: 8px; border-bottom: 1px solid #d6d8e0; height: 40px; display: flex; align-items: center; font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 400; line-height: normal; color: #212529; white-space: nowrap; background-color: #ffffff; flex: 1; min-width: 0;"
-                    data-name="Table detail" data-node-id="17778:10449">
-                    <a href="#"
-                        style="color: #1e90ff; text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">ข้อมูลบทวิเคราะห์
-                        ณ วันที่ dd mm yyyy</a>
-                </div>
-            </div>
-
         </div>
     </div>
+
+    <!-- Action Buttons (Figma Integration) -->
+    <div
+        style="display: flex; gap: 32px; align-items: center; justify-content: flex-end; width: 100%; margin-bottom: 24px;">
+        <!-- Clear Button -->
+        <button id="clearBtn"
+            style="display: flex; gap: 8px; align-items: center; cursor: pointer; background: none; border: none; padding: 0;">
+            <div style="width: 16px; height: 16px; position: relative;">
+                <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/46314a6b-c3a9-45ca-a7cf-8132aa500b9a/Refresh-Icon.png?uh=46487756a049dd4d6babb1e76fe11f6bf5907779f49a5d4b511d7e7b60529472"
+                    style="width: 100%; height: 100%; display: block;">
+            </div>
+            <span
+                style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 14px; color: #0d0d0e; line-height: 1.5;">ล้างการค้นหา</span>
+        </button>
+
+        <!-- Search Button -->
+        <button id="mainSearchBtn"
+            style="background-color: #1E90FF; display: flex; height: 44px; align-items: center; justify-content: center; padding: 0 24px; border-radius: 8px; width: 200px; cursor: pointer; border: none;">
+            <span
+                style="font-family: 'BLS', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF; line-height: 1.5;">ค้นหา</span>
+        </button>
+    </div>
+
+    <div style="background: #FFFFFF; border-radius: 12px; border: 1px solid #E6E8ED; overflow: hidden;">
+
+        <div style="max-height: 900px; overflow-y: auto; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: separate; border-spacing: 0; min-width: 1200px;">
+                <thead>
+                    <tr>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 20; white-space: nowrap; left: 0; min-width: 180px;">
+                            DR01</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap; width: 180px; min-width: 180px; max-width: 180px; overflow: hidden; text-overflow: ellipsis;">
+                            สินทรัพย์อ้างอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ราคาล่าสุด (บาท)</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            %เปลี่ยนแปลง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            1M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: left; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            3M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            6M</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: right; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            YTD</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            ตลาดหลักทรัพย์อ้าอิง</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            อัตราแปลงสภาพ</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            มูลค่าตลาด (ล้านบาท)</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            การจ่ายปันผล</th>
+                        <th
+                            style="background-color: #353945; color: #FFFFFF; font-size: 14px; font-weight: 700; text-align: center; padding: 12px 16px; position: sticky; top: 0; z-index: 10; white-space: nowrap;">
+                            Trading Session</th>
+                    </tr>
+                </thead>
+                <tbody id="dr-table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .dr-flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #E6E8ED;
+            display: inline-block;
+            flex-shrink: 0;
+            pointer-events: none;
+            /* Prevent icon from intercepting clicks */
+        }
+
+        .flag-us {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/7ee26b85-4860-48c1-b616-2e0c3e08d126/us_1.png?uh=bfbce81239ff30d9de9b04a94e97a70765b27092b02244113fca3c6fd805a61c');
+        }
+
+        .flag-hk {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/a5271239-cfd3-443d-82f9-471c1ae2cde8/HK.svg?uh=0a7f1286996d50d9b256581746cc50f001fb0f91489ecc1b2a5b09d90cc6e342');
+        }
+
+        .flag-vn {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/200e723c-c41f-4eef-ba90-379c02843f6c/VN.png?uh=e9766b10f204fe9ff9517ee191ad09384cd4b044dbb2c57174cde2dcaace58fd');
+        }
+
+        .flag-cn {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/9153b884-d147-4ed0-8a11-7be4cbcdab08/CN.webp?uh=5633e87705bdfc1efb704711395e9fd228215b8aa99ba01822a6a96eec22fe92');
+        }
+
+        .flag-ind {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/80050839-66af-49db-a6f7-675ec80090da/IN.png?uh=ad40bd3f689f26261c8a6185f6dce6889e1ea11aa414fa57ea54d58839c5efbe');
+        }
+
+        .flag-jp {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/48b09c03-874f-4ba3-9c3c-58eb2b0e1c04/JP.svg?uh=a058fa82810d4bfd3772de4bc3a7a36f0ee7dee9da16471081f42a7bc0b93a5b');
+        }
+
+        .flag-fr {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/b9cdf42f-2d76-4481-8422-833a320e7aae/FR.png?uh=09d2ffa2d45f83757fbf84dcc8b720d95ef9c9224c3c5f36c4cb9bd2793b682a');
+        }
+
+        .flag-nl {
+            background-image: url('/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4393/cid/1/cdid/11870/readonly/0/pbmode/edit/h/e3ee5e6be00950faae877e95ba1bb6945d3d1b4a2a3b1fef5011d4ce0685af1c/-/getmedia/c58bf571-94ae-477f-926f-aa7b81f3c172/NL.png?uh=178f7372233a7800453dc5ac887140b52f6696b3a3655c5a958d1427f428969d');
+        }
+
+        /* Custom Dropdown Styles */
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            height: 44px;
+        }
+
+        .dropdown-trigger {
+            background: #FFFFFF;
+            border: 1px solid #CBD3DF;
+            border-radius: 8px;
+            height: 100%;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .dropdown-trigger span {
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            color: #141416;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #CBD3DF;
+            border-radius: 8px;
+            margin-top: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-options.show {
+            display: block;
+        }
+
+        .dropdown-option {
+            padding: 10px 16px;
+            font-family: 'BLS Text', sans-serif;
+            font-size: 16px;
+            color: #141416;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-option:hover {
+            background-color: #F5F6F8;
+        }
+
+        .dropdown-option.selected {
+            background-color: #E6F0FF;
+            color: #1E90FF;
+            font-weight: 700;
+        }
+    </style>
 </div>
+
+<script>
+    (function () {
+        let tableData = [];
+
+        const symbolThemeMap = {
+            'AAPL01': "Consumer Tech", 'AMZN01': "E-Commerce", 'CRM01': "Software",
+            'GOOGL01': "Software", 'ISRG01': "Health Tech", 'META01': "Internet Platform",
+            'MICRON01': "Semiconductor", 'MSFT01': "Software", 'NVDA01': "Semiconductor",
+            'ORCL01': "Software", 'PLTR01': "Software", 'TSLA01': "Future Mobility",
+            'BABA01': "E-Commerce", 'BIDU01': "Internet Platform", 'BILIBILI01': "Internet Platform",
+            'BYDCOM01': "Future Mobility", 'CATL01': "Future Mobility", 'KUAISHO01': "Internet Platform",
+            'PINGAN01': "Longevity", 'SMIC01': "Semiconductor", 'TENCENT01': "Internet Platform",
+            'XIAOMI01': "Consumer Tech", 'ASML01': "Semiconductor", 'LVMH01': "Luxury",
+            'NDX01': "US Technology", 'SP50001': "US Large-Cap", 'CN01': "China Large-Cap",
+            'STAR5001': "China Technology", 'CNTECH01': "HK Technology", 'HK01': "HK Large-Cap",
+            'HKCE01': "HK Large-Cap", 'E1VFVN3001': "VN Large-Cap", 'FUEVFVND01': "VN Large-Cap",
+            'INDIA01': "India Large & Mid-Cap", 'JAPAN10001': "Japan Large-Cap"
+        };
+
+        const tbody = document.getElementById('dr-table-body');
+        const searchInput = document.getElementById('searchInput');
+
+        // Helper to format values as percentages
+        const formatPct = (val) => {
+            if (val === null || val === undefined || val === "-") return "-";
+            const num = parseFloat(val);
+            return isNaN(num) ? "-" : (num > 0 ? `+${num.toFixed(2)}%` : `${num.toFixed(2)}%`);
+        };
+
+        // Helper for country flags based on Exchange
+        function getFlag(item) {
+            const ex = item.Exchange;
+            if (ex === "HKEX") return 'hk';
+            if (ex === "Nasdaq" || ex === "NYSE") return 'us';
+            if (ex === "Ho Chi Minh Stock Exchange") return 'vn';
+            if (ex === "Euronext Paris") return 'fr';
+            if (ex === "Euronext Amsterdam") return 'nl';
+            return 'us';
+        }
+
+        // Helper for Country Name mapping
+        function getCountryName(ex) {
+            const map = {
+                "HKEX": "ฮ่องกง",
+                "Nasdaq": "สหรัฐอเมริกา",
+                "NYSE": "สหรัฐอเมริกา",
+                "Ho Chi Minh Stock Exchange": "เวียดนาม",
+                "Euronext Paris": "ฝรั่งเศส",
+                "Euronext Amsterdam": "เนเธอร์แลนด์"
+            };
+            return map[ex] || "อื่นๆ";
+        }
+
+        async function fetchData() {
+            try {
+                tbody.innerHTML = '<tr><td colspan="13" style="padding: 24px; text-align: center;">กำลังโหลดข้อมูล...</td></tr>';
+
+                const response = await fetch('https://investmentstation.bualuang.co.th/data_DRweb.php');
+                const rawData = await response.json();
+
+                const etfSymbols = [
+                    'NDX01','SP50001','CN01','JAPAN10001','INDIA01','STAR5001',
+                    'CNTECH01','HK01','HKCE01','E1VFVN3001','FUEVFVND01'
+                ];
+
+                tableData = rawData.map(item => ({
+                    symbol: item.Symbol,
+                    asset: item.UL,
+                    price: item.Last_price?.toLocaleString() || '-',
+                    change: formatPct(item["Change%_1D"]),
+                    change1m: formatPct(item["Change%_1M"]),
+                    change3m: formatPct(item["Change%_3M"]),
+                    change6m: formatPct(item["Change%_6M"]),
+                    ytd: formatPct(item["Change%_YTD"]),
+                    market: item.Exchange,
+                    theme: symbolThemeMap[item.Symbol] || "Other",
+                    type: etfSymbols.includes(item.Symbol) ? "DR on ETF" : "DR on STOCK",
+                    country: getCountryName(item.Exchange),
+                    ratio: `1 : ${item.Ratio}`,
+                    cap: (item.Marketcap / 1000000).toLocaleString(undefined, { maximumFractionDigits: 0 }),
+                    div: item.Dividend_Record === "Record" ? "จ่าย" : "ไม่จ่าย",
+                    session: item.Trading_session,
+                    // ensure NDX/SP500 treated as US
+                    flag: (item.Symbol && (item.Symbol.startsWith('NDX') || item.Symbol.startsWith('SP500'))) ? 'us' : getFlag(item.Exchange)
+                }));
+
+                render();
+            } catch (error) {
+                console.error("Error:", error);
+                tbody.innerHTML = '<tr><td colspan="13" style="padding: 24px; text-align: center; color: red;">ไม่สามารถเชื่อมต่อข้อมูลได้</td></tr>';
+            }
+        }
+
+        function render() {
+            const searchTerm = searchInput.value.trim().toUpperCase();
+
+            // Re-using your logic for colors
+            const getChangeColor = (val) => {
+                if (!val || val === '-') return '#353945';
+                if (val.includes('+')) return '#00B16A';
+                if (val.includes('-')) return '#D92D20';
+                return '#353945';
+            };
+
+            const filteredData = tableData.filter(item => {
+                const matchesSearch = !searchTerm || item.symbol.includes(searchTerm);
+                // (Add other filter logic here using filterState as per your original code)
+                return matchesSearch;
+            });
+
+            let html = '';
+            filteredData.forEach((item, index) => {
+                const bgColor = index % 2 === 0 ? '#FFFFFF' : '#F4F5F6';
+                const cellStyle = "padding: 12px 16px; font-size: 14px; color: #141416; border-bottom: 1px solid #E6E8ED; vertical-align: middle; white-space: nowrap;";
+                const stickyFirstColStyle = "position: sticky; left: 0; z-index: 5; border-right: 1px solid #E6E8ED;";
+
+                html += `
+                    <tr style="background-color: ${bgColor};">
+                        <td style="${cellStyle} ${stickyFirstColStyle} background-color: ${bgColor};">
+                            <a href="https://knowledge.bualuang.co.th/article/${item.symbol}" target="_blank" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;font-weight:700;">
+                                <span class="dr-flag-icon flag-${item.flag}"></span>
+                                <span>${item.symbol}</span>
+                            </a>
+                        </td>
+                        <td style="${cellStyle} text-align: left; width: 180px;">${item.asset}</td>
+                        <td style="${cellStyle} text-align: right;">${item.price}</td>
+                        <td style="${cellStyle} text-align: right; color: ${getChangeColor(item.change)};">${item.change}</td>
+                        <td style="${cellStyle} text-align: right; color: ${getChangeColor(item.change1m)};">${item.change1m}</td>
+                        <td style="${cellStyle} text-align: right; color: ${getChangeColor(item.change3m)};">${item.change3m}</td>
+                        <td style="${cellStyle} text-align: right; color: ${getChangeColor(item.change6m)};">${item.change6m}</td>
+                        <td style="${cellStyle} text-align: right; color: ${getChangeColor(item.ytd)};">${item.ytd}</td>
+                        <td style="${cellStyle}">${item.market}</td>
+                        <td style="${cellStyle} text-align: right;">${item.ratio}</td>
+                        <td style="${cellStyle} text-align: right;">${item.cap}</td>
+                        <td style="${cellStyle} text-align: center;">${item.div}</td>
+                        <td style="${cellStyle} text-align: center;">${item.session}</td>
+                    </tr>`;
+            });
+            tbody.innerHTML = html || '<tr><td colspan="13" style="padding: 24px; text-align: center;">ไม่พบข้อมูล</td></tr>';
+        }
+
+        // Initialize listeners
+        searchInput.addEventListener('input', render);
+        fetchData();
+    })();
+</script>

@@ -4,8 +4,8 @@
     <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px;justify-content:center;">
         <span style="font-size:16px;font-weight:700;color:#0d0d0e;">เปรียบเทียบ</span>
 
-        <button id="btn-underlying" onclick="selectCompareTab('underlying')" style="padding:8px 24px;border-radius:999px;border:1px solid #1565B3;background:#1565B3;color:#fff;font-size:16px;font-weight:700;cursor:pointer;">META</button>
-        <button id="btn-dr01" onclick="selectCompareTab('dr01')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">META01</button>
+        <button id="btn-underlying" onclick="selectCompareTab('underlying')" style="padding:8px 24px;border-radius:999px;border:1px solid #1565B3;background:#1565B3;color:#fff;font-size:16px;font-weight:700;cursor:pointer;">ISRG</button>
+        <button id="btn-dr01" onclick="selectCompareTab('dr01')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">ISRG01</button>
         <button id="btn-usdthb" onclick="selectCompareTab('usdthb')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">USD/THB</button>
     </div>
 
@@ -70,14 +70,14 @@
                 btnUnderlying.style.cssText = activeStyle;
                 tvWrapper.style.display = "block";
                 ctaWrapper.style.display = "none";
-                createTV("NASDAQ:META");
+                createTV("NASDAQ:CRM");
             }
             if (tab === "dr01") {
                 btnDr01.style.cssText = activeStyle;
                 tvWrapper.style.display = "none";
                 ctaWrapper.style.display = "flex";
-                textElem.textContent = "ดูราคาอ้างอิง META01";
-                linkElem.href = "https://www.tradingview.com/chart/?symbol=META01";
+                textElem.textContent = "ดูราคาอ้างอิง ISRG01";
+                linkElem.href = "https://www.tradingview.com/chart/?symbol=ISRG01";
             }
             if (tab === "usdthb") {
                 btnUsdthb.style.cssText = activeStyle;
