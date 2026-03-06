@@ -8,7 +8,7 @@
             <div
                 style="border-bottom: 1px solid #cbd3df; padding-bottom: 8px; display: flex; gap: 8px; align-items: center;">
                 <div style="position: relative; flex: 1; display: flex; align-items: center; gap: 12px;">
-                    <input type="text" id="calculator-dr-code" value="NDX01" placeholder="พิมพ์ DR code..."
+                    <input type="text" id="calculator-dr-code" placeholder="พิมพ์ DR code..."
                         style="font-family: 'BLS', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.2; color: #1e90ff; border: none; outline: none; background: transparent; padding: 0; margin: 0; flex: 1; min-width: 0;">
                     <img src="/cmsctx/pm/782074c6-06f0-4ca7-80c7-3189fa09448c/lang/th/wpid/4388/cid/1/cdid/11852/readonly/0/pbmode/edit/h/70bd560c03fe0d37d759f867e8d8f34511df020d21a72b0dcb3120263d569463/-/getmedia/c1df46f2-c394-4bde-a851-05a8ff7ce33c/search-1.webp?uh=c4f70c1d6595f22b083ea67d550d767807aaa08ab43988fbd8f9c816f27e6924"
                         alt="search" style="width: 28px; height: 28px; flex-shrink: 0; cursor: pointer;"
@@ -22,7 +22,7 @@
 
             <p id="calculator-etf-name"
                 style="font-family: 'BLS', sans-serif; font-size: 18px; font-weight: 700; line-height: 1.5; letter-spacing: -0.18px; color: #23262f; margin: 0;">
-                ChinaAMC NASDAQ 100 ETF (3086)
+                -
             </p>
 
             <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -32,7 +32,7 @@
                 </p>
                 <p id="calculator-ratio"
                     style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
-                    340 : 1
+                    -
                 </p>
             </div>
 
@@ -110,48 +110,11 @@
 
 
 <script>
-    const drData = {
-        "DR01": [
-            { "code": "NDX01", "issuer": "ChinaAMC NASDAQ 100 ETF", "ratio": "340:1" },
-            { "code": "SP50001", "issuer": "Hang Seng S&P 500 Index ETF", "ratio": "120:1" },
-            { "code": "CN01", "issuer": "ChinaAMC CSI 300 Index ETF", "ratio": "95:1" },
-            { "code": "STAR5001", "issuer": "Premia China STAR50 ETF", "ratio": "110:1" },
-            { "code": "CNTECH", "issuer": "ChinaAMC Hang Seng TECH Index ETF", "ratio": "150:1" },
-            { "code": "HK01", "issuer": "Tracker Fund of Hong Kong", "ratio": "150:1" },
-            { "code": "HKCE01", "issuer": "Hang Seng China Enterprises Index ETF", "ratio": "150:1" },
-            { "code": "E1VFVN3001", "issuer": "DCVFMVN30 ETF", "ratio": "150:1" },
-            { "code": "FUEVFND01", "issuer": "DCVFMVN DIAMOND ETF", "ratio": "150:1" },
-            { "code": "INDIA01", "issuer": "ChinaAMC MSCI India ETF", "ratio": "150:1" },
-            { "code": "JAPAN10001", "issuer": "Hang Seng Japan TOPIX 100 Index ETF", "ratio": "150:1" },
-            { "code": "AAPL01", "issuer": "Apple Inc.", "ratio": "150:1" },
-            { "code": "AMZN01", "issuer": "AMAZON.COM, INC.", "ratio": "150:1" },
-            { "code": "CRM01", "issuer": "Salesforce Inc.", "ratio": "150:1" },
-            { "code": "GOOGL01", "issuer": "Alphabet Inc.", "ratio": "150:1" },
-            { "code": "ISRG01", "issuer": "Intuitive Surgical Inc.", "ratio": "150:1" },
-            { "code": "META01", "issuer": "Meta Platforms, Inc.", "ratio": "150:1" },
-            { "code": "MICRON01", "issuer": "Micron Technology, Inc.", "ratio": "150:1" },
-            { "code": "MSFT01", "issuer": "MICROSOFT CORPORATION", "ratio": "150:1" },
-            { "code": "NVDA01", "issuer": "NVIDIA CORPORATION", "ratio": "150:1" },
-            { "code": "ORCL01", "issuer": "Oracle Corporation", "ratio": "150:1" },
-            { "code": "PLTR01", "issuer": "Palantir Technologies Inc. Class A", "ratio": "150:1" },
-            { "code": "TSLA01", "issuer": "Tesla, Inc.", "ratio": "150:1" },
-            { "code": "BABA01", "issuer": "Alibaba Group Holding Limited", "ratio": "150:1" },
-            { "code": "BIDU01", "issuer": "Baidu Inc.", "ratio": "150:1" },
-            { "code": "BILIBILI01", "issuer": "Bilibili Inc.", "ratio": "150:1" },
-            { "code": "BYDCOM01", "issuer": "BYD Company Limited", "ratio": "150:1" },
-            { "code": "CATL01", "issuer": "Contemporary Amperex Technology Co., Limited", "ratio": "150:1" },
-            { "code": "KUAISH01", "issuer": "Kuaishou Technology", "ratio": "150:1" },
-            { "code": "PINAGAN01", "issuer": "Ping An Insurance (Group) Company of China, Ltd.", "ratio": "150:1" },
-            { "code": "SMIC01", "issuer": "Semiconductor Manufacturing International Corporation", "ratio": "150:1" },
-            { "code": "TENCENT01", "issuer": "Tencent Holdings Ltd.", "ratio": "150:1" },
-            { "code": "XIAOMI01", "issuer": "Xiaomi Corporation", "ratio": "150:1" },
-            { "code": "ASML01", "issuer": "ASML Holding N.V.", "ratio": "150:1" },
-            { "code": "LVMH01", "issuer": "LVMH Moët Hennessy Louis Vuitton SE", "ratio": "150:1" }
-        ]
-    };
+    const DATA_URL = 'https://investmentstation.bualuang.co.th/data_DRweb.php';
 
-    let currentDR = drData.DR01[0];
-    let currentRatio = parseInt(currentDR.ratio.split(':')[0], 10);
+    let drData = [];
+    let currentDR = null;
+    let currentRatio = 1;
 
     const drInput = document.getElementById('calculator-dr-code');
     const dropdownList = document.getElementById('dropdownList');
@@ -165,21 +128,11 @@
     const assetCurrencyLabel = document.getElementById('assetCurrencyLabel');
     const exchangeCurrencyLabel = document.getElementById('exchangeCurrencyLabel');
 
-    function getCurrency(symbol) {
-        const hk = ['BABA01', 'TENCENT01', 'BYDCOM01', 'BIDU01', 'CATL01', 'PINAGAN01', 'XIAOMI01', 'HK01', 'HKCE01', 'KUAISHO01', 'SMIC01', 'CNTECH'];
-        const vn = ['E1VFVN3001', 'FUEVFVND01', 'FUEVFND01'];
-        const eu = ['LVMH01', 'ASML01'];
-        const ind = ['INDIA01'];
-        const jp = ['JAPAN10001'];
-        const cn = ['CN01', 'STAR5001'];
-
-        if (hk.includes(symbol)) return 'HKD';
-        if (vn.includes(symbol)) return 'VND';
-        if (ind.includes(symbol)) return 'INR';
-        if (jp.includes(symbol)) return 'JPY';
-        if (cn.includes(symbol)) return 'CNY';
-        if (eu.includes(symbol)) return 'EUR';
-        return 'USD'; // Default
+    function getCurrency(country) {
+        const code = (country || '').toLowerCase();
+        if (code === 'us') return 'USD';
+        if (code === 'vn') return 'VND';
+        return 'HKD';
     }
 
     async function fetchExchangeRate(currency) {
@@ -220,12 +173,11 @@
     }
 
     function updateCalculatorDisplay(dr) {
+        if (!dr) return;
         drInput.value = dr.code;
         document.getElementById('calculator-etf-name').textContent = dr.issuer;
-        document.getElementById('calculator-ratio').textContent = dr.ratio;
-
-        const ratioParts = dr.ratio.split(':');
-        currentRatio = parseInt(ratioParts[0], 10);
+        document.getElementById('calculator-ratio').textContent = dr.ratioDisplay;
+        currentRatio = dr.ratioValue || 1;
 
         // Update Button Text and Dynamic URL
         const infoBtnSpan = infoBtn.querySelector('span');
@@ -235,7 +187,7 @@
         infoBtn.href = `https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${dr.code}`;
 
         // Currency Update
-        const currency = getCurrency(dr.code);
+        const currency = getCurrency(dr.country);
         if (assetCurrencyLabel) assetCurrencyLabel.textContent = currency;
         if (exchangeCurrencyLabel) exchangeCurrencyLabel.textContent = `1 ${currency} to THB`;
 
@@ -277,7 +229,7 @@
     });
 
     function filterDropdownItems(searchTerm) {
-        const filtered = drData.DR01.filter(dr => dr.code.toLowerCase().includes(searchTerm.toLowerCase()));
+        const filtered = drData.filter(dr => dr.code.toLowerCase().includes(searchTerm.toLowerCase()));
         renderDropdownItems(filtered);
     }
 
@@ -303,6 +255,29 @@
     assetPriceInput.addEventListener('input', calculateFairPrice);
     exchangeRateInput.addEventListener('input', calculateFairPrice);
 
+    async function loadDrData() {
+        try {
+            const response = await fetch(DATA_URL);
+            const rawData = await response.json();
+            if (!Array.isArray(rawData)) return;
+
+            drData = rawData
+                .filter(item => item.Symbol && item.UL && item.Ratio)
+                .map(item => ({
+                    code: item.Symbol,
+                    issuer: item.UL,
+                    ratioValue: Number(item.Ratio) || 1,
+                    ratioDisplay: `1 : ${item.Ratio}`,
+                    country: item.Country || ''
+                }));
+
+            currentDR = drData[0] || null;
+            updateCalculatorDisplay(currentDR);
+        } catch (e) {
+            console.error('Failed to load DR data:', e);
+        }
+    }
+
     // Initialize display on load
-    updateCalculatorDisplay(currentDR);
+    loadDrData();
 </script>

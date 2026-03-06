@@ -1,26 +1,43 @@
-<div class="tradingview-widget-container" style="height:500px; width:100%;">
-    <div id="tradingview_aapl_chart" style="height:calc(100% - 32px); width:100%;"></div>
-    <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank">
-            <span class="blue-text">AAPL Chart</span>
-        </a> by TradingView
-    </div>
-    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-    <script type="text/javascript">
-        new TradingView.widget(
-            {
-                "autosize": true,
-                "symbol": "NASDAQ:AAPL",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "light",
-                "style": "1",
-                "locale": "en",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "allow_symbol_change": true,
-                "container_id": "tradingview_aapl_chart"
-            }
-        );
-    </script>
+<div>
+
+  <h2 style="margin:0 0 16px 0;">TradingView Chart</h2>
+
+  <div class="tradingview-widget-container" style="width:100%; max-width:1200px;">
+    <div id="tradingview_chart" style="height:600px;"></div>
+  </div>
+
+  
+
 </div>
+<script>
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/tv.js';
+    script.async = true;
+    script.onload = function () {
+      if (typeof TradingView === 'undefined') return;
+      new TradingView.widget({
+        container_id: "tradingview_chart",
+        width: "100%",
+        height: 600,
+        symbol: "NASDAQ:AAPL",
+        interval: "D",
+        timezone: "Asia/Bangkok",
+        theme: "light",
+        style: "1",
+        locale: "en",
+        toolbar_bg: "#f1f3f6",
+        enable_publishing: false,
+        hide_top_toolbar: false,
+        hide_legend: false,
+        save_image: false,
+        withdateranges: true,
+        allow_symbol_change: true,
+        details: false,
+        hotlist: false,
+        calendar: false
+      });
+    };
+    document.head.appendChild(script);
+  })();
+</script>

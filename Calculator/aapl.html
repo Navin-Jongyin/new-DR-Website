@@ -32,7 +32,7 @@
                 </p>
                 <p id="calculator-ratio"
                     style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
-                    340 : 1
+                    1 : 340
                 </p>
             </div>
 
@@ -116,11 +116,11 @@
         "code": "AAPL01",
         "issuer": "Apple Inc.",
 
-        "ratio": "150:1",
+        "ratio": "1:340",
 
     };
 
-    let currentRatio = parseInt(currentDR.ratio.split(':')[0], 10);
+    let currentRatio = parseInt(currentDR.ratio.split(':')[1], 10);
 
     const drInput = document.getElementById('calculator-dr-code');
     const assetPriceInput = document.getElementById('assetPrice');
@@ -134,7 +134,7 @@
         document.getElementById('calculator-ratio').textContent = dr.ratio;
 
         const ratioParts = dr.ratio.split(':');
-        currentRatio = parseInt(ratioParts[0], 10);
+        currentRatio = parseInt(ratioParts[1], 10);
 
         calculateFairPrice();
     }

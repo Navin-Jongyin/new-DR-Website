@@ -381,8 +381,12 @@
                     cap: (item.Marketcap / 1000000).toLocaleString(undefined, { maximumFractionDigits: 0 }),
                     div: item.Dividend_Record === "Record" ? "จ่าย" : "ไม่จ่าย",
                     session: item.Trading_session,
-                    // ensure NDX/SP500 treated as US
-                    flag: (item.Symbol && (item.Symbol.startsWith('NDX') || item.Symbol.startsWith('SP500'))) ? 'us' : getFlag(item.Exchange)
+                    // force country flags for specific symbols
+                    flag: (item.Symbol && (item.Symbol.startsWith('NDX') || item.Symbol.startsWith('SP500'))) ? 'us' :
+                          (item.Symbol && (item.Symbol.startsWith('CN01') || item.Symbol.startsWith('STAR5001'))) ? 'cn' :
+                          (item.Symbol && item.Symbol.startsWith('INDIA01')) ? 'ind' :
+                          (item.Symbol && item.Symbol.startsWith('JAPAN10001')) ? 'jp' :
+                          getFlag(item.Exchange)
                 }));
 
                 render();

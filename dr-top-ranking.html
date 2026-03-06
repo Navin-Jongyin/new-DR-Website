@@ -170,55 +170,14 @@
     </section>
 
     <script>
-        const tableData = {
-            'active': [
-                { symbol: 'AMD80', value: '1.55', quantity: '30,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'TSLA80', value: '2.86', quantity: '15,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'NVDA80', value: '31.50', quantity: '12,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'AMZN80', value: '2.02', quantity: '10,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'GOOGL80', value: '4.62', quantity: '8,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'META80', value: '2.76', quantity: '5,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'NVDA01', value: '18.55', quantity: '4,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'TSLA01', value: '42.00', quantity: '3,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'MNST06', value: '3.28', quantity: '2,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'KUAISH23', value: '2.04', quantity: '1,243,032', price: '20.87', change: '+20.87', marketValue: '20.87', flag: 'hk' },
-            ],
-            'value': [
-                { symbol: 'NVDA80', value: '31.50', quantity: '30,243,032', price: '20.87', change: '+0.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'TSLA80', value: '28.50', quantity: '15,243,032', price: '124.28', change: '-12.24', marketValue: '124.28', flag: 'us' },
-                { symbol: 'BABA80', value: '25.30', quantity: '12,243,032', price: '88.09', change: '+1.35', marketValue: '88.09', flag: 'hk' },
-                { symbol: 'TENCENT80', value: '20.10', quantity: '10,243,032', price: '334.00', change: '+3.35', marketValue: '334.00', flag: 'hk' },
-                { symbol: 'MSFT80', value: '18.90', quantity: '8,243,032', price: '239.82', change: '-44.60', marketValue: '239.82', flag: 'us' },
-                { symbol: 'AMZN80', value: '15.42', quantity: '7,243,032', price: '85.42', change: '+0.50', marketValue: '85.42', flag: 'us' },
-                { symbol: 'GOOGL80', value: '12.33', quantity: '6,243,032', price: '89.23', change: '-1.20', marketValue: '89.23', flag: 'us' },
-                { symbol: 'META80', value: '10.55', quantity: '5,243,032', price: '130.02', change: '+2.10', marketValue: '130.02', flag: 'us' },
-                { symbol: 'AMD80', value: '8.44', quantity: '4,243,032', price: '64.55', change: '+1.55', marketValue: '64.55', flag: 'us' },
-                { symbol: 'AAPL80', value: '6.77', quantity: '3,243,032', price: '129.93', change: '-0.30', marketValue: '129.93', flag: 'us' },
-            ],
-            'gainer': [
-                { symbol: 'TENCENT80', value: '20.10', quantity: '10,243,032', price: '334.00', change: '+3.35', marketValue: '334.00', flag: 'hk' },
-                { symbol: 'BABA80', value: '25.30', quantity: '12,243,032', price: '88.09', change: '+1.35', marketValue: '88.09', flag: 'hk' },
-                { symbol: 'NDX80', value: '5.60', quantity: '1,243,032', price: '20.87', change: '+0.25', marketValue: '20.87', flag: 'us' },
-                { symbol: 'CN01', value: '4.20', quantity: '2,100,000', price: '27.40', change: '+0.88', marketValue: '27.40', flag: 'cn' },
-                { symbol: 'E1VFVN3001', value: '3.10', quantity: '1,500,000', price: '18.50', change: '+1.25', marketValue: '18.50', flag: 'vn' },
-                { symbol: 'NVDA80', value: '31.50', quantity: '30,243,032', price: '20.87', change: '+0.87', marketValue: '20.87', flag: 'us' },
-                { symbol: 'AMZN80', value: '15.42', quantity: '7,243,032', price: '85.42', change: '+0.50', marketValue: '85.42', flag: 'us' },
-                { symbol: 'META80', value: '10.55', quantity: '5,243,032', price: '130.02', change: '+2.10', marketValue: '130.02', flag: 'us' },
-                { symbol: 'AMD80', value: '8.44', quantity: '4,243,032', price: '64.55', change: '+1.55', marketValue: '64.55', flag: 'us' },
-                { symbol: 'HK01', value: '2.30', quantity: '1,800,000', price: '14.80', change: '+0.05', marketValue: '14.80', flag: 'hk' },
-            ],
-            'loser': [
-                { symbol: 'MSFT80', value: '18.90', quantity: '8,243,032', price: '239.82', change: '-44.60', marketValue: '239.82', flag: 'us' },
-                { symbol: 'TSLA80', value: '28.50', quantity: '15,243,032', price: '124.28', change: '-12.24', marketValue: '124.28', flag: 'us' },
-                { symbol: 'SP50001', value: '1.20', quantity: '500,000', price: '18.55', change: '-0.12', marketValue: '18.55', flag: 'us' },
-                { symbol: 'GOOGL80', value: '12.33', quantity: '6,243,032', price: '89.23', change: '-1.20', marketValue: '89.23', flag: 'us' },
-                { symbol: 'AAPL80', value: '6.77', quantity: '3,243,032', price: '129.93', change: '-0.30', marketValue: '129.93', flag: 'us' },
-                { symbol: 'JAPAN10001', value: '2.50', quantity: '1,200,000', price: '12.50', change: '-0.50', marketValue: '12.50', flag: 'jp' },
-                { symbol: 'INDIA01', value: '1.80', quantity: '900,000', price: '15.80', change: '-0.20', marketValue: '15.80', flag: 'ind' },
-                { symbol: 'STAR5001', value: '0.90', quantity: '400,000', price: '10.50', change: '-0.15', marketValue: '10.50', flag: 'cn' },
-                { symbol: 'PINGAN80', value: '1.10', quantity: '600,000', price: '45.20', change: '-0.80', marketValue: '45.20', flag: 'hk' },
-                { symbol: 'XIAOMI80', value: '0.95', quantity: '500,000', price: '10.20', change: '-0.10', marketValue: '10.20', flag: 'hk' },
-            ]
+        const DATA_URL = 'https://investmentstation.bualuang.co.th/data_DRweb.php';
+        const MAX_ROWS = 10;
+
+        let tableData = {
+            active: [],
+            value: [],
+            gainer: [],
+            loser: []
         };
 
         const tableBody = document.getElementById('table-body');
@@ -251,22 +210,82 @@
 
                 // Change Color Logic
                 let changeColor = '#353945';
-                if (row.change.includes('+')) changeColor = '#077D55'; // Green
-                if (row.change.includes('-')) changeColor = '#D92D20'; // Red
+                if ((row.change || '').includes('+')) changeColor = '#077D55'; // Green
+                if ((row.change || '').includes('-')) changeColor = '#D92D20'; // Red
                 const cellChange = `${cellRight} color: ${changeColor}; font-weight: 700;`;
 
                 const flagHtml = row.flag ? `<div class="dr-flag-icon flag-${row.flag}"></div>` : '';
 
                 tr.innerHTML = `
-                    <td style="${symbolStyle}">${flagHtml} ${row.symbol}</td>
-                    <td style="${cellRight}">${row.value}</td>
-                    <td style="${cellRight}">${row.quantity}</td>
-                    <td style="${cellRight}">${row.price}</td>
-                    <td style="${cellChange}">${row.change}</td>
-                    <td style="${cellRight}">${row.marketValue}</td>
+                    <td style="${symbolStyle}">${flagHtml} ${row.symbol || '-'}</td>
+                    <td style="${cellRight}">${row.value || '-'}</td>
+                    <td style="${cellRight}">${row.quantity || '-'}</td>
+                    <td style="${cellRight}">${row.price || '-'}</td>
+                    <td style="${cellChange}">${row.change || '-'}</td>
+                    <td style="${cellRight}">${row.marketValue || '-'}</td>
                 `;
                 tableBody.appendChild(tr);
             });
+        }
+
+        function formatNumber(value, options = {}) {
+            if (value === null || value === undefined || Number.isNaN(value)) return '-';
+            return new Intl.NumberFormat('en-US', options).format(value);
+        }
+
+        function normalizeRow(item) {
+            const tradeValue = Number(item.Total_Trade_Value);
+            const tradeVolume = Number(item.Total_Trade_Volume);
+            const lastPrice = Number(item.Last_price);
+            const change1D = Number(item['Change%_1D']);
+            const marketcap = Number(item.Marketcap);
+
+            return {
+                symbol: item.Symbol || '-',
+                value: tradeValue ? formatNumber(tradeValue / 1_000_000, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '-',
+                quantity: tradeVolume ? formatNumber(tradeVolume, { maximumFractionDigits: 0 }) : '-',
+                price: lastPrice ? formatNumber(lastPrice, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '-',
+                change: Number.isFinite(change1D) ? `${change1D >= 0 ? '+' : ''}${formatNumber(change1D, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : '-',
+                marketValue: marketcap ? formatNumber(marketcap / 1_000_000, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '-',
+                flag: item.Country || ''
+            };
+        }
+
+        function buildTableData(items) {
+            const normalized = items.map(normalizeRow);
+            const byVolume = [...items].sort((a, b) => (Number(b.Total_Trade_Volume) || 0) - (Number(a.Total_Trade_Volume) || 0)).slice(0, MAX_ROWS).map(normalizeRow);
+            const byValue = [...items].sort((a, b) => (Number(b.Total_Trade_Value) || 0) - (Number(a.Total_Trade_Value) || 0)).slice(0, MAX_ROWS).map(normalizeRow);
+            const byGainer = [...items].sort((a, b) => (Number(b['Change%_1D']) || -Infinity) - (Number(a['Change%_1D']) || -Infinity)).slice(0, MAX_ROWS).map(normalizeRow);
+            const negativeItems = items.filter(item => Number(item['Change%_1D']) < 0);
+            const byLoser = negativeItems
+                .sort((a, b) => (Number(a['Change%_1D']) || 0) - (Number(b['Change%_1D']) || 0))
+                .slice(0, MAX_ROWS)
+                .map(normalizeRow);
+
+            tableData = {
+                active: byVolume,
+                value: byValue,
+                gainer: byGainer,
+                loser: byLoser
+            };
+
+            return normalized;
+        }
+
+        async function loadData() {
+            tableBody.innerHTML = '<tr><td colspan="6" style="padding: 16px; text-align: center; font-family: \'BLS Text\', sans-serif; color: #777E90;">Loading...</td></tr>';
+            try {
+                const response = await fetch(DATA_URL, { cache: 'no-store' });
+                const data = await response.json();
+                if (Array.isArray(data)) {
+                    buildTableData(data);
+                    renderTable('active');
+                } else {
+                    tableBody.innerHTML = '<tr><td colspan="6" style="padding: 16px; text-align: center; font-family: \'BLS Text\', sans-serif; color: #D92D20;">Invalid data</td></tr>';
+                }
+            } catch (error) {
+                tableBody.innerHTML = '<tr><td colspan="6" style="padding: 16px; text-align: center; font-family: \'BLS Text\', sans-serif; color: #D92D20;">Failed to load data</td></tr>';
+            }
         }
 
         function switchTab(selectedType) {
@@ -291,7 +310,7 @@
         });
 
         // Initialize
-        renderTable('active');
+        loadData();
 
     </script>
 </body>
