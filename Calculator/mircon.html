@@ -32,7 +32,7 @@
                 </p>
                 <p id="calculator-ratio"
                     style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
-                    3,400 : 1
+                     1 : 1,500
                 </p>
             </div>
 
@@ -45,7 +45,7 @@
                     <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice"
                         style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
                     <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
-                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD</span>
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">USD</span>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@
                     <input type="number" value="33.68" id="exchangeRate"
                         style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
                     <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
-                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD/THB</span>
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">USD/THB</span>
                 </div>
 
 
@@ -111,16 +111,16 @@
 </div>
 <script>
     // DR01 data
-    // Initialize AAPL01 data directly
+    // Initialize DR data directly
     const currentDR = {
         "code": "MICRON01",
         "issuer": "Micron Technology, Inc (MU)",
 
-        "ratio": "1500:1",
+        "ratio": "1 : 1500",
 
     };
 
-    let currentRatio = parseInt(currentDR.ratio.split(':')[0], 10);
+    let currentRatio = parseInt(currentDR.ratio.split(':')[1], 10);
 
     const drInput = document.getElementById('calculator-dr-code');
     const assetPriceInput = document.getElementById('assetPrice');
@@ -134,7 +134,7 @@
         document.getElementById('calculator-ratio').textContent = dr.ratio;
 
         const ratioParts = dr.ratio.split(':');
-        currentRatio = parseInt(ratioParts[0], 10);
+        currentRatio = parseInt(ratioParts[1], 10);
 
         calculateFairPrice();
     }

@@ -13,7 +13,7 @@
             <div
                 style="border-bottom: 1px solid #cbd3df; padding-bottom: 8px; display: flex; gap: 8px; align-items: center;">
                 <div style="position: relative; flex: 1; display: flex; align-items: center; gap: 12px;">
-                    <input type="text" id="calculator-dr-code" value="ORCL01" readonly
+                    <input type="text" id="calculator-dr-code" value="GOOGL01" readonly
                         style="font-family: 'BLS', sans-serif; font-size: 32px; font-weight: 800; line-height: 1.2; color: #1e90ff; border: none; outline: none; background: transparent; padding: 0; margin: 0; flex: 1; min-width: 0; cursor: default;">
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 </p>
                 <p id="calculator-ratio"
                     style="font-family: 'BLS Text', sans-serif; font-size: 16px; font-weight: 700; line-height: normal; color: #000000; margin: 0;">
-                     1 : 1,600
+                    1 : 340
                 </p>
             </div>
 
@@ -45,7 +45,7 @@
                     <input type="number" placeholder="ราคาสินทรัพย์อ้างอิง" id="assetPrice"
                         style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
                     <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
-                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD</span>
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">USD</span>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@
                     <input type="number" value="33.68" id="exchangeRate"
                         style="flex: 1; border: none; outline: none; font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">
                     <div style="width: 1px; height: 43px; background-color: #cbd3df;"></div>
-                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">HKD/THB</span>
+                    <span style="font-family: 'BLS Text', sans-serif; font-size: 16px; color: #23262f;">USD/THB</span>
                 </div>
 
 
@@ -111,12 +111,11 @@
 </div>
 <script>
     // DR01 data
-    // Initialize DR data directly
+    // Initialize GOOGL01 data directly
     const currentDR = {
-        "code": "ORCL01",
-        "issuer": "Oracle Corporation",
-
-        "ratio": "1:1600",
+        "code": "GOOGL01",
+        "issuer": "Alphabet Inc.",
+        "ratio": "1 : 340",
 
     };
 

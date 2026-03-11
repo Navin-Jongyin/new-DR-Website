@@ -4,9 +4,9 @@
     <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px;justify-content:center;">
         <span style="font-size:16px;font-weight:700;color:#0d0d0e;">เปรียบเทียบ</span>
 
-        <button id="btn-underlying" onclick="selectCompareTab('underlying')" style="padding:8px 24px;border-radius:999px;border:1px solid #1565B3;background:#1565B3;color:#fff;font-size:16px;font-weight:700;cursor:pointer;">ORCL</button>
-        <button id="btn-dr01" onclick="selectCompareTab('dr01')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">ORCL01</button>
-        <button id="btn-usdthb" onclick="selectCompareTab('usdthb')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">USD/THB</button>
+        <button id="btn-underlying" onclick="selectCompareTab('underlying')" style="padding:8px 24px;border-radius:999px;border:1px solid #1565B3;background:#1565B3;color:#fff;font-size:16px;font-weight:700;cursor:pointer;">9888</button>
+        <button id="btn-dr01" onclick="selectCompareTab('dr01')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">BIDU01</button>
+        <button id="btn-usdthb" onclick="selectCompareTab('usdthb')" style="padding:8px 24px;border-radius:999px;border:1px solid #E6E8ED;background:#fff;color:#777E90;font-size:16px;font-weight:700;cursor:pointer;">HKD/THB</button>
     </div>
 
     <!-- TradingView Chart -->
@@ -68,22 +68,23 @@
 
             if (tab === "underlying") {
                 btnUnderlying.style.cssText = activeStyle;
-                tvWrapper.style.display = "block";
-                ctaWrapper.style.display = "none";
-                createTV("NASDAQ:ORCL");
+                tvWrapper.style.display = "none";
+                ctaWrapper.style.display = "flex";
+                textElem.textContent = "ดูราคาอ้างอิง 9888";
+                linkElem.href = "https://www.tradingview.com/chart/?symbol=9888";;
             }
             if (tab === "dr01") {
                 btnDr01.style.cssText = activeStyle;
                 tvWrapper.style.display = "none";
                 ctaWrapper.style.display = "flex";
-                textElem.textContent = "ดูราคาอ้างอิง ORCL01";
-                linkElem.href = "https://www.tradingview.com/chart/?symbol=ORCL01";
+                textElem.textContent = "ดูราคาอ้างอิง SP50001";
+                linkElem.href = "https://www.tradingview.com/chart/?symbol=SP50001";
             }
             if (tab === "usdthb") {
                 btnUsdthb.style.cssText = activeStyle;
                 tvWrapper.style.display = "block";
                 ctaWrapper.style.display = "none";
-                createTV("USDTHB");
+                createTV("HKDTHB");
             }
         }
         // initialize default tab

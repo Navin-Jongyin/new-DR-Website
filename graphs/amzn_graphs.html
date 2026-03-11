@@ -81,10 +81,9 @@
             }
             if (tab === "usdthb") {
                 btnUsdthb.style.cssText = activeStyle;
-                tvWrapper.style.display = "none";
-                ctaWrapper.style.display = "flex";
-                textElem.textContent = "ดูราคาอ้างอิง USD/THB";
-                linkElem.href = "#";
+                tvWrapper.style.display = "block";
+                ctaWrapper.style.display = "none";
+                createTV("USDTHB");
             }
         }
         // initialize default tab

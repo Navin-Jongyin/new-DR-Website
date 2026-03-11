@@ -63,11 +63,11 @@
                 </div>
             </div>
 
-            <a id="calculator-info-btn" href="#" target="_blank"
-                style="display: flex; justify-content: center; align-items: center; width: 100%; height: 44px; border: 2px solid #1e90ff; border-radius: 8px; background: transparent; text-decoration: none; cursor: pointer;">
+            <a id="calculator-info-btn" href="#" target="_blank" aria-disabled="true" tabindex="-1"
+                style="display: flex; justify-content: center; align-items: center; width: 100%; height: 44px; border: 2px solid #1e90ff; border-radius: 8px; background: transparent; text-decoration: none; cursor: not-allowed; pointer-events: none; opacity: 0.5;">
                 <span
                     style="font-family: 'BLS', sans-serif; font-size: 16px; font-weight: 700; line-height: 1.5; color: #1e90ff;">ดูข้อมูล
-                    NDX01</span>
+                </span>
             </a>
         </div>
 
@@ -128,6 +128,30 @@
     const assetCurrencyLabel = document.getElementById('assetCurrencyLabel');
     const exchangeCurrencyLabel = document.getElementById('exchangeCurrencyLabel');
 
+    function setInfoButtonEnabled(enabled) {
+        const infoBtnSpan = infoBtn.querySelector('span');
+        if (!infoBtnSpan) return;
+
+        if (enabled && currentDR) {
+            infoBtnSpan.textContent = 'ดูข้อมูล ' + currentDR.code;
+            infoBtn.href = `https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${currentDR.code}`;
+            infoBtn.style.pointerEvents = 'auto';
+            infoBtn.style.cursor = 'pointer';
+            infoBtn.style.opacity = '1';
+            infoBtn.setAttribute('aria-disabled', 'false');
+            infoBtn.removeAttribute('tabindex');
+            return;
+        }
+
+        infoBtnSpan.textContent = 'ดูข้อมูล';
+        infoBtn.href = '#';
+        infoBtn.style.pointerEvents = 'none';
+        infoBtn.style.cursor = 'not-allowed';
+        infoBtn.style.opacity = '0.5';
+        infoBtn.setAttribute('aria-disabled', 'true');
+        infoBtn.setAttribute('tabindex', '-1');
+    }
+
     function getCurrency(country) {
         const code = (country || '').toLowerCase();
         if (code === 'us') return 'USD';
@@ -180,11 +204,7 @@
         currentRatio = dr.ratioValue || 1;
 
         // Update Button Text and Dynamic URL
-        const infoBtnSpan = infoBtn.querySelector('span');
-        if (infoBtnSpan) {
-            infoBtnSpan.textContent = 'ดูข้อมูล ' + dr.code;
-        }
-        infoBtn.href = `https://kenticoweb-test.bualuang.co.th/financial-service/inav-lists/dr/dr01-inav/${dr.code}`;
+        setInfoButtonEnabled(true);
 
         // Currency Update
         const currency = getCurrency(dr.country);
@@ -207,6 +227,8 @@
     searchIcon.addEventListener('click', function (e) {
         e.stopPropagation();
         drInput.value = '';
+        currentDR = null;
+        setInfoButtonEnabled(false);
         drInput.focus();
         filterDropdownItems('');
         dropdownList.style.display = 'block';
@@ -214,6 +236,11 @@
 
     drInput.addEventListener('input', function () {
         const searchTerm = this.value.trim();
+
+        // Disable details button while user is typing until a DR is selected.
+        currentDR = null;
+        setInfoButtonEnabled(false);
+
         if (searchTerm.length > 0) {
             filterDropdownItems(searchTerm);
             dropdownList.style.display = 'block';
@@ -271,8 +298,8 @@
                     country: item.Country || ''
                 }));
 
-            currentDR = drData[0] || null;
-            updateCalculatorDisplay(currentDR);
+            // Keep initial state empty; user must search/select a DR first.
+            setInfoButtonEnabled(false);
         } catch (e) {
             console.error('Failed to load DR data:', e);
         }
